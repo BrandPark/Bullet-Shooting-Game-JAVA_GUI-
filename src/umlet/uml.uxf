@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>225</x>
-      <y>180</y>
+      <x>189</x>
+      <y>225</y>
       <w>144</w>
       <h>126</h>
     </coordinates>
@@ -23,8 +23,8 @@ setBullet(Bullet) : void
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>117</x>
-      <y>360</y>
+      <x>81</x>
+      <y>405</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -34,8 +34,8 @@ setBullet(Bullet) : void
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>252</x>
-      <y>369</y>
+      <x>216</x>
+      <y>414</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -45,8 +45,8 @@ setBullet(Bullet) : void
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>144</x>
-      <y>297</y>
+      <x>108</x>
+      <y>342</y>
       <w>135</w>
       <h>81</h>
     </coordinates>
@@ -56,8 +56,8 @@ setBullet(Bullet) : void
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>279</x>
-      <y>297</y>
+      <x>243</x>
+      <y>342</y>
       <w>54</w>
       <h>90</h>
     </coordinates>
@@ -67,8 +67,8 @@ setBullet(Bullet) : void
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>585</x>
-      <y>198</y>
+      <x>549</x>
+      <y>243</y>
       <w>117</w>
       <h>81</h>
     </coordinates>
@@ -86,8 +86,8 @@ checkHit(): boolean
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>18</y>
+      <x>396</x>
+      <y>63</y>
       <w>126</w>
       <h>99</h>
     </coordinates>
@@ -103,8 +103,8 @@ getY(): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>90</y>
+      <x>279</x>
+      <y>135</y>
       <w>135</w>
       <h>108</h>
     </coordinates>
@@ -114,8 +114,8 @@ getY(): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
-      <y>72</y>
+      <x>513</x>
+      <y>117</y>
       <w>117</w>
       <h>144</h>
     </coordinates>
@@ -125,8 +125,8 @@ getY(): int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>621</x>
-      <y>342</y>
+      <x>585</x>
+      <y>387</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -136,8 +136,8 @@ getY(): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>612</x>
-      <y>270</y>
+      <x>576</x>
+      <y>315</y>
       <w>63</w>
       <h>90</h>
     </coordinates>
@@ -147,8 +147,8 @@ getY(): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>666</x>
-      <y>270</y>
+      <x>630</x>
+      <y>315</y>
       <w>135</w>
       <h>81</h>
     </coordinates>
@@ -158,8 +158,8 @@ getY(): int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>738</x>
-      <y>333</y>
+      <x>702</x>
+      <y>378</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -169,8 +169,8 @@ getY(): int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>414</x>
-      <y>387</y>
+      <x>378</x>
+      <y>432</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -181,8 +181,8 @@ getY(): int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>549</x>
-      <y>387</y>
+      <x>513</x>
+      <y>432</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -192,8 +192,8 @@ getY(): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>495</x>
-      <y>396</y>
+      <x>459</x>
+      <y>441</y>
       <w>72</w>
       <h>27</h>
     </coordinates>
@@ -203,8 +203,8 @@ getY(): int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>801</x>
-      <y>180</y>
+      <x>765</x>
+      <y>225</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -214,8 +214,8 @@ getY(): int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>837</x>
-      <y>81</y>
+      <x>801</x>
+      <y>126</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -225,8 +225,8 @@ getY(): int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>666</x>
-      <y>81</y>
+      <x>630</x>
+      <y>126</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -236,8 +236,8 @@ getY(): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>675</x>
-      <y>99</y>
+      <x>639</x>
+      <y>144</y>
       <w>45</w>
       <h>117</h>
     </coordinates>
@@ -247,8 +247,8 @@ getY(): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>747</x>
-      <y>81</y>
+      <x>711</x>
+      <y>126</y>
       <w>108</w>
       <h>27</h>
     </coordinates>
@@ -258,8 +258,8 @@ getY(): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>738</x>
-      <y>99</y>
+      <x>702</x>
+      <y>144</y>
       <w>90</w>
       <h>99</h>
     </coordinates>
@@ -269,8 +269,8 @@ getY(): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>225</y>
+      <x>324</x>
+      <y>270</y>
       <w>243</w>
       <h>36</h>
     </coordinates>
@@ -281,8 +281,8 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>279</y>
+      <x>324</x>
+      <y>324</y>
       <w>81</w>
       <h>126</h>
     </coordinates>
@@ -292,8 +292,8 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>486</x>
-      <y>261</y>
+      <x>450</x>
+      <y>306</y>
       <w>117</w>
       <h>144</h>
     </coordinates>
