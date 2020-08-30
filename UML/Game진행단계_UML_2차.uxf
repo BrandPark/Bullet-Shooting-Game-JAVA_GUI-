@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>328</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>GamePanel
+--
+UnitInfo: String
+LevelInfo: StringBuffer[]
+backgroundImageUrl: String
+--
+run(): void
+setBackgroundImage();
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>240</y>
+      <w>152</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>UserUnit 
+extends
+Unit
+--
+--
+getLife(): void
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>712</x>
+      <y>368</y>
+      <w>208</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>EnemyUnit
+extends
+Unit
+--
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>936</x>
+      <y>448</y>
+      <w>96</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>EnemyBullet
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>992</x>
+      <y>216</y>
+      <w>96</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>UserBullet
+--
+bulletType: int 
+power: int
+shootDelay: int
+--
+move(): void
+getShootDelay() : void
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>504</y>
+      <w>176</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>TimeLabel
+--
+mm: int
+ss: int
+ms: int
+time: String
+--
+showTime(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>128</y>
+      <w>128</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>LifeLabel
+--
+userLife: int
+--
+setLife()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>208</x>
+      <y>272</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>JFrame</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>552</y>
+      <w>136</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Boss
+extends
+Unit</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>536</x>
+      <y>304</y>
+      <w>224</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>216</y>
+      <w>120</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>536</x>
+      <y>336</y>
+      <w>192</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>220.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>344</y>
+      <w>112</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;200.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>912</x>
+      <y>416</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>30.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>496</x>
+      <y>176</y>
+      <w>32</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>344</y>
+      <w>248</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>290.0;280.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>160</y>
+      <w>288</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>340.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>680</y>
+      <w>176</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Unit
+--
+speed: int
+imageUrl: String
+life : int 
+bulletType: int
+--
+shoot(): abstract void
+move() : abstract void
+changeBullet(type: int): void
+changePower(type: int): void
+attacked(): abstract void
+getHitArea(): abstract void
+2. panel에서 유닛들의 위치를 모두 추적하면서 총알은 move()에서 겹치는 부분이 생기는지 체크
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>320</y>
+      <w>304</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=)-
+m1=UnitImageUrl, LevelInfo
+
+</panel_attributes>
+    <additional_attributes>20.0;30.0;360.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>272</y>
+      <w>200</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>230.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
