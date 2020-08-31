@@ -1,11 +1,13 @@
-package game;
+package step4_ingame.movingObj;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 
-@SuppressWarnings("serial")
+import step4_ingame.staticSrc.Location;
+import step4_ingame.staticSrc.Size;
+
 public class UserUnit extends Unit{
 	
 	private int moveDir = 0;
@@ -21,6 +23,8 @@ public class UserUnit extends Unit{
 	
 	public UserUnit(String imageUrl) {
 		super(imageUrl);
+		setLocation(Location.USER_X, Location.USER_Y);
+		setSize(Size.USER_W, Size.USER_H);
 		setLife(3);
 		setSpeed(5);
 	}

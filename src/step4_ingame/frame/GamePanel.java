@@ -1,40 +1,49 @@
-package game;
+package step4_ingame.frame;
 
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.JPanel;
+import common.StepPanel;
+import step0.StepManager;
+import step4_ingame.movingObj.UserUnit;
+import step4_ingame.staticSrc.ImageUrl;
+import step4_ingame.staticSrc.Size;
 
-import common.Size;
-import common.UnitLocation;
-import common.UnitName;
-
-public class GamePanel extends JPanel implements Runnable, KeyListener{
+public class GamePanel extends StepPanel implements Runnable, KeyListener{
 	private UserUnit userUnit;
-	
+	private TimeScorePanel tsp;
+	private LifePanel lp;
+	private StepManager sm;
+
 	public GamePanel() {
 		setPreferredSize(new Dimension(Size.FRAME_W,Size.FRAME_H));
 		setLayout(null);
-		
-		userUnit = new UserUnit(UnitName.USER_UNIT1);
-		userUnit.setSize(Size.USER_W, Size.USER_H);
-		userUnit.setLocation(UnitLocation.USER_X,UnitLocation.USER_Y);
-		add(userUnit);
+		sm = StepManager.valueOf();
+		init();
 		
 		addKeyListener(this);
 
 		setFocusable(true);
 		requestFocus();
+		
 	}
-	
+	public void init() {
+		userUnit = new UserUnit(ImageUrl.getImgUrl(sm.getUserUnitCode()));
+		System.out.println(sm.getUserUnitCode());
+		add(userUnit);
+		
+		tsp = new TimeScorePanel();
+		add(tsp);
+		
+		lp = new LifePanel();
+		add(lp);
+	}
 	
 	@Override
 	public void run() {
 		while(true) {
+			
 			userUnit.move();
 			repaint();
 			revalidate();
@@ -59,6 +68,13 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	public void keyPressed(KeyEvent e) {
 		userUnit.keyPressed(e);
 	}
+	public void start() {
+		new Thread(this).start();
+	}
 
-	
+	@Override
+	public GamePanel getPanel() {
+		start();
+		return this;
+	}
 }

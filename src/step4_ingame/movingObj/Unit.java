@@ -1,6 +1,4 @@
-package game;
-
-import java.awt.Graphics2D;
+package step4_ingame.movingObj;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
