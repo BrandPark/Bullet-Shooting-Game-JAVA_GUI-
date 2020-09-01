@@ -3,16 +3,17 @@ package step0;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import repo.StepPanelRepo;
+
 class MainFrame extends JFrame{
 	private JPanel panel;
-	private StepManager sm;
+	private StepPanelRepo pr;
 	
 	public MainFrame(String title) {
 		setTitle(title);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
-		sm = StepManager.valueOf(this);
-		setContentPane(sm.getPanel());
+		pr = StepPanelRepo.getRepo();
 		
 		pack();
 		setResizable(false);

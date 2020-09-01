@@ -29,8 +29,7 @@ public class GamePanel extends StepPanel implements Runnable, KeyListener{
 		
 	}
 	public void init() {
-		userUnit = new UserUnit(ImageUrl.getImgUrl(sm.getUserUnitCode()));
-		System.out.println(sm.getUserUnitCode());
+		//userUnit = new UserUnit();
 		add(userUnit);
 		
 		tsp = new TimeScorePanel();
