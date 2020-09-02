@@ -10,21 +10,26 @@ import step4_ingame.movingObj.UserUnit;
 
 final public class StepManager {
 	private int curPanelIndex;
-	private PanelRepo panelRepo = PanelRepo.getRepo();
-	private UserRepo userRepo = UserRepo.getRepo();
-	private EnemyRepo enemyRepo = EnemyRepo.getRepo();
+	private final PanelRepo panelRepo;
+	private final UserRepo userRepo;
+	private final EnemyRepo enemyRepo;
 		
 	private static StepManager INSTANCE = null;
 	
-	public static final StepManager getInstance() {
+	synchronized public static final StepManager getInstance() {
 		if(INSTANCE==null) {
 			INSTANCE = new StepManager();
+			System.out.println("StepManager.getInstance()");
+			
 		}
 		return INSTANCE;
 	}
 
 	private StepManager() {
 		this.curPanelIndex = 0;
+		panelRepo = PanelRepo.getRepo();
+		userRepo = UserRepo.getRepo();
+		enemyRepo = EnemyRepo.getRepo();
 	}
 	
 	public void saveUser(UserUnit userUnit) {

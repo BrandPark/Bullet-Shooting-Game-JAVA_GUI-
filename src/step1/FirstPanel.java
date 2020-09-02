@@ -12,7 +12,8 @@ import step4_ingame.movingObj.UserUnit;
 
 public class FirstPanel extends StepPanel{
 	private JButton startBtn = new JButton("시작");
-	
+	private StepManager manager = StepManager.getInstance();
+
 	
 	public FirstPanel() {
 		setLayout(new FlowLayout());
@@ -22,7 +23,7 @@ public class FirstPanel extends StepPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				StepManager manager = StepManager.getInstance();
+//				StepManager manager = StepManager.getInstance();
 				manager.saveUser(new UserUnit("resource/img_unit/user_unit.png"));
 				manager.nextStep();
 				

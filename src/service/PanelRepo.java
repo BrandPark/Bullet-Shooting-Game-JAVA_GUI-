@@ -9,14 +9,15 @@ import step4_ingame.frame.GamePanel;
 
 //@Singleton
 final class PanelRepo {
-	private List<StepPanel> panelArray = new ArrayList<>();
+	private List<StepPanel> panelArray = null;
 	private static final PanelRepo INSTANCE = new PanelRepo();
 	
 	private PanelRepo() {
+		panelArray = new ArrayList<>();
 		panelInit();
 	}
 	
-	public static PanelRepo getRepo() {
+	final static PanelRepo getRepo() {
 		return INSTANCE;
 	}
 	
