@@ -11,11 +11,9 @@ import service.StepManager;
 import step4_ingame.movingObj.UserUnit;
 
 public class FirstPanel extends StepPanel{
-	private StepPanel panel;
 	private JButton startBtn = new JButton("시작");
 	
 	public FirstPanel() {
-		panel = this;
 		setLayout(new FlowLayout());
 		add(startBtn);
 		

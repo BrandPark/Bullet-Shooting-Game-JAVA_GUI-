@@ -1,16 +1,15 @@
 package service;
 
 import java.awt.Container;
+import java.awt.event.FocusAdapter;
 
 import javax.swing.JFrame;
 
 import common.StepPanel;
-import step4_ingame.frame.GamePanel;
 import step4_ingame.movingObj.UserUnit;
 
 final public class StepManager {
 	private int curPanelIndex;
-	private JFrame c;
 	private PanelRepo panelRepo = PanelRepo.getRepo();
 	private UserRepo userRepo = UserRepo.getRepo();
 	private EnemyRepo enemyRepo = EnemyRepo.getRepo();
