@@ -1,23 +1,24 @@
-package repo;
+package service;
 
 import step4_ingame.movingObj.UserUnit;
 
 //Singleton
 public final class UserRepo {
-	private UserUnit userUnit;
+	private UserUnit userUnit = null;
 	private static final UserRepo INSTANCE = new UserRepo();
 	
 	private UserRepo() {}
 	
-	public final static UserRepo getRepo() {
+	final static UserRepo getRepo() {
 		return INSTANCE;
 	}
 	
 	
-	public final void save(UserUnit userUnit) {
-		this.userUnit = userUnit;
+	final void save(UserUnit userUnit) {
+		if(userUnit == null)
+			this.userUnit = userUnit;
 	}
-	public final UserUnit getUserUnit() {
+	final UserUnit getUserUnit() {
 		return userUnit;
 	}
 	

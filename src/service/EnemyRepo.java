@@ -1,23 +1,23 @@
-package repo;
+package service;
 
 import java.util.Vector;
 
 import step4_ingame.movingObj.Unit;
 
-public class EnemyRepo {
+final class EnemyRepo {
 	private int level;
 	private Vector<Unit> enemys = new Vector<Unit>();
 	private static final EnemyRepo INSTANCE = new EnemyRepo();
 	
 	private EnemyRepo() {}
 	
-	public static final EnemyRepo getRepo() {
+	static final EnemyRepo getRepo() {
 		return INSTANCE;
 	}
-	final public void save(int level) {
+	final void save(int level) {
 		this.level = level;
 	}
-	final public Vector<Unit> getEnemys(){
+	final Vector<Unit> getEnemys(){
 		return enemys;
 	}
 	final private Vector<Unit> getEnemysFromFile(int level) {

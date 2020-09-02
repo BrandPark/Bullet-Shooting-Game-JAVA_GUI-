@@ -1,6 +1,5 @@
 package step1;
 
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,28 +7,27 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import common.StepPanel;
-import step4_ingame.staticSrc.Size;
+import service.StepManager;
+import step4_ingame.movingObj.UserUnit;
 
 public class FirstPanel extends StepPanel{
-
+	private StepPanel panel;
 	private JButton startBtn = new JButton("시작");
 	
 	public FirstPanel() {
-		setPreferredSize(new Dimension(Size.FRAME_W,Size.FRAME_H));
-		
-		add(startBtn, FlowLayout.CENTER);
+		panel = this;
+		setLayout(new FlowLayout());
+		add(startBtn);
 		
 		startBtn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				StepManager manager = StepManager.getInstance();
+				manager.saveUser(new UserUnit("resource/img_unit/user_unit.png"));
+				manager.nextStep();
 			}
 		});
-	}
-	@Override
-	public StepPanel getPanel() {
-		return null;
 	}
 
 }
