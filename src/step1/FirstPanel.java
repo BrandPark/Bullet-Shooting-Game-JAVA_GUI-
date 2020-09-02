@@ -13,6 +13,7 @@ import step4_ingame.movingObj.UserUnit;
 public class FirstPanel extends StepPanel{
 	private JButton startBtn = new JButton("시작");
 	
+	
 	public FirstPanel() {
 		setLayout(new FlowLayout());
 		add(startBtn);
@@ -24,8 +25,15 @@ public class FirstPanel extends StepPanel{
 				StepManager manager = StepManager.getInstance();
 				manager.saveUser(new UserUnit("resource/img_unit/user_unit.png"));
 				manager.nextStep();
+				
 			}
 		});
+	}
+
+	@Override
+	public void focusing() {
+		requestFocus();
+		setFocusable(true);
 	}
 
 }

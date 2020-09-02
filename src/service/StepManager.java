@@ -33,16 +33,22 @@ final public class StepManager {
 	
 	public void nextStep() {
 		StepPanel curPanel = panelRepo.getPanel(curPanelIndex++);
+		StepPanel nextPanel = panelRepo.getPanel(curPanelIndex);
+		
 		Container c = curPanel.getParent();
 		c.remove(curPanel);
-		c.add(panelRepo.getPanel(curPanelIndex));
+		c.add(nextPanel);
 		c.repaint();
 		c.revalidate();
 		
+		nextPanel.focusing();
 	}
+	
 	
 	public void gameStart(JFrame frame) {
 		frame.add(panelRepo.getPanel(0));
 	}
+	
+
 	
 }

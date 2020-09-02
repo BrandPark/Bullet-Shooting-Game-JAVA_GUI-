@@ -10,4 +10,5 @@ abstract public class StepPanel extends JPanel{
 	public StepPanel(){
 		setPreferredSize(new Dimension(Size.FRAME_W,Size.FRAME_H));
 	}
+	abstract public void focusing();
 }

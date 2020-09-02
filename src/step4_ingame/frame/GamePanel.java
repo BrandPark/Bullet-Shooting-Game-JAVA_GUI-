@@ -14,15 +14,14 @@ public class GamePanel extends StepPanel implements Runnable, KeyListener{
 	public GamePanel() {
 		setLayout(null);
 		init();
-		
+	}
+	public void focusing() {
 		addKeyListener(this);
-		
 		requestFocus();
 		setFocusable(true);
-		
 		threadStart();
 	}
-	public void init() {
+	private void init() {
 		userUnit = new UserUnit("resource/img_unit/user_unit.png");
 		add(userUnit);
 		

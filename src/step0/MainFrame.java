@@ -1,7 +1,6 @@
 package step0;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 import service.StepManager;
 
