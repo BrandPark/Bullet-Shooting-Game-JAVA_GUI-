@@ -1,21 +1,15 @@
 package service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import common.StepPanel;
-import step1.FirstPanel;
-import step4_ingame.frame.GamePanel;
 
 //@Singleton
 final class PanelRepo {
 	private List<StepPanel> panelArray = null;
 	private static final PanelRepo INSTANCE = new PanelRepo();
 	
-	private PanelRepo() {
-		panelArray = new ArrayList<>();
-		panelInit();
-	}
+	private PanelRepo() {}
 	
 	final static PanelRepo getRepo() {
 		return INSTANCE;
@@ -30,13 +24,8 @@ final class PanelRepo {
 		return panelArray.get(step);
 	}
 	
-	final private void panelInit() {
-		addPanel(new FirstPanel());
-		addPanel(new GamePanel());
+	final void initPanel(List<StepPanel> list) {
+		panelArray = list;
 	}
 	
-	final private void addPanel(StepPanel panel) {
-		if(!panelArray.contains(panel))
-			panelArray.add(panel);
-	}
 }

@@ -2,6 +2,7 @@ package service;
 
 import java.awt.Container;
 import java.awt.event.FocusAdapter;
+import java.util.List;
 
 import javax.swing.JFrame;
 
@@ -20,7 +21,6 @@ final public class StepManager {
 		if(INSTANCE==null) {
 			INSTANCE = new StepManager();
 			System.out.println("StepManager.getInstance()");
-			
 		}
 		return INSTANCE;
 	}
@@ -52,6 +52,10 @@ final public class StepManager {
 	
 	public void gameStart(JFrame frame) {
 		frame.add(panelRepo.getPanel(0));
+	}
+
+	public void initPanel(List<StepPanel> list) {
+		panelRepo.initPanel(list);
 	}
 	
 
