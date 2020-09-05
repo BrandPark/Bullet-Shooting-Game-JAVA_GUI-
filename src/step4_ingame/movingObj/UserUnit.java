@@ -2,8 +2,8 @@ package step4_ingame.movingObj;
 
 import java.awt.event.KeyEvent;
 
-import step4_ingame.staticSrc.Location;
-import step4_ingame.staticSrc.Size;
+import common.static_data.Location;
+import common.static_data.Size;
 
 public class UserUnit extends Unit{
 	

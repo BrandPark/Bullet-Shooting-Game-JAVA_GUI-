@@ -3,7 +3,7 @@ package step4_ingame.movingObj;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import utils.ImageCal;
+import common.utils.ImageUtil;
 
 public abstract class Unit extends JLabel{
 	
@@ -14,23 +14,26 @@ public abstract class Unit extends JLabel{
 
 	public Unit(String url) {
 		super();
+		this.life = 3;
 		this.imgUrl = url;
-		icon = new ImageIcon(url);
+		this.icon = new ImageIcon(url);
 		setIcon(icon);
 	}
-	protected void setSpeed(int speed) {
+	
+	void setSpeed(int speed) {
 		this.speed = speed;
 	}
-	protected int getSpeed() {
+	int getSpeed() {
 		return speed;
 	}
-	protected void setLife(int life) {
+	void setLife(int life) {
 		this.life = life;
 	}
+	
 	@Override
 	public void setSize(int width, int height) {
 		super.setSize(width,height);
-		icon = ImageCal.reSizing(icon, width,height);
+		icon = ImageUtil.reSizing(icon, width,height);
 		
 	}
 	

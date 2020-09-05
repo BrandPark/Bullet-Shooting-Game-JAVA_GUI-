@@ -5,12 +5,11 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import service.StepManager;
-import step4_ingame.staticSrc.Size;
+import common.static_data.Size;
 
 class MainFrame extends JFrame{
 	
-	public MainFrame(String title) {
+	MainFrame(String title) {
 		setTitle(title);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
@@ -22,16 +21,15 @@ class MainFrame extends JFrame{
 		
 		setLocationRelativeTo(null);
 		setVisible(true);
-		
 	}
 	
 	public static void main(String[] args) {
 		
-		StepManager manager = StepManager.getInstance();
+		StepController stepController = StepController.getInstance();
 		StepPanelList stepPanelList = new StepPanelList();
-		manager.initPanel(stepPanelList.getList());
+		stepPanelList.initPanel(stepController);
 		
-		manager.gameStart(new MainFrame("Bullet-Shooting-Game"));
+		stepController.gameStart(new MainFrame("Bullet-Shooting-Game"));
 	}
 
 	

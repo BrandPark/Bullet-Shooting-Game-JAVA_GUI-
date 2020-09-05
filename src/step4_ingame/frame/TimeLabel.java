@@ -1,11 +1,6 @@
 package step4_ingame.frame;
 
-import java.awt.Color;
-
 import javax.swing.JLabel;
-
-import step4_ingame.staticSrc.Location;
-import step4_ingame.staticSrc.Size;
 
 public class TimeLabel extends JLabel implements Runnable {
 	private int mm;

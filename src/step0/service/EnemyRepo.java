@@ -1,4 +1,4 @@
-package service;
+package step0.service;
 
 import java.util.Vector;
 
@@ -20,7 +20,7 @@ final class EnemyRepo {
 	final Vector<Unit> getEnemys(){
 		return enemys;
 	}
-	final private Vector<Unit> getEnemysFromFile(int level) {
+	private final Vector<Unit> getEnemysFromFile(int level) {
 		//저장된 파일로부터 enemys를 가져옴
 		return null;
 	}

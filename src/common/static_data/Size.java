@@ -1,4 +1,4 @@
-package step4_ingame.staticSrc;
+package common.static_data;
 
 public abstract class Size {
 //	GamePanel

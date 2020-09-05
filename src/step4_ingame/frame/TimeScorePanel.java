@@ -5,8 +5,8 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import step4_ingame.staticSrc.Location;
-import step4_ingame.staticSrc.Size;
+import common.static_data.Location;
+import common.static_data.Size;
 
 public class TimeScorePanel extends JPanel{
 	private TimeLabel tl;

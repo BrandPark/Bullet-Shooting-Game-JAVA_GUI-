@@ -7,12 +7,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import common.StepPanel;
-import service.StepManager;
+import step0.StepController;
 import step4_ingame.movingObj.UserUnit;
 
 public class FirstPanel extends StepPanel{
 	private JButton startBtn = new JButton("시작");
-	private StepManager manager = StepManager.getInstance();
+	private StepController stepController = StepController.getInstance();
 
 	
 	public FirstPanel() {
@@ -23,18 +23,19 @@ public class FirstPanel extends StepPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				StepManager manager = StepManager.getInstance();
-				manager.saveUser(new UserUnit("resource/img_unit/user_unit.png"));
-				manager.nextStep();
-				
+				stepController.saveUser(new UserUnit("resource/img_unit/user_unit.png"));
+				stepController.nextStep();
 			}
 		});
 	}
-
 	@Override
-	public void focusing() {
-		requestFocus();
-		setFocusable(true);
+	public void start() {
+		// TODO Auto-generated method stub
+		
 	}
-
+	@Override
+	protected void init() {
+		// TODO Auto-generated method stub
+		
+	}
 }

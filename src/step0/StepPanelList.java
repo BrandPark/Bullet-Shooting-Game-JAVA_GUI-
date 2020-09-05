@@ -15,8 +15,7 @@ class StepPanelList {
 		stepArray.add(new GamePanel());
 	}
 	
-	List<StepPanel> getList(){
-		return stepArray;
+	void initPanel(StepController stepController){
+		stepController.initPanel(stepArray);
 	}
-
 }

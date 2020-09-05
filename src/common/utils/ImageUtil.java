@@ -1,10 +1,10 @@
-package utils;
+package common.utils;
 
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public abstract class ImageCal {
+public abstract class ImageUtil {
 	
 	
 	public static ImageIcon reSizing(ImageIcon icon, int width, int height ) {
