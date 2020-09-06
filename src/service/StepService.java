@@ -1,4 +1,4 @@
-package step0.service;
+package service;
 
 import java.awt.Container;
 import java.awt.event.FocusAdapter;
@@ -6,8 +6,8 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import common.StepPanel;
-import step4_ingame.movingObj.UserUnit;
+import steps.step0.StepPanel;
+import steps.step4_ingame.movingObj.UserUnit;
 
 final public class StepService {
 	private final PanelRepo panelRepo;

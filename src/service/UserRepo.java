@@ -1,6 +1,6 @@
-package step0.service;
+package service;
 
-import step4_ingame.movingObj.UserUnit;
+import steps.step4_ingame.movingObj.UserUnit;
 
 //Singleton
 final class UserRepo {

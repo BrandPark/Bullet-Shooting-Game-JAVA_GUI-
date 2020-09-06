@@ -1,8 +1,8 @@
-package step0.service;
+package service;
 
 import java.util.Vector;
 
-import step4_ingame.movingObj.Unit;
+import steps.step4_ingame.movingObj.Unit;
 
 final class EnemyRepo {
 	private int level;

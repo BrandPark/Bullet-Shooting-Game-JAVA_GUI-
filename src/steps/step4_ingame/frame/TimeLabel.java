@@ -1,4 +1,4 @@
-package step4_ingame.frame;
+package steps.step4_ingame.frame;
 
 import javax.swing.JLabel;
 

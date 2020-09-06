@@ -1,12 +1,11 @@
-package step0;
+package steps.step0;
 
 import java.util.List;
 
 import javax.swing.JFrame;
 
-import common.StepPanel;
-import step0.service.StepService;
-import step4_ingame.movingObj.UserUnit;
+import service.StepService;
+import steps.step4_ingame.movingObj.UserUnit;
 
 public final class StepController {
 	private int curStepIndex;

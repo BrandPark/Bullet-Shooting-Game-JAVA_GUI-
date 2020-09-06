@@ -1,4 +1,4 @@
-package step1;
+package steps.step1;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import common.StepPanel;
-import step0.StepController;
-import step4_ingame.movingObj.UserUnit;
+import steps.step0.StepController;
+import steps.step0.StepPanel;
+import steps.step4_ingame.movingObj.UserUnit;
 
 public class FirstPanel extends StepPanel{
 	private JButton startBtn = new JButton("시작");

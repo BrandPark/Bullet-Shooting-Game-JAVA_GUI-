@@ -1,4 +1,4 @@
-package step4_ingame.movingObj;
+package steps.step4_ingame.movingObj;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;

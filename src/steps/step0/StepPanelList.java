@@ -1,11 +1,10 @@
-package step0;
+package steps.step0;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import common.StepPanel;
-import step1.FirstPanel;
-import step4_ingame.frame.GamePanel;
+import steps.step1.FirstPanel;
+import steps.step4_ingame.frame.GamePanel;
 
 class StepPanelList {
 	private List<StepPanel> stepArray = new ArrayList<>();

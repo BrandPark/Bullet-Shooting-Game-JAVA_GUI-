@@ -1,10 +1,10 @@
-package step4_ingame.frame;
+package steps.step4_ingame.frame;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import common.StepPanel;
-import step4_ingame.movingObj.UserUnit;
+import steps.step0.StepPanel;
+import steps.step4_ingame.movingObj.UserUnit;
 
 public class GamePanel extends StepPanel implements Runnable, KeyListener{
 	private UserUnit userUnit;

@@ -1,4 +1,4 @@
-package step4_ingame.movingObj;
+package steps.step4_ingame.movingObj;
 
 import java.awt.event.KeyEvent;
 

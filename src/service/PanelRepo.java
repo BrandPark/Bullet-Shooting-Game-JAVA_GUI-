@@ -1,8 +1,8 @@
-package step0.service;
+package service;
 
 import java.util.List;
 
-import common.StepPanel;
+import steps.step0.StepPanel;
 
 //@Singleton
 final class PanelRepo {
