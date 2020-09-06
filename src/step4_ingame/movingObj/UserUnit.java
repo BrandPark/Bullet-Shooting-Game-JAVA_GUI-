@@ -55,7 +55,13 @@ public class UserUnit extends Unit{
 			xa = getSpeed();
 			ya = getSpeed();
 		}
-		setLocation(getX()+xa, getY()+ya);
+		int setX = getX() + xa;
+		int setY = getY() + ya;
+		
+		if(isInFrame(setX,setY)) {
+			setLocation(setX,setY);
+		}
+		
 	}
 	
 	public void keyPressed(KeyEvent e) {
@@ -83,7 +89,16 @@ public class UserUnit extends Unit{
 		if(key == KeyEvent.VK_RIGHT)
 			moveDir = moveDir ^ RIGHT;
 	}
-
+	
+	private boolean isInFrame(int x, int y) {
+		int endX = x + Size.USER_W;
+		int endY = y + Size.USER_H;
+		
+		if(x<0 || y<0 || endX>Size.FRAME_W || endY>Size.FRAME_H)
+			return false;
+		
+		return true;
+	}
 	
 	
 

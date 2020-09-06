@@ -28,8 +28,8 @@ fontsize=18
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2044</x>
-      <y>511</y>
+      <x>2079</x>
+      <y>546</y>
       <w>259</w>
       <h>161</h>
     </coordinates>
@@ -59,7 +59,7 @@ setBackground(img:String): void
     <id>UMLClass</id>
     <coordinates>
       <x>2338</x>
-      <y>539</y>
+      <y>504</y>
       <w>133</w>
       <h>63</h>
     </coordinates>
@@ -79,7 +79,7 @@ getLife(): void
     <id>UMLClass</id>
     <coordinates>
       <x>2338</x>
-      <y>644</y>
+      <y>609</y>
       <w>182</w>
       <h>77</h>
     </coordinates>
@@ -102,7 +102,7 @@ setScore(unitCode: int): void
     <id>UMLClass</id>
     <coordinates>
       <x>2604</x>
-      <y>798</y>
+      <y>763</y>
       <w>189</w>
       <h>70</h>
     </coordinates>
@@ -115,7 +115,7 @@ setScore(unitCode: int): void
     <id>UMLClass</id>
     <coordinates>
       <x>2352</x>
-      <y>378</y>
+      <y>343</y>
       <w>203</w>
       <h>91</h>
     </coordinates>
@@ -142,7 +142,7 @@ deleteBullet(): void
     <id>UMLClass</id>
     <coordinates>
       <x>1946</x>
-      <y>315</y>
+      <y>280</y>
       <w>154</w>
       <h>77</h>
     </coordinates>
@@ -159,7 +159,7 @@ run(): void</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>2128</x>
-      <y>322</y>
+      <y>287</y>
       <w>112</w>
       <h>49</h>
     </coordinates>
@@ -175,7 +175,7 @@ setLife(life: int)
     <id>UMLClass</id>
     <coordinates>
       <x>1141</x>
-      <y>462</y>
+      <y>427</y>
       <w>98</w>
       <h>28</h>
     </coordinates>
@@ -186,7 +186,7 @@ setLife(life: int)
     <id>UMLClass</id>
     <coordinates>
       <x>2338</x>
-      <y>791</y>
+      <y>756</y>
       <w>119</w>
       <h>35</h>
     </coordinates>
@@ -197,21 +197,21 @@ setLife(life: int)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2296</x>
-      <y>567</y>
-      <w>56</w>
-      <h>49</h>
+      <x>2331</x>
+      <y>560</y>
+      <w>28</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>60.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2422</x>
-      <y>462</y>
+      <y>427</y>
       <w>35</w>
       <h>91</h>
     </coordinates>
@@ -223,34 +223,34 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2296</x>
-      <y>567</y>
-      <w>56</w>
-      <h>140</h>
+      <x>2331</x>
+      <y>602</y>
+      <w>28</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*
 m2=1</panel_attributes>
-    <additional_attributes>60.0;180.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2016</x>
-      <y>385</y>
-      <w>147</w>
-      <h>140</h>
+      <y>350</y>
+      <w>182</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;190.0;180.0</additional_attributes>
+    <additional_attributes>10.0;10.0;240.0;280.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2492</x>
-      <y>714</y>
+      <y>679</y>
       <w>126</w>
       <h>133</h>
     </coordinates>
@@ -262,34 +262,34 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2142</x>
-      <y>364</y>
-      <w>63</w>
-      <h>161</h>
+      <x>2177</x>
+      <y>329</y>
+      <w>35</w>
+      <h>231</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>70.0;10.0;10.0;210.0</additional_attributes>
+    <additional_attributes>20.0;10.0;10.0;310.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2296</x>
-      <y>567</y>
-      <w>77</w>
-      <h>238</h>
+      <x>2331</x>
+      <y>602</y>
+      <w>42</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>80.0;320.0;10.0;10.0</additional_attributes>
+    <additional_attributes>30.0;220.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2786</x>
-      <y>511</y>
+      <y>476</y>
       <w>273</w>
       <h>259</h>
     </coordinates>
@@ -330,7 +330,7 @@ innerclass}
     <id>UMLClass</id>
     <coordinates>
       <x>1645</x>
-      <y>700</y>
+      <y>665</y>
       <w>259</w>
       <h>84</h>
     </coordinates>
@@ -348,7 +348,7 @@ getHitAreas(): Vector&lt;Area&gt;
     <id>UMLClass</id>
     <coordinates>
       <x>1645</x>
-      <y>840</y>
+      <y>805</y>
       <w>273</w>
       <h>70</h>
     </coordinates>
@@ -365,29 +365,29 @@ getEnemyUnits(): Vector&lt;Unit&gt;
     <id>Relation</id>
     <coordinates>
       <x>1897</x>
-      <y>616</y>
-      <w>161</w>
-      <h>133</h>
+      <y>651</y>
+      <w>196</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;170.0;210.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;260.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1911</x>
-      <y>616</y>
-      <w>147</w>
-      <h>245</h>
+      <y>651</y>
+      <w>182</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;330.0;190.0;10.0</additional_attributes>
+    <additional_attributes>10.0;230.0;240.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2464</x>
-      <y>567</y>
+      <y>532</y>
       <w>336</w>
       <h>63</h>
     </coordinates>
@@ -398,7 +398,7 @@ getEnemyUnits(): Vector&lt;Unit&gt;
     <id>Relation</id>
     <coordinates>
       <x>2513</x>
-      <y>616</y>
+      <y>581</y>
       <w>287</w>
       <h>77</h>
     </coordinates>
@@ -409,7 +409,7 @@ getEnemyUnits(): Vector&lt;Unit&gt;
     <id>Relation</id>
     <coordinates>
       <x>2450</x>
-      <y>798</y>
+      <y>763</y>
       <w>168</w>
       <h>56</h>
     </coordinates>
@@ -422,7 +422,7 @@ m2=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1715</x>
-      <y>945</y>
+      <y>910</y>
       <w>203</w>
       <h>119</h>
     </coordinates>
@@ -443,7 +443,7 @@ getImageUrl(imageCode: int): String</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>2261</x>
-      <y>315</y>
+      <y>280</y>
       <w>133</w>
       <h>63</h>
     </coordinates>
@@ -457,21 +457,21 @@ getScore(): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2142</x>
-      <y>371</y>
-      <w>168</w>
-      <h>154</h>
+      <x>2177</x>
+      <y>336</y>
+      <w>133</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>220.0;10.0;10.0;200.0</additional_attributes>
+    <additional_attributes>170.0;10.0;10.0;300.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
       <x>1533</x>
-      <y>987</y>
+      <y>952</y>
       <w>175</w>
       <h>56</h>
     </coordinates>
@@ -487,7 +487,7 @@ fg=black
     <id>UMLClass</id>
     <coordinates>
       <x>1309</x>
-      <y>287</y>
+      <y>252</y>
       <w>224</w>
       <h>84</h>
     </coordinates>
@@ -505,7 +505,7 @@ startStep(stepPanel: StepPanel): void
     <id>UMLClass</id>
     <coordinates>
       <x>1330</x>
-      <y>133</y>
+      <y>98</y>
       <w>154</w>
       <h>77</h>
     </coordinates>
@@ -523,7 +523,7 @@ getUserUnit(): UserUnit
     <id>UMLClass</id>
     <coordinates>
       <x>1120</x>
-      <y>133</y>
+      <y>98</y>
       <w>168</w>
       <h>77</h>
     </coordinates>
@@ -542,7 +542,7 @@ getEnemys(): Vector&lt;Unit&gt;
     <id>Relation</id>
     <coordinates>
       <x>1197</x>
-      <y>203</y>
+      <y>168</y>
       <w>224</w>
       <h>98</h>
     </coordinates>
@@ -555,7 +555,7 @@ getEnemys(): Vector&lt;Unit&gt;
     <id>UMLClass</id>
     <coordinates>
       <x>1512</x>
-      <y>133</y>
+      <y>98</y>
       <w>217</w>
       <h>84</h>
     </coordinates>
@@ -572,7 +572,7 @@ getPanel(): StepPanel
     <id>Relation</id>
     <coordinates>
       <x>1400</x>
-      <y>210</y>
+      <y>175</y>
       <w>238</w>
       <h>91</h>
     </coordinates>
@@ -584,25 +584,30 @@ getPanel(): StepPanel
     <id>Relation</id>
     <coordinates>
       <x>1232</x>
-      <y>462</y>
+      <y>434</y>
       <w>42</w>
-      <h>28</h>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=add()</panel_attributes>
-    <additional_attributes>10.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>1806</x>
-      <y>546</y>
-      <w>161</w>
-      <h>56</h>
+      <y>511</y>
+      <w>217</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract&gt;&gt;
 StepPanel
 fontsize=30
+--
+--
+init(): abstract void
+start(): abstract void
+
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -610,7 +615,7 @@ fontsize=30
     <id>UMLClass</id>
     <coordinates>
       <x>1309</x>
-      <y>546</y>
+      <y>511</y>
       <w>231</w>
       <h>63</h>
     </coordinates>
@@ -626,7 +631,7 @@ initStepPanels(StepController): void
     <id>UMLClass</id>
     <coordinates>
       <x>889</x>
-      <y>679</y>
+      <y>644</y>
       <w>91</w>
       <h>42</h>
     </coordinates>
@@ -638,7 +643,7 @@ initStepPanels(StepController): void
     <id>UMLClass</id>
     <coordinates>
       <x>539</x>
-      <y>679</y>
+      <y>644</y>
       <w>98</w>
       <h>28</h>
     </coordinates>
@@ -650,7 +655,7 @@ initStepPanels(StepController): void
     <id>UMLClass</id>
     <coordinates>
       <x>875</x>
-      <y>511</y>
+      <y>476</y>
       <w>91</w>
       <h>28</h>
     </coordinates>
@@ -663,7 +668,7 @@ initStepPanels(StepController): void
     <id>Relation</id>
     <coordinates>
       <x>630</x>
-      <y>693</y>
+      <y>658</y>
       <w>273</w>
       <h>28</h>
     </coordinates>
@@ -676,7 +681,7 @@ m1=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>581</x>
-      <y>518</y>
+      <y>483</y>
       <w>308</w>
       <h>182</h>
     </coordinates>
@@ -689,7 +694,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>931</x>
-      <y>532</y>
+      <y>497</y>
       <w>28</w>
       <h>161</h>
     </coordinates>
@@ -702,7 +707,7 @@ m2=1</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>483</x>
-      <y>364</y>
+      <y>329</y>
       <w>553</w>
       <h>112</h>
     </coordinates>
@@ -718,7 +723,7 @@ FirstPanel은 멤버로 다시 StepManager를 싱글턴으로 호출한다.
     <id>Relation</id>
     <coordinates>
       <x>1400</x>
-      <y>203</y>
+      <y>168</y>
       <w>21</w>
       <h>77</h>
     </coordinates>
@@ -730,7 +735,7 @@ FirstPanel은 멤버로 다시 StepManager를 싱글턴으로 호출한다.
     <id>Relation</id>
     <coordinates>
       <x>1533</x>
-      <y>581</y>
+      <y>546</y>
       <w>287</w>
       <h>28</h>
     </coordinates>
@@ -744,7 +749,7 @@ fontsize=20</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1407</x>
-      <y>497</y>
+      <y>462</y>
       <w>21</w>
       <h>63</h>
     </coordinates>
@@ -755,7 +760,7 @@ fontsize=20</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>707</x>
-      <y>840</y>
+      <y>805</y>
       <w>119</w>
       <h>28</h>
     </coordinates>
@@ -767,7 +772,7 @@ fontsize=20</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>616</x>
-      <y>861</y>
+      <y>826</y>
       <w>182</w>
       <h>161</h>
     </coordinates>
@@ -780,7 +785,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>784</x>
-      <y>861</y>
+      <y>826</y>
       <w>154</w>
       <h>161</h>
     </coordinates>
@@ -793,7 +798,7 @@ m2=1</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>413</x>
-      <y>1106</y>
+      <y>1071</y>
       <w>728</w>
       <h>70</h>
     </coordinates>
@@ -807,7 +812,7 @@ m2=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>917</x>
-      <y>1008</y>
+      <y>973</y>
       <w>91</w>
       <h>42</h>
     </coordinates>
@@ -819,7 +824,7 @@ m2=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>567</x>
-      <y>1008</y>
+      <y>973</y>
       <w>98</w>
       <h>28</h>
     </coordinates>
@@ -831,7 +836,7 @@ m2=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>903</x>
-      <y>840</y>
+      <y>805</y>
       <w>91</w>
       <h>28</h>
     </coordinates>
@@ -844,7 +849,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>658</x>
-      <y>1022</y>
+      <y>987</y>
       <w>273</w>
       <h>28</h>
     </coordinates>
@@ -857,7 +862,7 @@ m1=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>959</x>
-      <y>861</y>
+      <y>826</y>
       <w>28</w>
       <h>161</h>
     </coordinates>
@@ -870,7 +875,7 @@ m2=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>658</x>
-      <y>1316</y>
+      <y>1281</y>
       <w>98</w>
       <h>28</h>
     </coordinates>
@@ -881,7 +886,7 @@ m2=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>945</x>
-      <y>1316</y>
+      <y>1281</y>
       <w>98</w>
       <h>28</h>
     </coordinates>
@@ -892,7 +897,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>714</x>
-      <y>1274</y>
+      <y>1239</y>
       <w>280</w>
       <h>56</h>
     </coordinates>
@@ -904,7 +909,7 @@ m1=add()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>714</x>
-      <y>1337</y>
+      <y>1302</y>
       <w>350</w>
       <h>56</h>
     </coordinates>
@@ -916,7 +921,7 @@ m1=getInstance()</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>1337</y>
+      <y>1302</y>
       <w>637</w>
       <h>168</h>
     </coordinates>
@@ -936,7 +941,7 @@ MainFrame과 StepManager의 연관관계는 한방향이 된다.
     <id>UMLClass</id>
     <coordinates>
       <x>693</x>
-      <y>1477</y>
+      <y>1442</y>
       <w>98</w>
       <h>28</h>
     </coordinates>
@@ -947,7 +952,7 @@ MainFrame과 StepManager의 연관관계는 한방향이 된다.
     <id>UMLClass</id>
     <coordinates>
       <x>980</x>
-      <y>1477</y>
+      <y>1442</y>
       <w>98</w>
       <h>28</h>
     </coordinates>
@@ -958,7 +963,7 @@ MainFrame과 StepManager의 연관관계는 한방향이 된다.
     <id>Relation</id>
     <coordinates>
       <x>784</x>
-      <y>1477</y>
+      <y>1442</y>
       <w>210</w>
       <h>28</h>
     </coordinates>
@@ -970,7 +975,7 @@ m1=gameStart(frame: JFrame)</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>840</x>
-      <y>1575</y>
+      <y>1540</y>
       <w>98</w>
       <h>21</h>
     </coordinates>
@@ -981,7 +986,7 @@ m1=gameStart(frame: JFrame)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>756</x>
-      <y>1498</y>
+      <y>1463</y>
       <w>98</w>
       <h>105</h>
     </coordinates>
@@ -993,7 +998,7 @@ m1=new()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>931</x>
-      <y>1498</y>
+      <y>1463</y>
       <w>161</w>
       <h>105</h>
     </coordinates>
@@ -1005,7 +1010,7 @@ m1=getInstance()</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>574</x>
-      <y>119</y>
+      <y>84</y>
       <w>462</w>
       <h>91</h>
     </coordinates>
@@ -1018,19 +1023,19 @@ static특성상 클래스가 로더되기 전에 먼저 실행되기 때문에
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1960</x>
-      <y>567</y>
-      <w>98</w>
-      <h>21</h>
+      <x>2016</x>
+      <y>560</y>
+      <w>77</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2240</x>
-      <y>1169</y>
+      <y>1134</y>
       <w>70</w>
       <h>28</h>
     </coordinates>
@@ -1041,7 +1046,7 @@ static특성상 클래스가 로더되기 전에 먼저 실행되기 때문에
     <id>UMLClass</id>
     <coordinates>
       <x>2513</x>
-      <y>1211</y>
+      <y>1176</y>
       <w>70</w>
       <h>21</h>
     </coordinates>
@@ -1052,7 +1057,7 @@ static특성상 클래스가 로더되기 전에 먼저 실행되기 때문에
     <id>UMLClass</id>
     <coordinates>
       <x>2443</x>
-      <y>1442</y>
+      <y>1407</y>
       <w>70</w>
       <h>21</h>
     </coordinates>
@@ -1065,7 +1070,7 @@ static특성상 클래스가 로더되기 전에 먼저 실행되기 때문에
     <id>Relation</id>
     <coordinates>
       <x>2303</x>
-      <y>1169</y>
+      <y>1134</y>
       <w>224</w>
       <h>63</h>
     </coordinates>
@@ -1078,7 +1083,7 @@ m1=add(), threadStart()
     <id>Relation</id>
     <coordinates>
       <x>2471</x>
-      <y>1225</y>
+      <y>1190</y>
       <w>133</w>
       <h>231</h>
     </coordinates>
@@ -1091,7 +1096,7 @@ m2=start()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1974</x>
-      <y>1274</y>
+      <y>1239</y>
       <w>175</w>
       <h>35</h>
     </coordinates>
@@ -1102,7 +1107,7 @@ m2=start()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2037</x>
-      <y>1190</y>
+      <y>1155</y>
       <w>231</w>
       <h>98</h>
     </coordinates>
@@ -1112,8 +1117,8 @@ m2=start()</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>2366</x>
-      <y>1106</y>
+      <x>2408</x>
+      <y>924</y>
       <w>294</w>
       <h>98</h>
     </coordinates>
@@ -1125,7 +1130,7 @@ panel들은 Array로 StepManager에 들어있기때문에 </panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1582</x>
-      <y>462</y>
+      <y>427</y>
       <w>294</w>
       <h>98</h>
     </coordinates>
@@ -1140,7 +1145,7 @@ fontsize=20
     <id>Relation</id>
     <coordinates>
       <x>2429</x>
-      <y>1449</y>
+      <y>1414</y>
       <w>35</w>
       <h>98</h>
     </coordinates>
@@ -1151,7 +1156,7 @@ fontsize=20
     <id>UMLClass</id>
     <coordinates>
       <x>2394</x>
-      <y>1533</y>
+      <y>1498</y>
       <w>70</w>
       <h>21</h>
     </coordinates>
@@ -1162,7 +1167,7 @@ fontsize=20
     <id>UMLClass</id>
     <coordinates>
       <x>1316</x>
-      <y>455</y>
+      <y>420</y>
       <w>273</w>
       <h>49</h>
     </coordinates>
@@ -1177,7 +1182,7 @@ stepPanelChange(StepPanel,StepPanel): void
     <id>Relation</id>
     <coordinates>
       <x>1407</x>
-      <y>364</y>
+      <y>329</y>
       <w>21</w>
       <h>105</h>
     </coordinates>
@@ -1188,7 +1193,7 @@ stepPanelChange(StepPanel,StepPanel): void
     <id>Relation</id>
     <coordinates>
       <x>1526</x>
-      <y>329</y>
+      <y>294</y>
       <w>371</w>
       <h>231</h>
     </coordinates>
@@ -1199,7 +1204,7 @@ stepPanelChange(StepPanel,StepPanel): void
     <id>UMLPackage</id>
     <coordinates>
       <x>1078</x>
-      <y>98</y>
+      <y>63</y>
       <w>679</w>
       <h>301</h>
     </coordinates>
@@ -1212,7 +1217,7 @@ bg=pink
     <id>UMLPackage</id>
     <coordinates>
       <x>1043</x>
-      <y>35</y>
+      <y>0</y>
       <w>735</w>
       <h>595</h>
     </coordinates>
@@ -1224,7 +1229,7 @@ bg=blue</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1232</x>
-      <y>455</y>
+      <y>420</y>
       <w>98</w>
       <h>35</h>
     </coordinates>
