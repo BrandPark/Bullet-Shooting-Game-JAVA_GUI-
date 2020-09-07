@@ -1,18 +1,14 @@
 package service;
 
-import java.awt.Container;
-import java.awt.event.FocusAdapter;
-import java.util.List;
-
-import javax.swing.JFrame;
-
+import common.static_data.StepName;
 import steps.step0.StepPanel;
 import steps.step4_ingame.movingObj.UserUnit;
 
 final public class StepService {
-	private final PanelRepo panelRepo;
+	private final StepRepo stepRepo;
 	private final UserRepo userRepo;
 	private final EnemyRepo enemyRepo;
+	private int curStepIndex;
 		
 	private static StepService INSTANCE = null;
 	
@@ -23,21 +19,17 @@ final public class StepService {
 		return INSTANCE;
 	}
 	private StepService() {
-		panelRepo = PanelRepo.getRepo();
+		stepRepo = StepRepo.getRepo();
 		userRepo = UserRepo.getRepo();
 		enemyRepo = EnemyRepo.getRepo();
+		curStepIndex = 0;
 	}
 	
 	public void saveUser(UserUnit userUnit) {
 		userRepo.save(userUnit);
 	}
-	
-	public void initPanel(List<StepPanel> list) {
-		panelRepo.initPanel(list);
-	}
-	
-	public StepPanel getStep(int stepIndex) {
-		return panelRepo.getPanel(stepIndex);
+	public StepName getNextStepName() {
+		return stepRepo.getStepNameByIndex(curStepIndex++);
 	}
 	
 	public void focusing(StepPanel stepPanel) {

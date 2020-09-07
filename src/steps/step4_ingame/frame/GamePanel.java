@@ -3,6 +3,7 @@ package steps.step4_ingame.frame;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import steps.step0.StepController;
 import steps.step0.StepPanel;
 import steps.step4_ingame.movingObj.UserUnit;
 
@@ -10,6 +11,7 @@ public class GamePanel extends StepPanel implements Runnable, KeyListener{
 	private UserUnit userUnit;
 	private TimeScorePanel tsp;
 	private LifePanel lp;
+	private StepController stepController = StepController.getInstance();
 
 	public GamePanel() {
 		setLayout(null);

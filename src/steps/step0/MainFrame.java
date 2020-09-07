@@ -26,9 +26,6 @@ class MainFrame extends JFrame{
 	public static void main(String[] args) {
 		
 		StepController stepController = StepController.getInstance();
-		StepPanelList stepPanelList = new StepPanelList();
-		stepPanelList.initPanel(stepController);
-		
 		stepController.gameStart(new MainFrame("Bullet-Shooting-Game"));
 	}
 
