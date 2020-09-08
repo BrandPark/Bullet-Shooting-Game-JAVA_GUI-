@@ -1,7 +1,5 @@
 package steps.step0;
 
-import java.util.List;
-
 import javax.swing.JFrame;
 
 import common.static_data.StepName;
@@ -26,37 +24,33 @@ public final class StepController {
 	}
 	
 	public void nextStep() {
-		StepName nextStepName = stepService.getNextStepName();
-		StepPanel nextStep = StepFactory.getStep(nextStepName);
+		StepPanel nextStep = getStep(nextStepName());
 		stepChange(nextStep);
-		focusing(nextStep);
-		startStep(nextStep);
 	}
+	
 	public void gameStart(JFrame frame) {
 		this.frame = frame;
-		StepName stepName = stepService.getNextStepName();
-		StepPanel firstStep = getStepPanel(stepName);
-		frame.add(firstStep);
+		StepPanel firstStep = getStep(nextStepName());
+		stepChange(firstStep);
+	}
+	public UserUnit getUserUnit() {
+		return stepService.getUserUnit();
 	}
 	
-	private void focusing(StepPanel stepPanel) {
-		stepService.focusing(stepPanel);
-	}
-	
-	private void startStep(StepPanel stepPanel) {
-		stepService.startStep(stepPanel);
-	}
 	private void stepChange(StepPanel changePanel) {
 		frame.getContentPane().removeAll();
 		frame.add(changePanel);
 		frame.repaint();
 		frame.revalidate();
+		changePanel.focussing();
 	}
 	
-	private StepPanel getStepPanel(StepName name) {
+	private StepPanel getStep(StepName name) {
 		return StepFactory.getStep(name);
 	}
-	
+	private StepName nextStepName() {
+		return stepService.getNextStepName();
+	}
 	
 
 	

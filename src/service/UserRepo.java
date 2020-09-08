@@ -15,8 +15,7 @@ final class UserRepo {
 	
 	
 	final void save(UserUnit userUnit) {
-		if(userUnit == null)
-			this.userUnit = userUnit;
+		this.userUnit = userUnit;
 	}
 	final UserUnit getUserUnit() {
 		return userUnit;

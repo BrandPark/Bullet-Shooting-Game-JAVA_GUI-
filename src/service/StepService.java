@@ -28,17 +28,13 @@ final public class StepService {
 	public void saveUser(UserUnit userUnit) {
 		userRepo.save(userUnit);
 	}
+	public UserUnit getUserUnit() {
+		return userRepo.getUserUnit();
+	}
 	public StepName getNextStepName() {
 		return stepRepo.getStepNameByIndex(curStepIndex++);
 	}
 	
-	public void focusing(StepPanel stepPanel) {
-		stepPanel.requestFocus();
-		stepPanel.setFocusable(true);
-	}
-	public void startStep(StepPanel stepPanel) {
-		stepPanel.start();
-	}
 	
 	
 	

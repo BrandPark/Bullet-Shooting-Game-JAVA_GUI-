@@ -17,15 +17,12 @@ public class GamePanel extends StepPanel implements Runnable, KeyListener{
 		setLayout(null);
 		init();
 		addKeyListener(this);
+		threadStart();
 	}
 	
 	@Override
-	public void start() {
-		threadStart();
-	}
-	@Override
 	protected void init() {
-		userUnit = new UserUnit("resource/img_unit/user_unit.png");
+		userUnit = stepController.getUserUnit();
 		add(userUnit);
 		
 		tsp = new TimeScorePanel();

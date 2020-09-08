@@ -13,10 +13,13 @@ import steps.step4_ingame.movingObj.UserUnit;
 public class FirstPanel extends StepPanel{
 	private JButton startBtn = new JButton("시작");
 	private StepController stepController = StepController.getInstance();
-
 	
 	public FirstPanel() {
 		setLayout(new FlowLayout());
+		init();
+	}
+	@Override
+	protected void init() {
 		add(startBtn);
 		
 		startBtn.addActionListener(new ActionListener() {
@@ -27,15 +30,5 @@ public class FirstPanel extends StepPanel{
 				stepController.nextStep();
 			}
 		});
-	}
-	@Override
-	public void start() {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	protected void init() {
-		// TODO Auto-generated method stub
-		
 	}
 }
