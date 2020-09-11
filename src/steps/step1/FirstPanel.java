@@ -8,6 +8,7 @@ import javax.swing.JButton;
 
 import steps.step0.StepController;
 import steps.step0.StepPanel;
+import steps.step4_ingame.movingObj.UnitName;
 import steps.step4_ingame.movingObj.UserUnit;
 
 public class FirstPanel extends StepPanel{
@@ -26,7 +27,7 @@ public class FirstPanel extends StepPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				stepController.saveUser(new UserUnit("resource/img_unit/user_unit.png"));
+				stepController.saveUser(new UserUnit(UnitName.USER_UNIT1));
 				stepController.nextStep();
 			}
 		});

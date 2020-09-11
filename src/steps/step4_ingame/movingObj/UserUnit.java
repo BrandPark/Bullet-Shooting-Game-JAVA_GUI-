@@ -7,6 +7,7 @@ import common.static_data.Size;
 
 public class UserUnit extends Unit{
 	
+	private UnitName name;
 	private int moveDir = 0;
 	
 	private static final int RIGHT = 1;
@@ -18,8 +19,8 @@ public class UserUnit extends Unit{
 	private static final int LEFTUP = LEFT | UP;
 	private static final int LEFTDOWN = LEFT | DOWN;
 	
-	public UserUnit(String imageUrl) {
-		super(imageUrl);
+	public UserUnit(UnitName name) {
+		super(name);
 		setLocation(Location.USER_X, Location.USER_Y);
 		setSize(Size.USER_W, Size.USER_H);
 		setLife(3);
