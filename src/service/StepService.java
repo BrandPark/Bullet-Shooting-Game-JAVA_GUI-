@@ -2,7 +2,7 @@ package service;
 
 import common.static_data.StepName;
 import steps.step0.StepPanel;
-import steps.step4_ingame.movingObj.UserUnit;
+import steps.step4_ingame.movingObj.unit.UserUnit;
 
 final public class StepService {
 	private final StepRepo stepRepo;

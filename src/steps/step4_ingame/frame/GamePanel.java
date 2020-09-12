@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 
 import steps.step0.StepController;
 import steps.step0.StepPanel;
-import steps.step4_ingame.movingObj.UserUnit;
+import steps.step4_ingame.movingObj.unit.UserUnit;
 
 public class GamePanel extends StepPanel implements Runnable, KeyListener{
 	private UserUnit userUnit;

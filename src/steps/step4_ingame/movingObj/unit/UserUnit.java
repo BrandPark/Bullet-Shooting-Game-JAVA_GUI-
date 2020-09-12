@@ -1,4 +1,4 @@
-package steps.step4_ingame.movingObj;
+package steps.step4_ingame.movingObj.unit;
 
 import java.awt.event.KeyEvent;
 
@@ -99,6 +99,12 @@ public class UserUnit extends Unit{
 			return false;
 		
 		return true;
+	}
+
+	@Override
+	public void shoot() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

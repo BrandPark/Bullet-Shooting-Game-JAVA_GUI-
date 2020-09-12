@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 import common.static_data.StepName;
 import service.StepService;
-import steps.step4_ingame.movingObj.UserUnit;
+import steps.step4_ingame.movingObj.unit.UserUnit;
 
 public final class StepController {
 	private JFrame frame;

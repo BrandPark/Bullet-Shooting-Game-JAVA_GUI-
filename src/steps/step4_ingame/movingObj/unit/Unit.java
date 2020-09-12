@@ -1,4 +1,4 @@
-package steps.step4_ingame.movingObj;
+package steps.step4_ingame.movingObj.unit;
 
 import java.util.Vector;
 
@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 
 import common.static_data.IconFactory;
 import common.utils.ImageUtil;
+import steps.step4_ingame.movingObj.bullet.Bullet;
+import steps.step4_ingame.movingObj.bullet.BulletName;
 
 public abstract class Unit extends JLabel{
 	
@@ -34,8 +36,8 @@ public abstract class Unit extends JLabel{
 	void setLife(int life) {
 		this.life = life;
 	}
+	
 	abstract public void shoot();
-	protected 
 	@Override
 	public void setSize(int width, int height) {
 		super.setSize(width,height);

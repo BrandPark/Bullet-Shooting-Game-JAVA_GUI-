@@ -2,8 +2,8 @@ package common.static_data;
 
 import javax.swing.ImageIcon;
 
-import steps.step4_ingame.movingObj.BulletName;
-import steps.step4_ingame.movingObj.UnitName;
+import steps.step4_ingame.movingObj.bullet.BulletName;
+import steps.step4_ingame.movingObj.unit.UnitName;
 
 public abstract class IconFactory {
 	public static ImageIcon getUnitIcon(UnitName name) {
