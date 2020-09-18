@@ -1,103 +1,285 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>8</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
-    <id>Relation</id>
+    <id>UMLClass</id>
     <coordinates>
-      <x>416</x>
-      <y>328</y>
-      <w>160</w>
-      <h>48</h>
+      <x>528</x>
+      <y>88</y>
+      <w>132</w>
+      <h>55</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-show(:ScreenName) &gt;
-
-</panel_attributes>
-    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+*ScreenName*
+//
+fontsize=18</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
-      <y>336</y>
-      <w>88</w>
-      <h>24</h>
+      <x>561</x>
+      <y>264</y>
+      <w>110</w>
+      <h>44</h>
     </coordinates>
-    <panel_attributes>ScreenManager
-///
+    <panel_attributes>/*Screen*/
+////
+fontsize=18
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>640</x>
-      <y>328</y>
-      <w>176</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-getScreen() &gt;
-</panel_attributes>
-    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>800</x>
-      <y>336</y>
-      <w>80</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>ScreenName</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>800</x>
-      <y>416</y>
-      <w>80</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>Screen</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>832</x>
-      <y>352</y>
-      <w>64</w>
-      <h>80</h>
+      <x>594</x>
+      <y>132</y>
+      <w>88</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
-+create()</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
++create()
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>592</x>
-      <y>352</y>
-      <w>104</w>
-      <h>80</h>
+      <x>308</x>
+      <y>110</y>
+      <w>242</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-add(:Screen) v</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+
+getScreen()
+next();</panel_attributes>
+    <additional_attributes>200.0;20.0;10.0;20.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
-      <y>416</y>
-      <w>80</w>
-      <h>24</h>
+      <x>220</x>
+      <y>253</y>
+      <w>165</w>
+      <h>66</h>
     </coordinates>
-    <panel_attributes>Frame
+    <panel_attributes>/*Viewer*/
+--
+--
+paint(:Graphics)
+//
+valign=center
+fontsize=18</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>110</x>
+      <y>264</y>
+      <w>132</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>44</x>
+      <y>275</y>
+      <w>77</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>JPanel
 //
 valign=center</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>495</y>
+      <w>99</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>/*Element*/
+//
+valign=center
+fontsize=18
+bg=none</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>572</x>
+      <y>297</y>
+      <w>165</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+paint(:Graphics2D)
+move()
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>374</x>
+      <y>264</y>
+      <w>209</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+paint(:Graphics2D)
+keyPressed(:KeyEvent)
+move()
+</panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>121</x>
+      <y>308</y>
+      <w>198</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;80.0;160.0;80.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>44</x>
+      <y>385</y>
+      <w>88</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>/Runnable/
+//
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>308</y>
+      <w>176</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-()
+show(:ScreenName)
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>121</x>
+      <y>385</y>
+      <w>143</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;80.0;110.0;80.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>22</x>
+      <y>451</y>
+      <w>110</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>KeyListener
+//
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>176</y>
+      <w>110</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>/*Repo*/
+//
+valign=center
+fontsize=18</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>176</y>
+      <w>220</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+saveUser()
+saveGameInfo()
+getUser()
+getGameInfo</panel_attributes>
+    <additional_attributes>180.0;20.0;50.0;20.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>407</y>
+      <w>143</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>/*KeyHandler*/
+//
+valign=center
+fontsize=18</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>638</x>
+      <y>297</y>
+      <w>209</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+keyPressed(:KeyEvent)</panel_attributes>
+    <additional_attributes>170.0;100.0;170.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>627</x>
+      <y>440</y>
+      <w>231</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+focus()
+unFocus()
+doAction()
+
+//
+m1=*
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;70.0;180.0;70.0;180.0;10.0</additional_attributes>
   </element>
 </diagram>
