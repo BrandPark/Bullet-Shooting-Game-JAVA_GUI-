@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
+      <x>737</x>
       <y>88</y>
       <w>132</w>
       <h>55</h>
@@ -18,7 +18,7 @@ fontsize=18</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>561</x>
+      <x>770</x>
       <y>264</y>
       <w>110</w>
       <h>44</h>
@@ -32,7 +32,7 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>594</x>
+      <x>803</x>
       <y>132</y>
       <w>88</w>
       <h>154</h>
@@ -46,7 +46,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
+      <x>517</x>
       <y>110</y>
       <w>242</w>
       <h>165</h>
@@ -60,7 +60,7 @@ next();</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
+      <x>429</x>
       <y>253</y>
       <w>165</w>
       <h>66</h>
@@ -77,7 +77,7 @@ fontsize=18</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>110</x>
+      <x>319</x>
       <y>264</y>
       <w>132</w>
       <h>44</h>
@@ -89,7 +89,7 @@ fontsize=18</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>44</x>
+      <x>253</x>
       <y>275</y>
       <w>77</w>
       <h>33</h>
@@ -102,8 +102,8 @@ valign=center</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>539</x>
-      <y>495</y>
+      <x>748</x>
+      <y>594</y>
       <w>99</w>
       <h>44</h>
     </coordinates>
@@ -117,22 +117,24 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>572</x>
+      <x>781</x>
       <y>297</y>
       <w>165</w>
-      <h>220</h>
+      <h>176</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 paint(:Graphics2D)
 move()
+
+
 m1=*
 m2=1</panel_attributes>
-    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>374</x>
+      <x>583</x>
       <y>264</y>
       <w>209</w>
       <h>99</h>
@@ -148,7 +150,7 @@ move()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>121</x>
+      <x>330</x>
       <y>308</y>
       <w>198</w>
       <h>110</h>
@@ -159,7 +161,7 @@ move()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>44</x>
+      <x>253</x>
       <y>385</y>
       <w>88</w>
       <h>33</h>
@@ -172,7 +174,7 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
+      <x>517</x>
       <y>308</y>
       <w>176</w>
       <h>176</h>
@@ -185,7 +187,7 @@ show(:ScreenName)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>121</x>
+      <x>330</x>
       <y>385</y>
       <w>143</w>
       <h>110</h>
@@ -196,7 +198,7 @@ show(:ScreenName)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>22</x>
+      <x>231</x>
       <y>451</y>
       <w>110</w>
       <h>44</h>
@@ -209,12 +211,12 @@ valign=center</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>858</x>
+      <x>1100</x>
       <y>176</y>
-      <w>110</w>
+      <w>132</w>
       <h>44</h>
     </coordinates>
-    <panel_attributes>/*Repo*/
+    <panel_attributes>/*EnemyRepo*/
 //
 valign=center
 fontsize=18</panel_attributes>
@@ -223,24 +225,21 @@ fontsize=18</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>660</x>
+      <x>869</x>
       <y>176</y>
-      <w>220</w>
+      <w>253</w>
       <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
-saveUser()
-saveGameInfo()
-getUser()
-getGameInfo</panel_attributes>
-    <additional_attributes>180.0;20.0;50.0;20.0;10.0;100.0</additional_attributes>
+getEnemys(level:Int)</panel_attributes>
+    <additional_attributes>210.0;20.0;50.0;20.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>770</x>
-      <y>407</y>
+      <x>979</x>
+      <y>594</y>
       <w>143</w>
       <h>44</h>
     </coordinates>
@@ -253,22 +252,22 @@ fontsize=18</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>638</x>
-      <y>297</y>
-      <w>209</w>
-      <h>132</h>
+      <x>869</x>
+      <y>286</y>
+      <w>341</w>
+      <h>330</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-keyPressed(:KeyEvent)</panel_attributes>
-    <additional_attributes>170.0;100.0;170.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
+r1=keyPressed(:KeyEvent)</panel_attributes>
+    <additional_attributes>150.0;280.0;150.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>627</x>
-      <y>440</y>
-      <w>231</w>
-      <h>176</h>
+      <x>946</x>
+      <y>627</y>
+      <w>176</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
@@ -280,6 +279,141 @@ doAction()
 m1=*
 m2=1
 </panel_attributes>
-    <additional_attributes>10.0;70.0;180.0;70.0;180.0;10.0</additional_attributes>
+    <additional_attributes>10.0;110.0;130.0;110.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>726</y>
+      <w>99</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>/*Button*/
+//
+valign=center
+fontsize=18
+bg=none</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>726</y>
+      <w>99</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>/*Unit*/
+//
+valign=center
+fontsize=18
+bg=none</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>737</x>
+      <y>726</y>
+      <w>99</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>/*Display*/
+//
+valign=center
+fontsize=18
+bg=none</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>627</y>
+      <w>121</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;90.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>781</x>
+      <y>627</y>
+      <w>33</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>781</x>
+      <y>627</y>
+      <w>132</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;100.0;50.0;100.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>627</x>
+      <y>462</y>
+      <w>121</w>
+      <h>286</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+move()
+
+//////////////////
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;240.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>836</x>
+      <y>594</y>
+      <w>165</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+stop()</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>726</x>
+      <y>451</y>
+      <w>132</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>/*ElementSet*/
+//
+valign=center
+fontsize=18
+bg=none</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>781</x>
+      <y>484</y>
+      <w>165</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+paint(:Graphics2D)
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
