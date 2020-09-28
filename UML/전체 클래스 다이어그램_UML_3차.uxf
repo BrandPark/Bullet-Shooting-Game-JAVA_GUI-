@@ -94,12 +94,13 @@ bg=none</panel_attributes>
     <coordinates>
       <x>651</x>
       <y>308</y>
-      <w>105</w>
+      <w>154</w>
       <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-paint(:Graphics2D)
+allElementsPaint(:Graphics2D)
 move()
+getButtons()
 
 
 m1=1
@@ -370,7 +371,7 @@ stop()</panel_attributes>
       <w>84</w>
       <h>28</h>
     </coordinates>
-    <panel_attributes>/*ElementSet*/
+    <panel_attributes>/*Elements*/
 //
 valign=center
 fontsize=18
