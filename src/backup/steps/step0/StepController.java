@@ -2,9 +2,9 @@ package backup.steps.step0;
 
 import javax.swing.JFrame;
 
-import backup.common.static_data.StepName;
 import backup.service.StepService;
 import backup.steps.step4_ingame.movingObj.unit.UserUnit;
+import common.static_data.StepName;
 
 public final class StepController {
 	private JFrame frame;

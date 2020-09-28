@@ -5,7 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import backup.common.static_data.Size;
+import common.static_data.Size;
 
 class MainFrame extends JFrame{
 	

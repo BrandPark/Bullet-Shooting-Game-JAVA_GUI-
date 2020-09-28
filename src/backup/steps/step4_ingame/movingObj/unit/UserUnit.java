@@ -2,8 +2,8 @@ package backup.steps.step4_ingame.movingObj.unit;
 
 import java.awt.event.KeyEvent;
 
-import backup.common.static_data.Location;
-import backup.common.static_data.Size;
+import common.static_data.Location;
+import common.static_data.Size;
 
 public class UserUnit extends Unit{
 	

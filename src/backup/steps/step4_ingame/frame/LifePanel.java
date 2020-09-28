@@ -5,8 +5,8 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import backup.common.static_data.Location;
-import backup.common.static_data.Size;
+import common.static_data.Location;
+import common.static_data.Size;
 
 public class LifePanel extends JPanel{
 	private int life;

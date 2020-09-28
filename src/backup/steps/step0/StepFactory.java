@@ -1,9 +1,9 @@
 package backup.steps.step0;
 
-import backup.common.static_data.StepName;
 import backup.service.StepService;
 import backup.steps.step1.FirstPanel;
 import backup.steps.step4_ingame.frame.GamePanel;
+import common.static_data.StepName;
 
 public abstract class StepFactory {
 	private StepService stepService = StepService.getInstance();

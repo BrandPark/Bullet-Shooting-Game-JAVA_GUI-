@@ -3,8 +3,8 @@ package backup.steps.step4_ingame.movingObj.bullet;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import backup.common.static_data.IconFactory;
-import backup.common.utils.ImageUtil;
+import common.static_data.IconFactory;
+import common.utils.ImageUtil;
 
 public abstract class Bullet extends JLabel implements Runnable {
 	private BulletName name;
