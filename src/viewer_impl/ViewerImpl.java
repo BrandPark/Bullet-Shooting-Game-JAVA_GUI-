@@ -85,12 +85,10 @@ public class ViewerImpl extends JPanel implements Viewer{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		screen.keyPressed(e);
-		System.out.println("입력!");
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		screen.keyReleased(e);
-		System.out.println("입력!");
 	}
 }

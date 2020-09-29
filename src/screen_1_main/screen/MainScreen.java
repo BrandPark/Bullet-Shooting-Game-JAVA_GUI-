@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import interfaces.screen.KeyHandler;
 import interfaces.screen.Screen;
 import screen_1_main.element.MainElements;
+import screen_1_main.handler.FocusHandlerImpl;
 
 public class MainScreen implements Screen{
 	private MainElements elements = new MainElements();

@@ -1,4 +1,4 @@
-package screen_1_main.screen;
+package screen_1_main.handler;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -29,9 +29,12 @@ public class FocusHandlerImpl implements KeyHandler{
 		else if(c == KeyEvent.VK_DOWN) {
 			unFocusBtn(index);
 			if(index==buttons.size()-1)
-				index=0;
+				index=-1;
 			index++;
 			focusBtn(index);
+		}
+		else if(c == KeyEvent.VK_SPACE) {
+			selectBtn(index);
 		}
 			
 	}
@@ -44,7 +47,10 @@ public class FocusHandlerImpl implements KeyHandler{
 		buttons.get(index).focus();
 	}
 	private void unFocusBtn(int index) {
-		buttons.get(index).unFocus();
+		buttons.get(index).unfocus();
+	}
+	private void selectBtn(int index) {
+		buttons.get(index).doAction();
 	}
 
 }
