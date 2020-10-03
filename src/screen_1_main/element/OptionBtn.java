@@ -5,7 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 
 import common.static_data.Size;
-import interfaces.element.button.Button;
+import interfaces.element.Button;
 
 public class OptionBtn implements Button {
 	private int x = Size.FRAME_W / 8 * 3;
@@ -37,5 +37,6 @@ public class OptionBtn implements Button {
 	public void doAction() {
 		System.out.println("option버튼 실행");
 	}
+
 
 }

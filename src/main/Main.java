@@ -1,21 +1,28 @@
-package viewer_impl;
+package main;
 
 
 import javax.swing.JFrame;
 
-import interfaces.viewer.Viewer;
+import interfaces.config.ScreenModel;
+import interfaces.config.impl.ScreenDispatcherImpl;
 
-public class BulletGame {
-	public static void main(String[] args) {
+public class Main {
+	
+	public Main() {
 		JFrame frame = new JFrame("Bullet Shooting Game");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
-		Viewer viewer = new ViewerImpl(frame);
-		viewer.show(null);
+		new ScreenDispatcherImpl(frame);
 		
 		frame.pack();
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+	}
+	public void start() {
+		ScreenModel.doInit();
+	}
+	public static void main(String[] args) {
+		new Main().start();
 	}
 }

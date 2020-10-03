@@ -1,9 +1,13 @@
-package interfaces.viewer;
+package interfaces.config;
 
 import java.awt.event.KeyListener;
 
-import interfaces.screen.ScreenName;
+import javax.swing.JFrame;
+
+import interfaces.screen.Screen;
 
 public interface Viewer extends Runnable, KeyListener {
-	public void show(ScreenName name);
+	
+	public void show(Screen screen);
+	public void addTo(JFrame frame);
 }

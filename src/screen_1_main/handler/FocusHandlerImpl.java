@@ -3,16 +3,15 @@ package screen_1_main.handler;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
-import interfaces.element.Elements;
-import interfaces.element.button.Button;
+import interfaces.element.Button;
 import interfaces.screen.KeyHandler;
 
 public class FocusHandlerImpl implements KeyHandler{
 	private List<Button> buttons;
 	private int index;
 	
-	public FocusHandlerImpl(Elements elements) {
-		this.buttons = elements.getButtons();
+	public FocusHandlerImpl(List<Button> buttons) {
+		this.buttons = buttons;
 		this.index = 0;
 		focusBtn(index);
 	}
@@ -41,7 +40,6 @@ public class FocusHandlerImpl implements KeyHandler{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		
 	}
 	private void focusBtn(int index) {
 		buttons.get(index).focus();

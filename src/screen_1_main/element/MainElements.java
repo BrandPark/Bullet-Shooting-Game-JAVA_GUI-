@@ -4,9 +4,9 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 
+import interfaces.element.Button;
+import interfaces.element.Display;
 import interfaces.element.Elements;
-import interfaces.element.button.Button;
-import interfaces.element.display.Display;
 
 public class MainElements implements Elements{
 	private List<Button> buttons = new ArrayList<>();
@@ -32,6 +32,8 @@ public class MainElements implements Elements{
 			b.paint(g2d);
 		}
 	}
+
+
 
 	
 

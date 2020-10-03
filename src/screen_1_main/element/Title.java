@@ -5,7 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 
 import common.static_data.Size;
-import interfaces.element.display.Display;
+import interfaces.element.Display;
 
 public class Title implements Display{
 	private int x = Size.FRAME_W/4;
@@ -22,5 +22,6 @@ public class Title implements Display{
 	public void paint(Graphics2D g2d) {
 		g2d.drawImage(img,x,y,w,h,null);
 	}
+
 	
 }

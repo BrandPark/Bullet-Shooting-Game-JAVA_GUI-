@@ -1,4 +1,4 @@
-package viewer_impl;
+package interfaces.config.impl;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -10,19 +10,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import common.static_data.Size;
+import interfaces.config.Viewer;
 import interfaces.screen.Screen;
-import interfaces.screen.ScreenName;
-import interfaces.viewer.Viewer;
 
 public class ViewerImpl extends JPanel implements Viewer{
 	private Screen screen = null;
-	private JFrame frame = null;
 	
-	public ViewerImpl(JFrame frame) {
-		this.frame = frame;
+	public ViewerImpl() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
-		frame.add(this);
 		addKeyListener(this);
+		
 		new Thread(this).start();
 		
 		requestFocus();
@@ -30,13 +27,13 @@ public class ViewerImpl extends JPanel implements Viewer{
 	}
 	
 	@Override
-	public void show(ScreenName name) {
-		if(name == null) {
-			firstStart();
-			return;
-		}
-		removeScreen(screen);
-		setScreen(name.getScreen());
+	public void addTo(JFrame frame) {
+		frame.add(this);
+	}
+	
+	@Override
+	public void show(Screen screen) {
+		setScreen(screen);
 	}
 
 	@Override
@@ -44,12 +41,7 @@ public class ViewerImpl extends JPanel implements Viewer{
 		while(true) {
 			repaint();
 			revalidate();
-			try {
-				Thread.sleep(30);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			gameSpeed(30);
 		}
 	}
 	@Override
@@ -63,24 +55,20 @@ public class ViewerImpl extends JPanel implements Viewer{
 	}
 	
 	
-	private void firstStart() {
-		if(screen == null) {
-			this.screen = ScreenName.MainScreen.getScreen();
-			setScreen(screen);
-		}
-	}
 	private void setScreen(Screen screen) {
 		this.screen = screen;
 	}
-	private void removeScreen(Screen screen) {
-		if(screen != null) 
-			screen.remove();
+	private void gameSpeed(int speed) {
+		try {
+			Thread.sleep(speed);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Override
-	public void keyTyped(KeyEvent e) {
-		
-	}
+	public void keyTyped(KeyEvent e) {}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -91,4 +79,7 @@ public class ViewerImpl extends JPanel implements Viewer{
 	public void keyReleased(KeyEvent e) {
 		screen.keyReleased(e);
 	}
+
+	
+
 }

@@ -1,4 +1,4 @@
-package interfaces.element.unit;
+package interfaces.element;
 
 public interface Enemy extends Unit{
 

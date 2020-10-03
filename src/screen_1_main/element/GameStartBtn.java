@@ -5,7 +5,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 
 import common.static_data.Size;
-import interfaces.element.button.Button;
+import interfaces.config.ScreenModel;
+import interfaces.element.Button;
 
 public class GameStartBtn implements Button{
 	private int x = Size.FRAME_W/8 * 3;
@@ -21,7 +22,7 @@ public class GameStartBtn implements Button{
 	@Override
 	public void paint(Graphics2D g2d) {
 		g2d.drawImage(img,x,y,w,h,null);
-	}
+	}   
 
 	@Override
 	public void focus() {
@@ -33,6 +34,7 @@ public class GameStartBtn implements Button{
 	}
 	@Override
 	public void doAction() {
-			System.out.println("start버튼 실행");
+		ScreenModel.showNext();
 	}
+
 }

@@ -1,6 +1,4 @@
-package interfaces.element.button;
-
-import interfaces.element.Element;
+package interfaces.element;
 
 public interface Button extends Element{
 	public void focus();

@@ -1,6 +1,7 @@
 package interfaces.screen;
 
 import screen_1_main.screen.MainScreen;
+import screen_2_selectlevel.screen.SelectLevelScreen;
 
 public enum ScreenName {
 	MainScreen{
@@ -8,20 +9,11 @@ public enum ScreenName {
 		public Screen getScreen() {
 			return new MainScreen();
 		}
-		@Override
-		public Screen next() {
-			return null;
-		}
 	},
 	SelectLevelScreen{
 		@Override
 		public Screen getScreen() {
-			return null;
-		}
-
-		@Override
-		public Screen next() {
-			return null;
+			return new SelectLevelScreen();
 		}
 	},
 	IngameScreen{
@@ -29,13 +21,7 @@ public enum ScreenName {
 		public Screen getScreen() {
 			return null;
 		}
-
-		@Override
-		public Screen next() {
-			return null;
-		}
-		
 	};
 	abstract public Screen getScreen();
-	abstract public Screen next();
+	
 }
