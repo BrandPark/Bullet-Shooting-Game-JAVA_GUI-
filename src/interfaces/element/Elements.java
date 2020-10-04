@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface Elements{
 	public List<Button> getButtons();
-	public void allElementsPaint(Graphics2D g2d);
+	public void allPaint(Graphics2D g2d);
 }

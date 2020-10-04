@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>7</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>189</x>
-      <y>140</y>
-      <w>84</w>
-      <h>35</h>
+      <x>152</x>
+      <y>120</y>
+      <w>104</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enum&gt;&gt;
-*ScreenName*
+*Screens*
 //
 fontsize=18</panel_attributes>
     <additional_attributes/>
@@ -18,10 +18,10 @@ fontsize=18</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>903</x>
-      <y>203</y>
-      <w>70</w>
-      <h>28</h>
+      <x>976</x>
+      <y>192</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>/*Screen*/
 ////
@@ -32,10 +32,10 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>266</x>
-      <y>147</y>
-      <w>700</w>
-      <h>70</h>
+      <x>248</x>
+      <y>128</y>
+      <w>800</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 +create
@@ -46,24 +46,25 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>168</y>
-      <w>70</w>
-      <h>427</h>
+      <x>184</x>
+      <y>152</y>
+      <w>80</w>
+      <h>488</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*
 m2=1
-getScreen()</panel_attributes>
+getScreen()
+</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;540.0;50.0;590.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>693</x>
-      <y>175</y>
-      <w>119</w>
-      <h>70</h>
+      <x>736</x>
+      <y>160</y>
+      <w>120</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Runnable&gt;&gt;
 &lt;&lt;KeyListener&gt;&gt;
@@ -79,10 +80,10 @@ fontsize=18</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>910</x>
-      <y>420</y>
-      <w>63</w>
-      <h>28</h>
+      <x>920</x>
+      <y>536</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>/*Element*/
 //
@@ -94,40 +95,38 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>931</x>
-      <y>224</y>
-      <w>154</w>
-      <h>112</h>
+      <x>944</x>
+      <y>216</y>
+      <w>128</w>
+      <h>216</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.
-allElementsPaint(:Graphics2D)
-getButtons()
+    <panel_attributes>lt=&lt;-
+allPaint(:Graphics2D)
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;250.0;10.0;160.0;90.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>805</x>
-      <y>203</y>
-      <w>112</w>
-      <h>56</h>
+      <x>848</x>
+      <y>192</y>
+      <w>144</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 paint(:Graphics2D)
-getButtons()
-getKeyHandler()</panel_attributes>
-    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+keyPressed(:KeyEvent)</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>980</x>
-      <y>497</y>
-      <w>63</w>
-      <h>28</h>
+      <x>1016</x>
+      <y>624</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>/*Unit*/
 //
@@ -139,10 +138,10 @@ bg=none</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>826</x>
-      <y>497</y>
-      <w>63</w>
-      <h>28</h>
+      <x>848</x>
+      <y>624</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>/*Button*/
 //
@@ -154,10 +153,10 @@ bg=none</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>903</x>
-      <y>497</y>
-      <w>63</w>
-      <h>28</h>
+      <x>928</x>
+      <y>624</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>/*Display*/
 //
@@ -169,21 +168,21 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>875</x>
-      <y>441</y>
-      <w>77</w>
-      <h>70</h>
+      <x>880</x>
+      <y>560</y>
+      <w>96</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;90.0;40.0;10.0;40.0;10.0;80.0</additional_attributes>
+    <additional_attributes>100.0;10.0;100.0;40.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>931</x>
-      <y>441</y>
-      <w>21</w>
-      <h>70</h>
+      <x>952</x>
+      <y>560</y>
+      <w>24</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -191,21 +190,21 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>931</x>
-      <y>441</y>
-      <w>84</w>
-      <h>70</h>
+      <x>952</x>
+      <y>560</y>
+      <w>104</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;100.0;40.0;100.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;110.0;80.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>896</x>
-      <y>322</y>
-      <w>84</w>
-      <h>28</h>
+      <x>904</x>
+      <y>416</y>
+      <w>96</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>/*Elements*/
 //
@@ -217,35 +216,35 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>931</x>
-      <y>343</y>
-      <w>105</w>
-      <h>91</h>
+      <x>944</x>
+      <y>440</y>
+      <w>120</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 paint(:Graphics2D)
 m1=*
 m2=1</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1022</x>
-      <y>518</y>
-      <w>49</w>
-      <h>70</h>
+      <x>1064</x>
+      <y>648</y>
+      <w>56</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;50.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;50.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1022</x>
-      <y>574</y>
-      <w>70</w>
-      <h>28</h>
+      <x>1064</x>
+      <y>696</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>/*Enemy*/
 //
@@ -257,10 +256,10 @@ bg=none</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>938</x>
-      <y>574</y>
-      <w>63</w>
-      <h>28</h>
+      <x>976</x>
+      <y>696</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>/*User*/
 //
@@ -272,21 +271,21 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>966</x>
-      <y>518</y>
-      <w>49</w>
-      <h>70</h>
+      <x>1008</x>
+      <y>648</y>
+      <w>48</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>40.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>455</x>
-      <y>623</y>
-      <w>105</w>
-      <h>42</h>
+      <x>464</x>
+      <y>672</y>
+      <w>120</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>/*ScreenService*/
 //
@@ -298,24 +297,24 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>553</x>
-      <y>518</y>
-      <w>315</w>
-      <h>154</h>
+      <x>576</x>
+      <y>648</y>
+      <w>320</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 
 show*()
 </panel_attributes>
-    <additional_attributes>10.0;180.0;430.0;180.0;430.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;380.0;60.0;380.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>434</x>
-      <y>196</y>
-      <w>161</w>
-      <h>49</h>
+      <x>440</x>
+      <y>184</y>
+      <w>184</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Runnable&gt;&gt;
 /*ScreenDispatcher*/
@@ -328,10 +327,10 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
-      <y>203</y>
-      <w>119</w>
-      <h>35</h>
+      <x>616</x>
+      <y>192</y>
+      <w>136</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
@@ -341,10 +340,10 @@ show(:Screen)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>301</x>
-      <y>630</y>
-      <w>91</w>
-      <h>35</h>
+      <x>288</x>
+      <y>680</y>
+      <w>104</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>/*Action*/
 //
@@ -356,10 +355,10 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>385</x>
-      <y>630</y>
-      <w>84</w>
-      <h>28</h>
+      <x>384</x>
+      <y>680</y>
+      <w>96</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 execute()</panel_attributes>
@@ -368,10 +367,10 @@ execute()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
-      <y>595</y>
-      <w>42</w>
-      <h>49</h>
+      <x>296</x>
+      <y>640</y>
+      <w>48</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>40.0;50.0;10.0;10.0</additional_attributes>
@@ -379,10 +378,10 @@ execute()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>245</x>
-      <y>560</y>
-      <w>105</w>
-      <h>42</h>
+      <x>224</x>
+      <y>600</y>
+      <w>120</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>/*NextScreen*/
 //
@@ -394,10 +393,10 @@ bg=none</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>252</x>
-      <y>203</y>
-      <w>105</w>
-      <h>42</h>
+      <x>232</x>
+      <y>192</y>
+      <w>120</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Singleton&gt;&gt;
 /*ActiveScreen*/
@@ -410,10 +409,10 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>287</x>
-      <y>238</y>
-      <w>84</w>
-      <h>336</h>
+      <x>272</x>
+      <y>232</y>
+      <w>96</w>
+      <h>384</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 save(:Screen)
@@ -423,10 +422,10 @@ getScreenNo()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>210</y>
-      <w>98</w>
-      <h>35</h>
+      <x>344</x>
+      <y>200</y>
+      <w>112</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
@@ -436,10 +435,10 @@ getScreen()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>406</y>
-      <w>77</w>
-      <h>231</h>
+      <x>504</x>
+      <y>424</y>
+      <w>88</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 +create
@@ -449,10 +448,10 @@ doInit()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>329</x>
-      <y>238</y>
-      <w>140</w>
-      <h>42</h>
+      <x>320</x>
+      <y>232</y>
+      <w>160</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 +create</panel_attributes>
@@ -461,10 +460,10 @@ doInit()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>553</x>
-      <y>238</y>
-      <w>196</w>
-      <h>42</h>
+      <x>576</x>
+      <y>232</y>
+      <w>224</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 +create</panel_attributes>
@@ -473,10 +472,10 @@ doInit()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>462</x>
-      <y>728</y>
-      <w>91</w>
-      <h>42</h>
+      <x>472</x>
+      <y>792</y>
+      <w>104</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract&gt;&gt;
 /*ActionFactory*/
@@ -489,10 +488,10 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>504</x>
-      <y>658</y>
-      <w>70</w>
-      <h>84</h>
+      <x>520</x>
+      <y>712</y>
+      <w>80</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 getAction()</panel_attributes>
@@ -501,10 +500,10 @@ getAction()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>406</x>
-      <y>399</y>
-      <w>91</w>
-      <h>35</h>
+      <x>408</x>
+      <y>416</y>
+      <w>104</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>/*Main*/
 //
@@ -516,10 +515,10 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>238</y>
-      <w>77</w>
-      <h>189</h>
+      <x>504</x>
+      <y>232</y>
+      <w>88</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 +create
@@ -529,10 +528,10 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>329</x>
-      <y>427</y>
-      <w>126</w>
-      <h>70</h>
+      <x>320</x>
+      <y>448</y>
+      <w>144</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-()
 m2=start()
@@ -540,37 +539,12 @@ m2=start()
     <additional_attributes>160.0;10.0;110.0;70.0;10.0;70.0</additional_attributes>
   </element>
   <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>1057</x>
-      <y>721</y>
-      <w>98</w>
-      <h>49</h>
-    </coordinates>
-    <panel_attributes>Viewer
-1. Screen을 보여주는 것.
-2. 입력을 받는 것
-
-Screen
-1. Elements들을 그리는 것.
-2. 입력을 전달 받는 것
-
-FocusHandler
-1. 입력을 전달받는 것.
-2. Elements들을 가져와 입력에 맞게 Focus전달
-
-Elements
-1. Element들에게 paint()명령을 수행시킨다.
-2. </panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>714</x>
-      <y>371</y>
-      <w>84</w>
-      <h>35</h>
+      <x>1072</x>
+      <y>416</y>
+      <w>96</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>/*KeyHandler*/
 //////
@@ -582,25 +556,27 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>749</x>
-      <y>238</y>
-      <w>119</w>
-      <h>147</h>
+      <x>1008</x>
+      <y>216</y>
+      <w>216</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-keyPressed(:KeyEvent)</panel_attributes>
-    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+keyPressed(:KeyEvent)
+m2=1
+m1=1
+</panel_attributes>
+    <additional_attributes>110.0;250.0;110.0;160.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>749</x>
-      <y>399</y>
-      <w>91</w>
-      <h>175</h>
+      <x>992</x>
+      <y>416</y>
+      <w>96</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-
 
 focus()
 unFocus()
@@ -608,30 +584,29 @@ doAction()
 
 
 //
-m1=*
-m2=1
+
 </panel_attributes>
-    <additional_attributes>110.0;160.0;10.0;100.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>791</x>
-      <y>224</y>
-      <w>399</w>
-      <h>175</h>
+      <x>1160</x>
+      <y>320</y>
+      <w>96</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 +create</panel_attributes>
-    <additional_attributes>10.0;230.0;150.0;230.0;550.0;10.0</additional_attributes>
+    <additional_attributes>10.0;140.0;100.0;90.0;100.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>987</x>
-      <y>35</y>
-      <w>364</w>
-      <h>84</h>
+      <x>1072</x>
+      <y>0</y>
+      <w>416</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>Screen마다 키의 기능이 다를 수 있다. -&gt; KeyHandler의 기능은 Screen의 종속
 screen마다 Elements가 다르다.
@@ -639,16 +614,28 @@ screen마다 Elements가 다르다.
 Screen의 책임은 Elements들을 그리는 것이다. 
 keyHandler는 버튼의 Focus또는 Unit의 움직임의 책임이 있다.
 
-언제 KeyHanlder를 만들어서 Viewer에게 어떻게 전달할까?</panel_attributes>
+언제 KeyHanlder를 만들어서 Viewer에게 어떻게 전달할까?
+1. Screen에 KeyHandler를 Has관계를 넣는다.
+ - KeyHandler수정 시 Screen을 같이 수정해야한다.
+ - Screen이 Key입력을 전달받거나 Viewer에게 Handler를 줘야한다.
+                                                                                                                                                      
+2. Screen과 KeyHandler 모두를 가진 클래스를 하나 생성하여 VIewer와 엮는다.
+ - 
+3. Screens에 getHandler()를 추가하여 ActiveScreen에 handler와 Screen을 넣는다.
+ - 어떤 스크린에 어떤 키핸들러를 넣어야할지 직접 생각해서 넣어야한다. 
+
+
+=&gt; KeyHandler는 Screen에 종속되어있기 때문에 Screen만 그 존재를 알고있으면 된다. 
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1092</x>
-      <y>196</y>
-      <w>140</w>
-      <h>35</h>
+      <x>1120</x>
+      <y>288</y>
+      <w>160</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract&gt;&gt;
 /*KeyHandlerFactory*/
@@ -661,24 +648,89 @@ bg=none</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>966</x>
-      <y>203</y>
-      <w>140</w>
-      <h>28</h>
+      <x>1008</x>
+      <y>216</y>
+      <w>232</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 get*()</panel_attributes>
-    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>270.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>161</y>
-      <w>623</w>
-      <h>56</h>
+      <x>304</x>
+      <y>144</y>
+      <w>712</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>870.0;60.0;810.0;10.0;80.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>848</x>
+      <y>16</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Enum의 장점
+1. 같은 타입의 객체들을 생성하지않고 배열이나 리스트로 관리할 수 있다. (필요할 때 마다 생성)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>288</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+/*ElementsFactory*/
+//////
+valign=center
+fontsize=18
+bg=none</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>216</y>
+      <w>184</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+get*()</panel_attributes>
+    <additional_attributes>10.0;90.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>320</y>
+      <w>88</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
++create</panel_attributes>
+    <additional_attributes>90.0;140.0;10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1216</x>
+      <y>232</y>
+      <w>296</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>구현객체를 직접 생성하지않고 Factory에게 맡김으로써 
+패키지의 의존성을 변경할 수 있다. </panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

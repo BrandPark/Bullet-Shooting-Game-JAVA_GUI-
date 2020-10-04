@@ -4,14 +4,15 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 
 import interfaces.element.Button;
+import interfaces.element.Elements;
 import interfaces.screen.KeyHandler;
 
-public class FocusHandlerImpl implements KeyHandler{
+public class FocusHandler implements KeyHandler{
 	private List<Button> buttons;
 	private int index;
 	
-	public FocusHandlerImpl(List<Button> buttons) {
-		this.buttons = buttons;
+	public FocusHandler(Elements elements) {
+		this.buttons = elements.getButtons();
 		this.index = 0;
 		focusBtn(index);
 	}

@@ -4,12 +4,12 @@ import interfaces.action.Action;
 import interfaces.config.ActiveScreen;
 import interfaces.config.impl.ActiveScreenImpl;
 import interfaces.screen.Screen;
-import interfaces.screen.ScreenName;
+import interfaces.screen.Screens;
 import screen_2_selectlevel.screen.SelectLevelScreen;
 
 public class NextScreenAction implements Action{
 	private ActiveScreen as = ActiveScreenImpl.getInstance();
-	private ScreenName [] screenNames = ScreenName.values();
+	private Screens [] screenNames = Screens.values();
 	
 	@Override
 	public void execute() {

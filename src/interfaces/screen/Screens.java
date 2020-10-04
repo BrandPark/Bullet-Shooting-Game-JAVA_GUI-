@@ -3,7 +3,7 @@ package interfaces.screen;
 import screen_1_main.screen.MainScreen;
 import screen_2_selectlevel.screen.SelectLevelScreen;
 
-public enum ScreenName {
+public enum Screens {
 	MainScreen{
 		@Override
 		public Screen getScreen() {

@@ -24,7 +24,7 @@ public class MainElements implements Elements{
 	}
 
 	@Override
-	public void allElementsPaint(Graphics2D g2d) {
+	public void allPaint(Graphics2D g2d) {
 		for(Display d : displays) {
 			d.paint(g2d);
 		}
