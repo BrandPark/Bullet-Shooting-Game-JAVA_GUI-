@@ -1,7 +1,7 @@
 package interfaces.screen;
 
-import screen_1_main.screen.MainScreen;
-import screen_2_selectlevel.screen.SelectLevelScreen;
+import screen_1_main.view.MainScreen;
+import screen_2_selectunit.view.SelectUnitScreen;
 
 public enum Screens {
 	MainScreen{
@@ -13,7 +13,7 @@ public enum Screens {
 	SelectLevelScreen{
 		@Override
 		public Screen getScreen() {
-			return new SelectLevelScreen();
+			return new SelectUnitScreen();
 		}
 	},
 	IngameScreen{

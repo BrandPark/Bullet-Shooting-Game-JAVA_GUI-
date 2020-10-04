@@ -1,4 +1,9 @@
 package interfaces.element;
 
+import java.awt.Image;
+
 public interface User extends Unit{
+	public Image getImg();
+	public int getPower();
+	public int getSpeed();
 }

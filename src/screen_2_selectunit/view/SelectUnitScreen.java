@@ -1,4 +1,4 @@
-package screen_2_selectlevel.screen;
+package screen_2_selectunit.view;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 
 import interfaces.screen.Screen;
 
-public class SelectLevelScreen implements Screen{
+public class SelectUnitScreen implements Screen{
 
 	@Override
 	public void paint(Graphics2D g2d) {

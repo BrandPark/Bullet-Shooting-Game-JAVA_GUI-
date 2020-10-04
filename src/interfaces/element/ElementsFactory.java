@@ -1,6 +1,6 @@
 package interfaces.element;
 
-import screen_1_main.element.MainElements;
+import screen_1_main.view.MainElements;
 
 abstract public class ElementsFactory {
 	public static final Elements forMain() {

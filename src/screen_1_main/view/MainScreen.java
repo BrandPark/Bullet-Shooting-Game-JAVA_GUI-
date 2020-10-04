@@ -1,4 +1,4 @@
-package screen_1_main.screen;
+package screen_1_main.view;
 
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;

@@ -1,4 +1,4 @@
-package screen_1_main.element;
+package screen_1_main.view;
 
 import java.awt.Graphics2D;
 import java.util.ArrayList;
@@ -7,6 +7,9 @@ import java.util.List;
 import interfaces.element.Button;
 import interfaces.element.Display;
 import interfaces.element.Elements;
+import screen_1_main.element.GameStartBtn;
+import screen_1_main.element.OptionBtn;
+import screen_1_main.element.Title;
 
 public class MainElements implements Elements{
 	private List<Button> buttons = new ArrayList<>();

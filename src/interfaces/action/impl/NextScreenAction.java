@@ -5,7 +5,7 @@ import interfaces.config.ActiveScreen;
 import interfaces.config.impl.ActiveScreenImpl;
 import interfaces.screen.Screen;
 import interfaces.screen.Screens;
-import screen_2_selectlevel.screen.SelectLevelScreen;
+import screen_2_selectunit.view.SelectUnitScreen;
 
 public class NextScreenAction implements Action{
 	private ActiveScreen as = ActiveScreenImpl.getInstance();
@@ -14,7 +14,7 @@ public class NextScreenAction implements Action{
 	@Override
 	public void execute() {
 		Screen curScreen = as.getScreen();
-		Screen nextScreen = new SelectLevelScreen();
+		Screen nextScreen = new SelectUnitScreen();
 		for(int i=0;i<screenNames.length;i++) {
 			if(isNextable(curScreen, i)) {
 				nextScreen = screenNames[i+1].getScreen();
