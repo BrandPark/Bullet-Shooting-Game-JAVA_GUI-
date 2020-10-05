@@ -18,6 +18,7 @@ public class SelectUnitElements implements Elements {
 		buttons.add(ElementFactory.firstUserButton());
 		buttons.add(ElementFactory.secondUserButton());
 		buttons.add(ElementFactory.thirdUserButton());
+		displays.add(ElementFactory.selectTitle());
 	}
 	@Override
 	public List<Button> getButtons() {
