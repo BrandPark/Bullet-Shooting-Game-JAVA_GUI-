@@ -3,7 +3,7 @@ package main;
 
 import javax.swing.JFrame;
 
-import interfaces.config.ScreenModel;
+import interfaces.config.ScreenService;
 import interfaces.config.impl.ScreenDispatcherImpl;
 
 public class Main {
@@ -20,7 +20,7 @@ public class Main {
 		frame.setVisible(true);
 	}
 	public void start() {
-		ScreenModel.doInit();
+		ScreenService.doInit();
 	}
 	public static void main(String[] args) {
 		new Main().start();

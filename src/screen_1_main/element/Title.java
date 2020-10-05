@@ -3,6 +3,7 @@ package screen_1_main.element;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.image.ImageObserver;
 
 import common.static_data.Size;
 import interfaces.element.Display;
@@ -19,8 +20,8 @@ public class Title implements Display{
 	}
 	
 	@Override
-	public void paint(Graphics2D g2d) {
-		g2d.drawImage(img,x,y,w,h,null);
+	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
+		g2d.drawImage(img,x,y,w,h,imageObserver);
 	}
 
 	

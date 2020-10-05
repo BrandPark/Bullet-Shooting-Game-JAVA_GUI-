@@ -1,6 +1,7 @@
 package screen_2_selectunit.view;
 
 import java.awt.Graphics2D;
+import java.awt.image.ImageObserver;
 import java.util.List;
 
 import interfaces.element.Button;
@@ -15,7 +16,7 @@ public class SelectUnitElements implements Elements{
 	}
 
 	@Override
-	public void allPaint(Graphics2D g2d) {
+	public void allPaint(Graphics2D g2d, ImageObserver imageObserver) {
 		// TODO Auto-generated method stub
 		
 	}

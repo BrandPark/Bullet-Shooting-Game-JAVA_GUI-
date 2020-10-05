@@ -3,12 +3,13 @@ package screen_1_main.element;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.image.ImageObserver;
 
 import common.static_data.Size;
-import interfaces.config.ScreenModel;
+import interfaces.config.ScreenService;
 import interfaces.element.Button;
 
-public class GameStartBtn implements Button{
+public class GameStartBtn implements Button {
 	private int x = Size.FRAME_W/8 * 3;
 	private int y = Size.FRAME_H/6 + 200;
 	private int w = Size.FRAME_W/4;
@@ -20,8 +21,8 @@ public class GameStartBtn implements Button{
 	}
 	
 	@Override
-	public void paint(Graphics2D g2d) {
-		g2d.drawImage(img,x,y,w,h,null);
+	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
+		g2d.drawImage(img,x,y,w,h,imageObserver);
 	}   
 
 	@Override
@@ -34,7 +35,7 @@ public class GameStartBtn implements Button{
 	}
 	@Override
 	public void doAction() {
-		ScreenModel.showNext();
+		ScreenService.showNext();
 	}
 
 }

@@ -2,6 +2,7 @@ package screen_1_main.view;
 
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import java.awt.image.ImageObserver;
 
 import interfaces.element.Elements;
 import interfaces.element.ElementsFactory;
@@ -14,8 +15,8 @@ public class MainScreen implements Screen{
 	KeyHandler focusHandler = KeyHandlerFactory.getHandlerToMain(elements);
 	
 	@Override
-	public void paint(Graphics2D g2d) {
-		elements.allPaint(g2d);
+	public void paint(Graphics2D g2d,ImageObserver imageObserver) {
+		elements.allPaint(g2d, imageObserver);
 	}
 
 	@Override

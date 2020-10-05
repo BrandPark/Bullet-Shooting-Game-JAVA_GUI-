@@ -3,7 +3,7 @@ package interfaces.config;
 import interfaces.action.Action;
 import interfaces.action.ActionFactory;
 
-abstract public class ScreenModel {
+abstract public class ScreenService {
 	
 	public static void doInit() {
 		Action action = ActionFactory.initAction();

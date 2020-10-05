@@ -1,6 +1,7 @@
 package screen_1_main.view;
 
 import java.awt.Graphics2D;
+import java.awt.image.ImageObserver;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,12 +28,12 @@ public class MainElements implements Elements{
 	}
 
 	@Override
-	public void allPaint(Graphics2D g2d) {
+	public void allPaint(Graphics2D g2d, ImageObserver imageObserver) {
 		for(Display d : displays) {
-			d.paint(g2d);
+			d.paint(g2d, imageObserver);
 		}
 		for(Button b : buttons) {
-			b.paint(g2d);
+			b.paint(g2d, imageObserver);
 		}
 	}
 

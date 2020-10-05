@@ -51,9 +51,8 @@ public class ViewerImpl extends JPanel implements Viewer{
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
 		if(screen!=null)
-			screen.paint(g2d);
+			screen.paint(g2d,this);
 	}
-	
 	
 	private void setScreen(Screen screen) {
 		this.screen = screen;

@@ -3,13 +3,14 @@ package screen_2_selectunit.view;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import java.awt.image.ImageObserver;
 
 import interfaces.screen.Screen;
 
 public class SelectUnitScreen implements Screen{
 
 	@Override
-	public void paint(Graphics2D g2d) {
+	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
 		g2d.setColor(Color.BLACK);
 		g2d.fillRect(100,100,100,100);
 	}

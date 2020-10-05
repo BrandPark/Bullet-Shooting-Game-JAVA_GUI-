@@ -2,6 +2,7 @@ package screen_2_selectunit.element;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.image.ImageObserver;
 
 import interfaces.element.Element;
 import interfaces.element.User;
@@ -13,7 +14,7 @@ public class FirSelect implements Element{
 	private int power = 0;
 	private int speed = 0;
 	
-	private void init() {
+	public FirSelect() {
 		user = UserFactory.firUser();
 		img = user.getImg();
 		power = user.getPower();
@@ -21,7 +22,7 @@ public class FirSelect implements Element{
 	}
 	
 	@Override
-	public void paint(Graphics2D g2d) {
+	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
 		// TODO Auto-generated method stub
 		
 	}
