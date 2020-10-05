@@ -15,4 +15,8 @@ public abstract class Size {
 	public static final int LIFE_W = 50;
 	public static final int LIFE_H = 50;
 	
+	public static final int SELECT_CARD_W = 200;
+	public static final int SELECT_CARD_H = 400;
+	public static final int SELECT_CARD_VG = 200;
+	public static final int SELECT_CARD_HG = 50;
 }

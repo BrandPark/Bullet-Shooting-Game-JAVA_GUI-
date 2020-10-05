@@ -14,11 +14,7 @@ public class GameStartBtn implements Button {
 	private int y = Size.FRAME_H/6 + 200;
 	private int w = Size.FRAME_W/4;
 	private int h = Size.FRAME_H/10;
-	private Image img = null;
-	
-	public GameStartBtn() {
-		img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/start_btn_normal.png");
-	}
+	private Image img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/start_btn_normal.png");
 	
 	@Override
 	public void paint(Graphics2D g2d, ImageObserver imageObserver) {

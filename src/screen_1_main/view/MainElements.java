@@ -12,16 +12,16 @@ import screen_1_main.element.GameStartBtn;
 import screen_1_main.element.OptionBtn;
 import screen_1_main.element.Title;
 
-public class MainElements implements Elements{
+public class MainElements implements Elements {
 	private List<Button> buttons = new ArrayList<>();
 	private List<Display> displays = new ArrayList<>();
-	
+
 	public MainElements() {
 		displays.add(new Title());
 		buttons.add(new GameStartBtn());
 		buttons.add(new OptionBtn());
 	}
-	
+
 	@Override
 	public List<Button> getButtons() {
 		return buttons;
@@ -29,16 +29,12 @@ public class MainElements implements Elements{
 
 	@Override
 	public void allPaint(Graphics2D g2d, ImageObserver imageObserver) {
-		for(Display d : displays) {
+		for (Display d : displays) {
 			d.paint(g2d, imageObserver);
 		}
-		for(Button b : buttons) {
+		for (Button b : buttons) {
 			b.paint(g2d, imageObserver);
 		}
 	}
-
-
-
-	
 
 }

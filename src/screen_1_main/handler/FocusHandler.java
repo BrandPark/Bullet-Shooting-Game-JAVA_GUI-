@@ -19,14 +19,14 @@ public class FocusHandler implements KeyHandler{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int c = e.getKeyCode();
-		if(c == KeyEvent.VK_UP) {
+		if(c == KeyEvent.VK_UP || c == KeyEvent.VK_LEFT) {
 			unFocusBtn(index);
 			if(index==0)
 				index=buttons.size();
 			index--;
 			focusBtn(index);
 		}
-		else if(c == KeyEvent.VK_DOWN) {
+		else if(c == KeyEvent.VK_DOWN || c == KeyEvent.VK_RIGHT) {
 			unFocusBtn(index);
 			if(index==buttons.size()-1)
 				index=-1;
