@@ -3,8 +3,8 @@ package main;
 
 import javax.swing.JFrame;
 
-import interfaces.config.ScreenService;
-import interfaces.config.impl.ScreenDispatcherImpl;
+import dispatcher_service.ScreenService;
+import dispatcher_service.impl.ScreenDispatcherImpl;
 
 public class Main {
 	
