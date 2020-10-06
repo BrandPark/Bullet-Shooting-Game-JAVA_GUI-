@@ -6,9 +6,9 @@ import javax.swing.JFrame;
 import dispatcher_service.ScreenService;
 import dispatcher_service.impl.ScreenDispatcherImpl;
 
-public class Main {
+public class GameStarter {
 	
-	public Main() {
+	public GameStarter() {
 		JFrame frame = new JFrame("Bullet Shooting Game");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
@@ -23,6 +23,6 @@ public class Main {
 		ScreenService.doInit();
 	}
 	public static void main(String[] args) {
-		new Main().start();
+		new GameStarter().start();
 	}
 }
