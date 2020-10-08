@@ -19,9 +19,7 @@ public class ViewerImpl extends JPanel implements Viewer{
 	public ViewerImpl() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		addKeyListener(this);
-		
 		new Thread(this).start();
-		
 		requestFocus();
 		setFocusable(true);
 	}

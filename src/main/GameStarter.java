@@ -1,6 +1,8 @@
 package main;
 
 
+import java.awt.event.AWTEventListener;
+
 import javax.swing.JFrame;
 
 import dispatcher_service.ScreenService;
@@ -13,7 +15,6 @@ public class GameStarter {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
 		new ScreenDispatcherImpl(frame);
-		
 		frame.pack();
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
