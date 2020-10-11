@@ -1,8 +1,8 @@
 package dispatcher_service;
 
-import client.Screen;
+import client.View;
 
 public interface ActiveScreen {
-	public void save(Screen screen);
-	public Screen getScreen();
+	public void save(View screen);
+	public View getScreen();
 }

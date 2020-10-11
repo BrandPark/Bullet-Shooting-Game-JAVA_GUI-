@@ -1,8 +1,8 @@
 package dispatcher_service.impl;
 
-import client.Screen;
+import client.View;
 import client.Screens;
-import client.viewImpl_2.SelectUnitScreen;
+import client.viewImpl_2.SelectUnitView;
 import dispatcher_service.Action;
 import dispatcher_service.ActiveScreen;
 
@@ -12,11 +12,11 @@ public class NextScreenAction implements Action{
 	
 	@Override
 	public void execute() {
-		Screen curScreen = as.getScreen();
-		Screen nextScreen = new SelectUnitScreen();
+		View curScreen = as.getScreen();
+		View nextScreen = new SelectUnitView();
 		for(int i=0;i<screenNames.length;i++) {
 			if(isNextable(curScreen, i)) {
-				nextScreen = screenNames[i+1].getScreen();
+				nextScreen = screenNames[i+1].getView();
 				as.save(nextScreen);
 				return;
 			}
@@ -24,8 +24,8 @@ public class NextScreenAction implements Action{
 		as.save(nextScreen);
 	}
 	
-	private boolean isNextable(Screen curScreen, int targetIndex) {
-		if(screenNames[targetIndex].getScreen() == curScreen && targetIndex != finalIndex())
+	private boolean isNextable(View curScreen, int targetIndex) {
+		if(screenNames[targetIndex].getView() == curScreen && targetIndex != finalIndex())
 			return true;
 		return false;
 	}

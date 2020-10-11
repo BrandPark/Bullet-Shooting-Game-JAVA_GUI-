@@ -1,27 +1,27 @@
 package client;
 
-import client.viewImpl_1.MainScreen;
-import client.viewImpl_2.SelectUnitScreen;
+import client.viewImpl_1.MainView;
+import client.viewImpl_2.SelectUnitView;
 
 public enum Screens {
 	MainScreen{
 		@Override
-		public Screen getScreen() {
-			return new MainScreen();
+		public View getView() {
+			return new MainView();
 		}
 	},
 	SelectLevelScreen{
 		@Override
-		public Screen getScreen() {
-			return new SelectUnitScreen();
+		public View getView() {
+			return new SelectUnitView();
 		}
 	},
 	IngameScreen{
 		@Override
-		public Screen getScreen() {
+		public View getView() {
 			return null;
 		}
 	};
-	abstract public Screen getScreen();
+	abstract public View getView();
 	
 }

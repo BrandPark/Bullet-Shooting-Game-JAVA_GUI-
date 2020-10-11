@@ -1,23 +1,23 @@
 package dispatcher_service.impl;
 
-import client.Screen;
+import client.View;
 import dispatcher_service.ActiveScreen;
 
 public class ActiveScreenImpl implements ActiveScreen{
-	private Screen screen = null;
+	private View screen = null;
 	private ActiveScreenImpl() {}
 	
 	public static final ActiveScreen getInstance() {
 		return new LazyHolder().INSTANCE;
 	}
 	@Override
-	public void save(Screen screen) {
+	public void save(View screen) {
 		this.screen = screen;
 		notifyToDispatcher();
 	}
 
 	@Override
-	public Screen getScreen() {
+	public View getScreen() {
 		return screen;
 	}
 	

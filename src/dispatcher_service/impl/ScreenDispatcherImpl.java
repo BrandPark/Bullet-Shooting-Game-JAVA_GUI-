@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import client.Viewer;
+import client.Projector;
 import dispatcher_service.ActiveScreen;
 import dispatcher_service.ScreenDispatcher;
 
 public class ScreenDispatcherImpl implements ScreenDispatcher{
 	private ActiveScreen as = null;
-	private Viewer viewer = null;
+	private Projector viewer = null;
 	private JFrame frame = null;
 	
 	public ScreenDispatcherImpl(JFrame frame) {

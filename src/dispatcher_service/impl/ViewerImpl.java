@@ -9,12 +9,12 @@ import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import client.Screen;
-import client.Viewer;
+import client.View;
+import client.Projector;
 import client.common.Size;
 
-public class ViewerImpl extends JPanel implements Viewer{
-	private Screen screen = null;
+public class ViewerImpl extends JPanel implements Projector{
+	private View view = null;
 	
 	public ViewerImpl() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
@@ -30,7 +30,7 @@ public class ViewerImpl extends JPanel implements Viewer{
 	}
 	
 	@Override
-	public void show(Screen screen) {
+	public void show(View screen) {
 		setScreen(screen);
 	}
 
@@ -48,12 +48,12 @@ public class ViewerImpl extends JPanel implements Viewer{
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
-		if(screen!=null)
-			screen.paint(g2d,this);
+		if(view!=null)
+			view.paint(g2d,this);
 	}
 	
-	private void setScreen(Screen screen) {
-		this.screen = screen;
+	private void setScreen(View screen) {
+		this.view = screen;
 	}
 	private void gameSpeed(int speed) {
 		try {
@@ -69,12 +69,11 @@ public class ViewerImpl extends JPanel implements Viewer{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		screen.keyPressed(e);
+		view.keyPressed(e);
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		screen.keyReleased(e);
 	}
 
 	

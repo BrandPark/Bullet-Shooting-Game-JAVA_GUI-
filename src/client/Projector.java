@@ -4,8 +4,8 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 
-public interface Viewer extends Runnable, KeyListener {
+public interface Projector extends Runnable, KeyListener {
 	
-	public void show(Screen screen);
+	public void show(View screen);
 	public void addTo(JFrame frame);
 }

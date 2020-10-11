@@ -9,7 +9,7 @@ public class InitScreenAction implements Action{
 	
 	@Override
 	public void execute() {
-		as.save(Screens.MainScreen.getScreen());
+		as.save(Screens.MainScreen.getView());
 	}
 	
 }

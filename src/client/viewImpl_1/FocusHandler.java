@@ -4,15 +4,14 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 
 import client.Button;
-import client.Elements;
 import client.KeyHandler;
 
 public class FocusHandler implements KeyHandler{
 	private List<Button> buttons;
 	private int index;
 	
-	public FocusHandler(Elements elements) {
-		this.buttons = elements.getButtons();
+	public FocusHandler(List<Button> buttons) {
+		this.buttons = buttons;
 		this.index = 0;
 		focusBtn(index);
 	}
@@ -39,9 +38,6 @@ public class FocusHandler implements KeyHandler{
 			
 	}
 
-	@Override
-	public void keyReleased(KeyEvent e) {
-	}
 	private void focusBtn(int index) {
 		buttons.get(index).focus();
 	}
