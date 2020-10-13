@@ -2,10 +2,10 @@ package dispatcher_service.impl;
 
 import client.Screens;
 import dispatcher_service.Action;
-import dispatcher_service.ActiveScreen;
+import dispatcher_service.ViewModel;
 
 public class InitScreenAction implements Action{
-	private ActiveScreen as = ActiveScreenImpl.getInstance();
+	private ViewModel as = ViewModelImpl.getInstance();
 	
 	@Override
 	public void execute() {

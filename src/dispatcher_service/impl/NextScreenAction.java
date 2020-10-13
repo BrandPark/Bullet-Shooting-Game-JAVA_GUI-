@@ -4,15 +4,15 @@ import client.View;
 import client.Screens;
 import client.viewImpl_2.SelectUnitView;
 import dispatcher_service.Action;
-import dispatcher_service.ActiveScreen;
+import dispatcher_service.ViewModel;
 
 public class NextScreenAction implements Action{
-	private ActiveScreen as = ActiveScreenImpl.getInstance();
+	private ViewModel as = ViewModelImpl.getInstance();
 	private Screens [] screenNames = Screens.values();
 	
 	@Override
 	public void execute() {
-		View curScreen = as.getScreen();
+		View curScreen = as.getView();
 		View nextScreen = new SelectUnitView();
 		for(int i=0;i<screenNames.length;i++) {
 			if(isNextable(curScreen, i)) {
