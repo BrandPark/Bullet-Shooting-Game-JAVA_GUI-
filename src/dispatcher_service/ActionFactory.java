@@ -1,13 +1,13 @@
 package dispatcher_service;
 
-import dispatcher_service.impl.InitScreenAction;
-import dispatcher_service.impl.NextScreenAction;
+import dispatcher_service.impl.MainViewAction;
+import dispatcher_service.impl.NextViewAction;
 
 public abstract class ActionFactory{
 	public static Action nextScreenAction() {
-		return new NextScreenAction();
+		return new NextViewAction();
 	}
 	public static Action initAction() {
-		return new InitScreenAction();
+		return new MainViewAction();
 	}
 }

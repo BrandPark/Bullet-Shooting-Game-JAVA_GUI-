@@ -4,7 +4,7 @@ import client.Views;
 import dispatcher_service.Action;
 import dispatcher_service.ViewModel;
 
-public class InitScreenAction implements Action{
+public class MainViewAction implements Action{
 	private ViewModel as = ViewModelImpl.getInstance();
 	
 	@Override
