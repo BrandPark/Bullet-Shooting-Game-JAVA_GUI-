@@ -1,5 +1,5 @@
 package dispatcher_service;
 
-public interface ViewDispatcherThread{
+public interface ViewDispatchThread{
 	public void start();
 }

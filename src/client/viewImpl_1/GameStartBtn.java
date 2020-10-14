@@ -7,7 +7,6 @@ import java.awt.image.ImageObserver;
 
 import client.Button;
 import client.common.Size;
-import dispatcher_service.ScreenService;
 
 public class GameStartBtn implements Button {
 	private int x = Size.FRAME_W/8 * 3;
@@ -31,7 +30,7 @@ public class GameStartBtn implements Button {
 	}
 	@Override
 	public void doAction() {
-		ScreenService.showNext();
+		
 	}
 
 }

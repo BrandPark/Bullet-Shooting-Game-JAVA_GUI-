@@ -1,14 +1,14 @@
 package dispatcher_service.impl;
 
 import client.View;
-import client.Screens;
+import client.Views;
 import client.viewImpl_2.SelectUnitView;
 import dispatcher_service.Action;
 import dispatcher_service.ViewModel;
 
 public class NextScreenAction implements Action{
 	private ViewModel as = ViewModelImpl.getInstance();
-	private Screens [] screenNames = Screens.values();
+	private Views [] screenNames = Views.values();
 	
 	@Override
 	public void execute() {

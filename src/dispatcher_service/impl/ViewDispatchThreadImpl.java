@@ -1,14 +1,14 @@
 package dispatcher_service.impl;
 
 import client.Projector;
-import dispatcher_service.ViewDispatcherThread;
+import dispatcher_service.ViewDispatchThread;
 import dispatcher_service.ViewModel;
 
-public class ViewDispatcherThreadImpl extends Thread implements ViewDispatcherThread {
+public class ViewDispatchThreadImpl extends Thread implements ViewDispatchThread {
 	private ViewModel vm = null;
 	private Projector projector = null;
 	
-	public ViewDispatcherThreadImpl(Projector projector) {
+	public ViewDispatchThreadImpl(Projector projector) {
 		this.vm = ViewModelImpl.getInstance();
 		this.projector = projector;
 	}

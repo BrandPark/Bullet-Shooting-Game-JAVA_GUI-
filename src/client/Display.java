@@ -1,5 +1,5 @@
 package client;
 
-public interface Display extends Element{
+public interface Display extends ViewElement{
 	
 }

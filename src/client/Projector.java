@@ -7,5 +7,4 @@ import javax.swing.JFrame;
 public interface Projector extends Runnable, KeyListener {
 	
 	public void show(View view);
-	public void addTo(JFrame frame);
 }

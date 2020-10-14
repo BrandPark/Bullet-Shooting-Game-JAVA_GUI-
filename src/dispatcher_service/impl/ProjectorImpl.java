@@ -10,28 +10,31 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import client.View;
+import client.Views;
 import client.Projector;
 import client.common.Size;
 
-public class ViewerImpl extends JPanel implements Projector{
+public class ProjectorImpl extends JPanel implements Projector{
 	private View view = null;
+	private JFrame frame = null;
 	
-	public ViewerImpl() {
+	public ProjectorImpl(JFrame frame) {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		addKeyListener(this);
+		
+		this.frame = frame;
+		this.view = Views.MainView.getView();
+		frame.add(this);
+		
+		
 		new Thread(this).start();
 		requestFocus();
 		setFocusable(true);
 	}
 	
 	@Override
-	public void addTo(JFrame frame) {
-		frame.add(this);
-	}
-	
-	@Override
-	public void show(View screen) {
-		setScreen(screen);
+	public void show(View view) {
+		setScreen(view);
 	}
 
 	@Override
@@ -52,8 +55,8 @@ public class ViewerImpl extends JPanel implements Projector{
 			view.paint(g2d,this);
 	}
 	
-	private void setScreen(View screen) {
-		this.view = screen;
+	private void setScreen(View view) {
+		this.view = view;
 	}
 	private void gameSpeed(int speed) {
 		try {
