@@ -21,6 +21,9 @@ public class ActionQueueImpl implements ActionQueue {
 	@Override
 	public void add(Action action) {
 		queue.add(action);
+		synchronized(queue) {
+			this.notify();
+		}
 	}
 
 	@Override

@@ -1,14 +1,14 @@
 package dispatcher_service.impl;
 
 import client.Projector;
-import dispatcher_service.ViewDispatchThread;
+import dispatcher_service.DispatchThread;
 import dispatcher_service.ViewModel;
 
-public class ViewDispatchThreadImpl extends Thread implements ViewDispatchThread {
+public class ViewDispatchThread extends Thread implements DispatchThread {
 	private ViewModel vm = null;
 	private Projector projector = null;
 	
-	public ViewDispatchThreadImpl(Projector projector) {
+	public ViewDispatchThread(Projector projector) {
 		this.vm = ViewModelImpl.getInstance();
 		this.projector = projector;
 	}
@@ -28,9 +28,8 @@ public class ViewDispatchThreadImpl extends Thread implements ViewDispatchThread
 	}
 
 	@Override
-	public void start() {
-		// TODO Auto-generated method stub
-		
+	public void startThread() {
+		this.start();
 	}
 
 }

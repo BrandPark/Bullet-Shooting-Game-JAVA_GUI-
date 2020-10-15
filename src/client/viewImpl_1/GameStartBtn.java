@@ -5,11 +5,11 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
-import client.AbstractViewElement;
-import client.Button;
+import client.AbstractViewButton;
 import client.common.Size;
+import dispatcher_service.ActionFactory;
 
-public class GameStartBtn extends AbstractViewElement implements Button{
+public class GameStartBtn extends AbstractViewButton {
 	private int x = Size.FRAME_W/8 * 3;
 	private int y = Size.FRAME_H/6 + 200;
 	private int w = Size.FRAME_W/4;
@@ -31,7 +31,7 @@ public class GameStartBtn extends AbstractViewElement implements Button{
 	}
 	@Override
 	public void doAction() {
-		
+		addAction(ActionFactory.nextViewAction());
 	}
 
 
