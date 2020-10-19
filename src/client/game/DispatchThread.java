@@ -1,4 +1,4 @@
-package client.game.action_service;
+package client.game;
 
 public interface DispatchThread{
 	public void startThread();

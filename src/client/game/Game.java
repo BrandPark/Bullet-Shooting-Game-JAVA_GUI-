@@ -3,7 +3,7 @@ package client.game;
 
 import javax.swing.JFrame;
 
-import client.game.action_service.DispatchThread;
+import client.game.action_service.ActionDispatchThread;
 
 public class Game {
 	private Projector projector = null;

@@ -1,8 +1,6 @@
-package client.game;
+package client.game.action_service;
 
-import client.game.action_service.Action;
-import client.game.action_service.ActionQueue;
-import client.game.action_service.DispatchThread;
+import client.game.DispatchThread;
 import client.game.action_service.impl.ActionQueueImpl;
 
 public class ActionDispatchThread extends Thread implements DispatchThread {

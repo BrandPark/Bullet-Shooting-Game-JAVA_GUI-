@@ -1,6 +1,5 @@
 package client.game;
 
-import client.game.action_service.DispatchThread;
 import client.game.action_service.ViewModel;
 import client.game.action_service.impl.ViewModelImpl;
 

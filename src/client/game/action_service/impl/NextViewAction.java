@@ -1,9 +1,9 @@
 package client.game.action_service.impl;
 
+import client.game.Views;
 import client.game.action_service.Action;
 import client.game.action_service.ViewModel;
 import client.game.view.View;
-import client.game.view.Views;
 import client.game.view.viewImpl_2.SelectUnitView;
 
 public class NextViewAction implements Action{

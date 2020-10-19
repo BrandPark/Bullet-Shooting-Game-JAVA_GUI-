@@ -5,7 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
-import client.common.Size;
+import client.game.common.Size;
 import client.game.view.Button;
 
 public class UserBtn2 implements Button{
