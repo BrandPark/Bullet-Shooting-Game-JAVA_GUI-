@@ -1,10 +1,9 @@
-package client.game.view;
+package client.game.view.viewImpl_1;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import client.game.view.viewImpl_1.GameStartBtn;
-import client.game.view.viewImpl_1.OptionBtn;
+import client.game.view.Button;
 import client.game.view.viewImpl_2.ElementFactory;
 
 abstract public class ButtonListFactory {

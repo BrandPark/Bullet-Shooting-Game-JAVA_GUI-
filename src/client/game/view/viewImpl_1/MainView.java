@@ -6,9 +6,7 @@ import java.awt.image.ImageObserver;
 import java.util.List;
 
 import client.game.view.Button;
-import client.game.view.ButtonListFactory;
 import client.game.view.Display;
-import client.game.view.DisplayListFactory;
 import client.game.view.KeyHandler;
 import client.game.view.KeyHandlerFactory;
 import client.game.view.View;
