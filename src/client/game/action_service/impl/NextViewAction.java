@@ -1,9 +1,9 @@
 package client.game.action_service.impl;
 
+import client.game.View;
+import client.game.ViewModel;
 import client.game.Views;
 import client.game.action_service.Action;
-import client.game.action_service.ViewModel;
-import client.game.view.View;
 
 class NextViewAction implements Action{
 	private ViewModel viewModel = ViewModelImpl.getInstance();

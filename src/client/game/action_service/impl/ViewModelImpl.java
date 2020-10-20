@@ -1,7 +1,7 @@
 package client.game.action_service.impl;
 
-import client.game.action_service.ViewModel;
-import client.game.view.View;
+import client.game.View;
+import client.game.ViewModel;
 
 class ViewModelImpl implements ViewModel{
 	private View view = null;

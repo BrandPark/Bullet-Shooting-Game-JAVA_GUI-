@@ -1,4 +1,4 @@
-package client.game.view;
+package client.game;
 
 public interface Display extends ViewElement{
 	

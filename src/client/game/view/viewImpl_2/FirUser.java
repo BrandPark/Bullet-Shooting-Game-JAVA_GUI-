@@ -5,7 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
-import client.game.view.User;
+import client.game.User;
 
 class FirUser implements User {
 	private Image img = null;

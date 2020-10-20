@@ -1,7 +1,7 @@
 package client.game.view.viewImpl_1;
 
-import client.game.view.Button;
-import client.game.view.Display;
+import client.game.Button;
+import client.game.Display;
 
 public abstract class ElementFactory {
 	public static final Button gameStartButton() {

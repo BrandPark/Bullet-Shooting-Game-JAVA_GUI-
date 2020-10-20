@@ -3,7 +3,7 @@ package client.game.view.viewImpl_1;
 import java.util.ArrayList;
 import java.util.List;
 
-import client.game.view.Display;
+import client.game.Display;
 import client.game.view.viewImpl_2.SelectTitle;
 
 abstract public class DisplayListFactory {

@@ -1,6 +1,4 @@
-package client.game.action_service;
-
-import client.game.view.View;
+package client.game;
 
 public interface ViewModel {
 	public void save(View view);

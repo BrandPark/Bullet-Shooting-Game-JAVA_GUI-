@@ -3,7 +3,7 @@ package client.game.view.viewImpl_1;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
-import client.game.view.Button;
+import client.game.Button;
 import client.game.view.KeyHandler;
 
 class FocusHandler implements KeyHandler{

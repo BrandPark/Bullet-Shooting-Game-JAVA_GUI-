@@ -1,5 +1,6 @@
 package client.game.view;
 
+import client.game.ViewElement;
 import client.game.action_service.Action;
 import client.game.action_service.ActionQueue;
 import client.game.action_service.impl.ActionQueueImpl;

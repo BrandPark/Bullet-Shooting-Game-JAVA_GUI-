@@ -9,8 +9,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import client.game.common.Size;
-import client.game.view.View;
+import client.common.Size;
 
 class ProjectorImpl extends JPanel implements Projector{
 	private View view = null;

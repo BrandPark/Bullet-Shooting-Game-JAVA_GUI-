@@ -1,6 +1,5 @@
 package client.game;
 
-import client.game.view.View;
 import client.game.view.viewImpl_1.MainView;
 import client.game.view.viewImpl_2.SelectUnitView;
 

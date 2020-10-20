@@ -2,6 +2,7 @@ package client.game.view;
 
 import java.util.List;
 
+import client.game.Button;
 import client.game.view.viewImpl_1.FocusHandler;
 
 abstract public class KeyHandlerFactory {

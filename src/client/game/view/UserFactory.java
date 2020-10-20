@@ -1,5 +1,6 @@
 package client.game.view;
 
+import client.game.User;
 import client.game.view.viewImpl_2.FirUser;
 
 abstract public class UserFactory {

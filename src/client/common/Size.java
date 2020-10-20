@@ -1,4 +1,4 @@
-package client.game.common;
+package client.common;
 
 public abstract class Size {
 //	GamePanel

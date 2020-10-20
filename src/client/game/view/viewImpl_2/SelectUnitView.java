@@ -5,11 +5,11 @@ import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
 import java.util.List;
 
-import client.game.view.Button;
-import client.game.view.Display;
+import client.game.Button;
+import client.game.Display;
+import client.game.View;
 import client.game.view.KeyHandler;
 import client.game.view.KeyHandlerFactory;
-import client.game.view.View;
 import client.game.view.viewImpl_1.ButtonListFactory;
 import client.game.view.viewImpl_1.DisplayListFactory;
 
