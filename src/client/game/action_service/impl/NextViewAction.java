@@ -4,9 +4,8 @@ import client.game.Views;
 import client.game.action_service.Action;
 import client.game.action_service.ViewModel;
 import client.game.view.View;
-import client.game.view.viewImpl_2.SelectUnitView;
 
-public class NextViewAction implements Action{
+class NextViewAction implements Action{
 	private ViewModel viewModel = ViewModelImpl.getInstance();
 	private Views [] views = Views.values();
 	

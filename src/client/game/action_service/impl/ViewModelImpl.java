@@ -3,7 +3,7 @@ package client.game.action_service.impl;
 import client.game.action_service.ViewModel;
 import client.game.view.View;
 
-public class ViewModelImpl implements ViewModel{
+class ViewModelImpl implements ViewModel{
 	private View view = null;
 	private ViewModelImpl() {}
 	

@@ -13,7 +13,7 @@ import client.game.view.KeyHandler;
 import client.game.view.KeyHandlerFactory;
 import client.game.view.View;
 
-public class SelectUnitView implements View{
+class SelectUnitView implements View{
 	List<Button> buttons = ButtonListFactory.forSelectUnit();
 	List<Display> displays = DisplayListFactory.forSelectUnit();
 	

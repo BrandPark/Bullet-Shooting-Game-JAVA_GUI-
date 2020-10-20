@@ -8,7 +8,7 @@ import java.awt.image.ImageObserver;
 import client.game.common.Size;
 import client.game.view.Button;
 
-public class UserBtn3 implements Button{
+class UserBtn3 implements Button{
 
 	private int x = (3*Size.SELECT_CARD_HG) + (2*Size.SELECT_CARD_W);
 	private int y = 200;

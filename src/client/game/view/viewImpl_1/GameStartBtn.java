@@ -9,7 +9,7 @@ import client.game.action_service.ActionFactory;
 import client.game.common.Size;
 import client.game.view.AbstractViewButton;
 
-public class GameStartBtn extends AbstractViewButton {
+class GameStartBtn extends AbstractViewButton {
 	private int x = Size.FRAME_W/8 * 3;
 	private int y = Size.FRAME_H/6 + 200;
 	private int w = Size.FRAME_W/4;

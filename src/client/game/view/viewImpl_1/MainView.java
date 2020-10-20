@@ -13,7 +13,7 @@ import client.game.view.KeyHandler;
 import client.game.view.KeyHandlerFactory;
 import client.game.view.View;
 
-public class MainView implements View{
+class MainView implements View{
 	List<Button> buttons = ButtonListFactory.forMain();
 	List<Display> displays = DisplayListFactory.forMain();
 	

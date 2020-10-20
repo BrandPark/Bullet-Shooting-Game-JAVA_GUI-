@@ -8,7 +8,7 @@ import java.awt.image.ImageObserver;
 import client.game.common.Size;
 import client.game.view.Display;
 
-public class Title implements Display{
+class Title implements Display{
 	private int x = Size.FRAME_W/4;
 	private int y = Size.FRAME_H/6;
 	private int w = Size.FRAME_W/2;

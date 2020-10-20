@@ -3,7 +3,7 @@ package client.game.action_service;
 import client.game.DispatchThread;
 import client.game.action_service.impl.ActionQueueImpl;
 
-public class ActionDispatchThread extends Thread implements DispatchThread {
+class ActionDispatchThread extends Thread implements DispatchThread {
 	private ActionQueue actionQueue = ActionQueueImpl.getInstance();
 	
 	public ActionDispatchThread() {

@@ -8,7 +8,7 @@ import java.awt.image.ImageObserver;
 import client.game.common.Size;
 import client.game.view.Button;
 
-public class OptionBtn implements Button {
+class OptionBtn implements Button {
 	private int x = Size.FRAME_W / 8 * 3;
 	private int y = Size.FRAME_H / 6 + 300;
 	private int w = Size.FRAME_W / 4;

@@ -6,7 +6,7 @@ import java.util.List;
 import client.game.view.Button;
 import client.game.view.KeyHandler;
 
-public class FocusHandler implements KeyHandler{
+class FocusHandler implements KeyHandler{
 	private List<Button> buttons;
 	private int index;
 	

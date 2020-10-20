@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import client.game.common.Size;
 import client.game.view.View;
 
-public class ProjectorImpl extends JPanel implements Projector{
+class ProjectorImpl extends JPanel implements Projector{
 	private View view = null;
 	private JFrame frame = null;
 	

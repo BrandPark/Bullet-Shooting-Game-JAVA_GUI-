@@ -4,7 +4,7 @@ import client.game.Views;
 import client.game.action_service.Action;
 import client.game.action_service.ViewModel;
 
-public class MainViewAction implements Action{
+class MainViewAction implements Action{
 	private ViewModel as = ViewModelImpl.getInstance();
 	
 	@Override

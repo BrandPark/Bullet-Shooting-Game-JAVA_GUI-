@@ -6,7 +6,7 @@ import java.util.Queue;
 import client.game.action_service.Action;
 import client.game.action_service.ActionQueue;
 
-public class ActionQueueImpl implements ActionQueue {
+class ActionQueueImpl implements ActionQueue {
 	private Queue<Action> queue = new LinkedList<>();
 	private static ActionQueueImpl INSTANCE = null;
 	

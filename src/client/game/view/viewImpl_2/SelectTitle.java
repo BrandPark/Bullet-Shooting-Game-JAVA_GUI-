@@ -8,7 +8,7 @@ import java.awt.image.ImageObserver;
 import client.game.common.Size;
 import client.game.view.Display;
 
-public class SelectTitle implements Display{
+class SelectTitle implements Display{
 	private Image img = Toolkit.getDefaultToolkit().getImage("resource/img/select_title.png");
 	private int x = Size.FRAME_W/4;
 	private int y = Size.FRAME_H/40;

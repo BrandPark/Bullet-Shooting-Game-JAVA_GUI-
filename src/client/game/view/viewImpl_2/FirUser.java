@@ -7,7 +7,7 @@ import java.awt.image.ImageObserver;
 
 import client.game.view.User;
 
-public class FirUser implements User {
+class FirUser implements User {
 	private Image img = null;
 	private int power = 0;
 	private int speed = 0;
