@@ -1,9 +1,10 @@
-package client.game.action_service;
+package client.game.action_service.impl;
 
-import client.game.DispatchThread;
-import client.game.action_service.impl.ActionQueueImpl;
+import client.dispatch_queue_service.Dispatcher;
+import client.game.action_service.Action;
+import client.game.action_service.ActionQueue;
 
-class ActionDispatchThread extends Thread implements DispatchThread {
+class ActionDispatchThread extends Thread implements Dispatcher {
 	private ActionQueue actionQueue = ActionQueueImpl.getInstance();
 	
 	public ActionDispatchThread() {

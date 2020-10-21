@@ -3,11 +3,12 @@ package client.game;
 
 import javax.swing.JFrame;
 
-import client.game.action_service.ActionDispatchThread;
+import client.dispatch_queue_service.Dispatcher;
+import client.game.action_service.impl.ActionDispatchThread;
 
 public class Game {
 	private Projector projector = null;
-	private DispatchThread dispatchThread = null;
+	private Dispatcher dispatchThread = null;
 	private ActionDispatchThread actionDispatchThread = null;
 	
 	public Game() {

@@ -1,8 +1,9 @@
 package client.game;
 
+import client.dispatch_queue_service.Dispatcher;
 import client.game.action_service.impl.ViewModelImpl;
 
-public class ViewDispatchThread extends Thread implements DispatchThread {
+public class ViewDispatchThread extends Thread implements Dispatcher {
 	private ViewModel vm = null;
 	private Projector projector = null;
 	

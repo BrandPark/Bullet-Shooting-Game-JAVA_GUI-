@@ -6,7 +6,7 @@ import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
 import client.common.Size;
-import client.game.action_service.ActionFactory;
+import client.game.action_service.impl.ActionFactory;
 import client.game.view.AbstractViewButton;
 
 class GameStartBtn extends AbstractViewButton {
