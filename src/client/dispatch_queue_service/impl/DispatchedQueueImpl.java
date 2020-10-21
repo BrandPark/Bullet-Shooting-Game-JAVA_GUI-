@@ -11,13 +11,21 @@ class DispatchedQueueImpl implements DispatchedQueue{
 	private final Queue<Model> queue = new LinkedList<>();
 	
 	@Override
-	public void add(Model model) {
-		
+	synchronized public void add(Model model) {
+		queue.add(model);
+		this.notify();
 	}
 
 	@Override
-	public Model poll() {
-		return null;
+	synchronized public Model poll() {
+		return queue.poll();
+	}
+
+	@Override
+	public boolean isEmpty() {
+		if(queue.isEmpty())
+			return true;
+		return false;
 	}
 	
 }
