@@ -1,32 +1,38 @@
 package client.game.action_service.impl;
 
-import client.dispatch_queue_service.Dispatcher;
-import client.game.action_service.Action;
-import client.game.action_service.ActionQueue;
+import client.game.action_service.DispatchedQueue;
+import client.game.action_service.Dispatcher;
+import client.game.action_service.Model;
 
 class ActionDispatchThread extends Thread implements Dispatcher {
-	private ActionQueue actionQueue = ActionQueueImpl.getInstance();
+private DispatchedQueue actionQueue = new ActionQueue();
 	
-	public ActionDispatchThread() {
-		
-	}
 	@Override
 	public void run() {
 		while(true) {
-			synchronized(actionQueue) {
-				try {
-					actionQueue.wait();
-					Action action = actionQueue.poll();
-					action.execute();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
+			waitToQueue();
+			Model model = actionQueue.poll();
+			model.execute();	//model이 여러개가 queue에 있다면 여러개의 model이 서로 충돌되지 않게 처리해야함
 		}
 	}
 	@Override
 	public void startThread() {
 		this.start();
+	}
+	
+	private void waitToQueue() {
+		try {
+			if(actionQueue.isEmpty())
+				synchronized(actionQueue) {
+					actionQueue.wait();
+				}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	@Override
+	public DispatchedQueue getQueue() {
+		return actionQueue;
 	}
 	
 }

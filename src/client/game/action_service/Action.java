@@ -1,5 +1,4 @@
 package client.game.action_service;
 
-public interface Action {
-	public void execute();
+public interface Action extends Model{
 }

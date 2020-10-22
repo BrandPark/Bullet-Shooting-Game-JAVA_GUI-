@@ -1,12 +1,12 @@
-package client.game.action_service.impl;
+package client.game.view;
 
 import client.game.View;
-import client.game.ViewModel;
-import client.game.Views;
 import client.game.action_service.Action;
+import client.game.action_service.ViewQueue;
+import client.game.action_service.impl.ViewModelImpl;
 
 class NextViewAction implements Action{
-	private ViewModel viewModel = ViewModelImpl.getInstance();
+	private ViewQueue viewModel = ViewModelImpl.getInstance();
 	private Views [] views = Views.values();
 	
 	@Override

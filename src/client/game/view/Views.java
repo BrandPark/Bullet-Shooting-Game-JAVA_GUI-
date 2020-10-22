@@ -1,7 +1,6 @@
-package client.game;
+package client.game.view;
 
-import client.game.view.viewImpl_1.MainView;
-import client.game.view.viewImpl_2.SelectUnitView;
+import client.game.View;
 
 public enum Views {
 	MainView{
