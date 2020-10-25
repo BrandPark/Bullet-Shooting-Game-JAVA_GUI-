@@ -1,7 +1,7 @@
-package client.game.view;
+package client.game.impl;
 
 import client.game.User;
-import client.game.view.viewImpl_2.FirUser;
+import client.game.impl.viewImpl_2.FirUser;
 
 abstract public class UserFactory {
 	public static User firUser() { return new FirUser(); }

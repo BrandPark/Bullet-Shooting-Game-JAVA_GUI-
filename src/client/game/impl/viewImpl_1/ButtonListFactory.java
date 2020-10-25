@@ -1,10 +1,10 @@
-package client.game.view.viewImpl_1;
+package client.game.impl.viewImpl_1;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import client.game.Button;
-import client.game.view.viewImpl_2.ElementFactory;
+import client.game.impl.viewImpl_2.ElementFactory;
 
 abstract public class ButtonListFactory {
 	public static final List<Button> forMain() {

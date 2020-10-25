@@ -1,9 +1,9 @@
-package client.game.view;
+package client.game.impl;
 
 import java.util.List;
 
 import client.game.Button;
-import client.game.view.viewImpl_1.FocusHandler;
+import client.game.impl.viewImpl_1.FocusHandler;
 
 abstract public class KeyHandlerFactory {
 	public static final KeyHandler getHandlerToMain(List<Button> buttons) {

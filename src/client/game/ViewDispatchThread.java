@@ -1,7 +1,6 @@
 package client.game;
 
 import client.dispatch_queue_service.Dispatcher;
-import client.game.action_service.ViewQueue;
 import client.game.action_service.impl.ViewModelImpl;
 
 public class ViewDispatchThread extends Thread implements Dispatcher {

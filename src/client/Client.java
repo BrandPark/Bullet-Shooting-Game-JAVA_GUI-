@@ -1,11 +1,11 @@
 package client;
 
-import client.game.Game;
+import client.game.impl.GameImpl;
 
 public class Client {
 
 	public static void main(String[] args) {
-		new Game();
+		new GameImpl();
 	}
 
 }

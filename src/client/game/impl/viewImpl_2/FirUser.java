@@ -1,4 +1,4 @@
-package client.game.view.viewImpl_2;
+package client.game.impl.viewImpl_2;
 
 import java.awt.Graphics2D;
 import java.awt.Image;

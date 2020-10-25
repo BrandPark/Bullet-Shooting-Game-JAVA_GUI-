@@ -1,4 +1,4 @@
-package client.game.view.viewImpl_1;
+package client.game.impl.viewImpl_1;
 
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
@@ -8,8 +8,8 @@ import java.util.List;
 import client.game.Button;
 import client.game.Display;
 import client.game.View;
-import client.game.view.KeyHandler;
-import client.game.view.KeyHandlerFactory;
+import client.game.impl.KeyHandler;
+import client.game.impl.KeyHandlerFactory;
 
 class MainView implements View{
 	List<Button> buttons = ButtonListFactory.forMain();

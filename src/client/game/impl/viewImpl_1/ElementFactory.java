@@ -1,4 +1,4 @@
-package client.game.view.viewImpl_1;
+package client.game.impl.viewImpl_1;
 
 import client.game.Button;
 import client.game.Display;

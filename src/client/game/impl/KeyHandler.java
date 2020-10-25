@@ -1,4 +1,4 @@
-package client.game.view;
+package client.game.impl;
 
 import java.awt.event.KeyEvent;
 

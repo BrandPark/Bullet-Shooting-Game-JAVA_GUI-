@@ -1,8 +1,8 @@
-package client.game.view;
+package client.game.impl;
 
 import client.game.View;
+import client.game.ViewQueue;
 import client.game.action_service.Action;
-import client.game.action_service.ViewQueue;
 import client.game.action_service.impl.ViewModelImpl;
 
 class NextViewAction implements Action{

@@ -1,10 +1,10 @@
-package client.game.view.viewImpl_1;
+package client.game.impl.viewImpl_1;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
 
 import client.game.Button;
-import client.game.view.KeyHandler;
+import client.game.impl.KeyHandler;
 
 class FocusHandler implements KeyHandler{
 	private List<Button> buttons;

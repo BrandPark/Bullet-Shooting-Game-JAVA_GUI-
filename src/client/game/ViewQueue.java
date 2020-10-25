@@ -1,6 +1,6 @@
-package client.game.action_service;
+package client.game;
 
-import client.game.View;
+import client.game.action_service.DispatchedQueue;
 
 public interface ViewQueue extends DispatchedQueue{
 	public void save(View view);
