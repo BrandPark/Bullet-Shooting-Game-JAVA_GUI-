@@ -1,11 +1,11 @@
-package client.game.action_service.impl;
+package client.game.impl;
 
+import client.game.ActionDispatcher;
 import client.game.action_service.DispatchedQueue;
-import client.game.action_service.Dispatcher;
 import client.game.action_service.Model;
 
-class ActionDispatchThread extends Thread implements Dispatcher {
-private DispatchedQueue actionQueue = new ActionQueue();
+class ActionDispatchThread extends Thread implements ActionDispatcher {
+	private DispatchedQueue actionQueue = null;
 	
 	@Override
 	public void run() {

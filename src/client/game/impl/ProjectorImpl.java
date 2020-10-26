@@ -1,4 +1,4 @@
-package client.game;
+package client.game.impl;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -10,7 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import client.common.Size;
-import client.game.impl.Views;
+import client.game.Projector;
+import client.game.View;
 
 class ProjectorImpl extends JPanel implements Projector{
 	private View view = null;
