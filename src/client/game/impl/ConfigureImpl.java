@@ -18,11 +18,12 @@ public class ConfigureImpl implements Configure{
 		viewDispatcher = ConfigureContext.getViewDispatcher();
 		actionDispatcher = ConfigureContext.getActionDispatcher();
 		projector = ConfigureContext.getProjector(frame);
+		projector.setQueue(actionDispatcher.getQueue(), viewDispatcher.getQueue());
 		game = new GameImpl().addViewDispatcher(viewDispatcher).addActionDispatcher(actionDispatcher).addProjector(projector);
 		
 	}
 	@Override
-	public void getGame() {
+	public Game getGame() {
 		return game;
 	}
 	

@@ -1,6 +1,6 @@
 package client.game.action_service;
 
-public interface Dispatcher {
-	public DispatchedQueue getQueue();
+public interface Dispatcher<T>{
+	public T getQueue();
 	public void startThread();
 }

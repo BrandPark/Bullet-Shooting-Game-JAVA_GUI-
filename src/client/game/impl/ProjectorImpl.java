@@ -10,12 +10,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import client.common.Size;
+import client.game.ActionQueue;
 import client.game.Projector;
 import client.game.View;
+import client.game.ViewQueue;
 
 class ProjectorImpl extends JPanel implements Projector{
-	private View view = null;
+	private ViewQueue viewQueue;
+	private ActionQueue actionQueue;
 	private JFrame frame = null;
+	private View view;
 	
 	public ProjectorImpl(JFrame frame) {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
@@ -77,7 +81,11 @@ class ProjectorImpl extends JPanel implements Projector{
 	@Override
 	public void keyReleased(KeyEvent e) {
 	}
-
+	@Override
+	public void setQueue(ActionQueue actionQueue, ViewQueue viewQueue) {
+		this.actionQueue = actionQueue;
+		this.viewQueue = viewQueue;
+	}
 	
 
 }

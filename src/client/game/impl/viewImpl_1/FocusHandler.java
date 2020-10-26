@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 
 import client.game.Button;
-import client.game.impl.KeyHandler;
+import client.game.KeyHandler;
 
 class FocusHandler implements KeyHandler{
 	private List<Button> buttons;

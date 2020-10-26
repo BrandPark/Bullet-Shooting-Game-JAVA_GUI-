@@ -7,8 +7,8 @@ import java.util.List;
 
 import client.game.Button;
 import client.game.Display;
+import client.game.KeyHandler;
 import client.game.View;
-import client.game.impl.KeyHandler;
 import client.game.impl.KeyHandlerFactory;
 import client.game.impl.viewImpl_1.ButtonListFactory;
 import client.game.impl.viewImpl_1.DisplayListFactory;

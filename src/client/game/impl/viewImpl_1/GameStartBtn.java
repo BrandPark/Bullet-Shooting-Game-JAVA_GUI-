@@ -1,5 +1,6 @@
 package client.game.impl.viewImpl_1;
 
+import java.awt.Button;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -7,9 +8,8 @@ import java.awt.image.ImageObserver;
 
 import client.common.Size;
 import client.game.action_service.impl.ActionFactory;
-import client.game.impl.AbstractViewButton;
 
-class GameStartBtn extends AbstractViewButton {
+class GameStartBtn extends Button {
 	private int x = Size.FRAME_W/8 * 3;
 	private int y = Size.FRAME_H/6 + 200;
 	private int w = Size.FRAME_W/4;
