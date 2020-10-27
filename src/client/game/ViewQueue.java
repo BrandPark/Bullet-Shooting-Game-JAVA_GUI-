@@ -1,5 +1,7 @@
 package client.game;
 
-public interface ViewQueue {
+import client.game.action_service.DispatchedQueue;
+
+public interface ViewQueue extends DispatchedQueue{
 
 }
