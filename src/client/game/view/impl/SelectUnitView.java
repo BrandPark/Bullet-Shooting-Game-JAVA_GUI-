@@ -13,13 +13,17 @@ import client.game.view.KeyHandler;
 import client.game.view.View;
 
 class SelectUnitView implements View{
-	private ActionQueue actionQueue = null;
-	private ViewQueue viewQueue = null;
+	private final ActionQueue actionQueue;
+	private final ViewQueue viewQueue;
 	List<Button> buttons = ButtonListFactory.forSelectUnit();
 	List<Display> displays = DisplayListFactory.forSelectUnit();
 	
 	private KeyHandler focusHandler = new FocusHandler(buttons);
 	
+	public SelectUnitView(ViewQueue viewQueue, ActionQueue actionQueue) {
+		this.viewQueue = viewQueue;
+		this.actionQueue = actionQueue;
+	}
 
 	@Override
 	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
@@ -29,11 +33,6 @@ class SelectUnitView implements View{
 		for (Button b : buttons) {
 			b.paint(g2d, imageObserver);
 		}
-	}
-	@Override
-	public void addQueue(ActionQueue actionQueue, ViewQueue viewQueue) {
-		this.actionQueue = actionQueue;
-		this.viewQueue = viewQueue;
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {

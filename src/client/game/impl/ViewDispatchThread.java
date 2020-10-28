@@ -4,7 +4,7 @@ import client.game.Projector;
 import client.game.ViewDispatcher;
 import client.game.ViewQueue;
 
-public class ViewDispatchThread extends Thread implements ViewDispatcher {
+class ViewDispatchThread extends Thread implements ViewDispatcher {
 	private ViewQueue vm = null;
 	private Projector projector = null;
 	

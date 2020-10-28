@@ -1,15 +1,11 @@
 package client.game.impl;
 
-import javax.swing.JFrame;
-
 import client.game.AbstractProjector;
 import client.game.ActionDispatcher;
 import client.game.Configure;
-import client.game.Game;
 import client.game.ViewDispatcher;
 
-public class ConfigureImpl implements Configure{
-	private Game game;
+class ConfigureImpl implements Configure{
 	private ViewDispatcher viewDispatcher;
 	private ActionDispatcher actionDispatcher;
 	private AbstractProjector projector;
@@ -17,15 +13,22 @@ public class ConfigureImpl implements Configure{
 	public ConfigureImpl() {
 		viewDispatcher = ConfigureContext.getViewDispatcher();
 		actionDispatcher = ConfigureContext.getActionDispatcher();
-		projector = ConfigureContext.getProjector();
-		projector.setQueue(actionDispatcher.getQueue(), viewDispatcher.getQueue());
-		
-		game = new GameImpl();
-		game.addViewDispatcher(viewDispatcher).addActionDispatcher(actionDispatcher).addProjector(projector);
+		projector = ConfigureContext.getProjector(viewDispatcher.getQueue(), actionDispatcher.getQueue());
 	}
+
 	@Override
-	public Game getGame() {
-		return game;
+	public ViewDispatcher getViewDispatcher() {
+		return viewDispatcher;
+	}
+
+	@Override
+	public ActionDispatcher getActionDispatcher() {
+		return actionDispatcher;
+	}
+
+	@Override
+	public AbstractProjector getProjector() {
+		return projector;
 	}
 	
 	

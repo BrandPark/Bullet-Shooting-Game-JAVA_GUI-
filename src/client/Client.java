@@ -1,12 +1,12 @@
 package client;
 
 import client.game.Game;
-import client.game.impl.ConfigureFactory;
+import client.game.impl.GameFactory;
 
 public class Client {
 
 	public static void main(String[] args) {
-		Game game = ConfigureFactory.getConfigure().getGame();
+		Game game = GameFactory.getGame();
 		game.gameStart();
 	}
 

@@ -6,8 +6,6 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 
-import javax.swing.JFrame;
-
 import client.common.Size;
 import client.game.AbstractProjector;
 import client.game.ActionQueue;
@@ -16,25 +14,22 @@ import client.game.view.View;
 import client.game.view.impl.Views;
 
 class ProjectorImpl extends AbstractProjector{
-	private ViewQueue viewQueue;
-	private ActionQueue actionQueue;
+	private final ViewQueue viewQueue;
+	private final ActionQueue actionQueue;
+	private final Thread thread;
 	private View view;
 	
-	public ProjectorImpl() {
+	public ProjectorImpl(ViewQueue viewQueue, ActionQueue actionQueue) {
+		this.viewQueue = viewQueue;
+		this.actionQueue = actionQueue;
+		this.thread = new Thread(this);
+		this.view = Views.MainView.getView(viewQueue, actionQueue);
+		
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		addKeyListener(this);
-		this.view = Views.MainView.getView();
-		new Thread(this).start();
 		requestFocus();
 		setFocusable(true);
 	}
-	
-	@Override
-	public void show(View view) {
-		view.addQueue(actionQueue, viewQueue);
-		setView(view);
-	}
-
 	@Override
 	public void run() {
 		while(true) {
@@ -52,19 +47,14 @@ class ProjectorImpl extends AbstractProjector{
 		if(view!=null)
 			view.paint(g2d,this);
 	}
-	
-	private void setView(View view) {
+	@Override
+	public void projectorStart() {
+		thread.start();
+	}
+	@Override
+	public void show(View view) {
 		this.view = view;
 	}
-	private void gameSpeed(int speed) {
-		try {
-			Thread.sleep(speed);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 	@Override
 	public void keyTyped(KeyEvent e) {}
 
@@ -76,10 +66,17 @@ class ProjectorImpl extends AbstractProjector{
 	@Override
 	public void keyReleased(KeyEvent e) {
 	}
-	@Override
-	public void setQueue(ActionQueue actionQueue, ViewQueue viewQueue) {
-		this.actionQueue = actionQueue;
-		this.viewQueue = viewQueue;
+	
+	private void gameSpeed(int speed) {
+		try {
+			Thread.sleep(speed);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
+	
+	
+	
+	
 
 }

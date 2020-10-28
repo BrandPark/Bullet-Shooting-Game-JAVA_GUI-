@@ -10,5 +10,4 @@ import client.game.ViewQueue;
 public interface View{
 	public void paint(Graphics2D g2d,ImageObserver imageObserver);
 	public void keyPressed(KeyEvent e);
-	public void addQueue(ActionQueue actionQueue, ViewQueue viewQueue);
 }

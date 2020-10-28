@@ -13,13 +13,17 @@ import client.game.view.KeyHandler;
 import client.game.view.View;
 
 class MainView implements View{
-	private ActionQueue actionQueue = null;
-	private ViewQueue viewQueue = null;
-	List<Button> buttons = ButtonListFactory.forMain();
-	List<Display> displays = DisplayListFactory.forMain();
+	private final ActionQueue actionQueue;
+	private final ViewQueue viewQueue;
+	private final List<Button> buttons = ButtonListFactory.forMain();
+	private final List<Display> displays = DisplayListFactory.forMain();
 	
 	KeyHandler focusHandler = new FocusHandler(buttons);
 	
+	public MainView(ViewQueue viewQueue, ActionQueue actionQueue) {
+		this.viewQueue = viewQueue;
+		this.actionQueue = actionQueue;
+	}
 	@Override
 	public void paint(Graphics2D g2d,ImageObserver imageObserver) {
 		for (Display d : displays) {
@@ -32,15 +36,9 @@ class MainView implements View{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if(e.getKeyCode() == KeyEvent.VK_SPACE)
-			viewQueue.add(new NextViewAction());
+		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+			
+		}
 		focusHandler.keyPressed(e);
 	}
-	@Override
-	public void addQueue(ActionQueue actionQueue, ViewQueue viewQueue) {
-		this.actionQueue = actionQueue;
-		this.viewQueue = viewQueue;
-	}
-
-
 }

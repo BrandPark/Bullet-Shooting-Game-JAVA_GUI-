@@ -1,5 +1,7 @@
 package client.game;
 
 public interface Configure {
-	public Game getGame();
+	public ViewDispatcher getViewDispatcher();
+	public ActionDispatcher getActionDispatcher();
+	public AbstractProjector getProjector();
 }
