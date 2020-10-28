@@ -1,4 +1,4 @@
-package client.game.view;
+package client.game.impl;
 
 import client.game.ActionDispatcher;
 import client.game.ActionQueue;

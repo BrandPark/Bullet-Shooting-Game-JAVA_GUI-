@@ -1,21 +1,23 @@
-package client.game.view;
+package client.game.impl;
 
 
 import javax.swing.JFrame;
 
+import client.game.AbstractProjector;
 import client.game.ActionDispatcher;
 import client.game.Game;
 import client.game.Projector;
 import client.game.ViewDispatcher;
 
 public class GameImpl implements Game{
-	private Projector projector = null;
+	private AbstractProjector projector = null;
 	private ViewDispatcher viewDispatcher = null;
 	private ActionDispatcher actionDispatcher = null;
 	private ActionDispatchThread actionDispatchThread = null;
+	private JFrame frame;
 	
 	public GameImpl() {
-		JFrame frame = new JFrame("Bullet Shooting Game");
+		frame = new JFrame("Bullet Shooting Game");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		frame.pack();
 		frame.setResizable(false);
@@ -35,8 +37,25 @@ public class GameImpl implements Game{
 	}
 
 	@Override
-	public Game addProjector(Projector projector) {
+	public Game addProjector(AbstractProjector projector) {
 		this.projector = projector;
+		frame.add(projector);
 		return this;
+	}
+	@Override
+	public void gameStart() {
+		if(checkDispatchers()) {
+			viewDispatcher.startThread();
+			actionDispatcher.startThread();
+		}
+	}
+	@Override
+	public void gameExit() {
+		// TODO Auto-generated method stub
+	}
+	private boolean checkDispatchers() {
+		if(viewDispatcher == null || actionDispatcher == null)
+			return false;
+		return true;
 	}
 }

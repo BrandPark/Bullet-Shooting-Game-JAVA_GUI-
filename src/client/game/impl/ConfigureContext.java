@@ -1,9 +1,9 @@
-package client.game.view;
+package client.game.impl;
 
 import javax.swing.JFrame;
 
+import client.game.AbstractProjector;
 import client.game.ActionDispatcher;
-import client.game.Projector;
 import client.game.ViewDispatcher;
 
 abstract public class ConfigureContext {
@@ -13,8 +13,7 @@ abstract public class ConfigureContext {
 	public static final ActionDispatcher getActionDispatcher() {
 		return new ActionDispatchThread();
 	}
-	public static final Projector getProjector(JFrame frame) {
-		return new ProjectorImpl(frame);
+	public static final AbstractProjector getProjector() {
+		return new ProjectorImpl();
 	}
-	
 }

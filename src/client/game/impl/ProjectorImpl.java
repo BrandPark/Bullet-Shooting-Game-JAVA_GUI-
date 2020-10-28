@@ -1,4 +1,4 @@
-package client.game.view;
+package client.game.impl;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -7,29 +7,23 @@ import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 import client.common.Size;
+import client.game.AbstractProjector;
 import client.game.ActionQueue;
-import client.game.Projector;
 import client.game.ViewQueue;
+import client.game.view.View;
 import client.game.view.impl.Views;
 
-class ProjectorImpl extends JPanel implements Projector{
+class ProjectorImpl extends AbstractProjector{
 	private ViewQueue viewQueue;
 	private ActionQueue actionQueue;
-	private JFrame frame = null;
 	private View view;
 	
-	public ProjectorImpl(JFrame frame) {
+	public ProjectorImpl() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		addKeyListener(this);
-		
-		this.frame = frame;
 		this.view = Views.MainView.getView();
-		frame.add(this);
-		
-		
 		new Thread(this).start();
 		requestFocus();
 		setFocusable(true);
@@ -87,6 +81,5 @@ class ProjectorImpl extends JPanel implements Projector{
 		this.actionQueue = actionQueue;
 		this.viewQueue = viewQueue;
 	}
-	
 
 }
