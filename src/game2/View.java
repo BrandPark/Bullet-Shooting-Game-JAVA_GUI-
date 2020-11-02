@@ -6,4 +6,8 @@ import java.awt.image.ImageObserver;
 public interface View {
 	public void paint(Graphics2D g2d,ImageObserver imageObserver);
 	public void stopView();
+	public void leftKey();
+	public void rightKey();
+	public void upKey();
+	public void downKey();
 }
