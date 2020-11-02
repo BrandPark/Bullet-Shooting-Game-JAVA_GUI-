@@ -1,6 +1,6 @@
-package game2.context_impl;
+package client.game2.context_impl;
 
-import game2.ActionDispatcher;
+import client.game2.ActionDispatcher;
 
 class ActionDispatcherThread extends Thread implements ActionDispatcher{
 	

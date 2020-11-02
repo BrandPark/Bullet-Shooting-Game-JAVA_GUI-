@@ -1,4 +1,4 @@
-package game2;
+package client.game2;
 
 import java.awt.Graphics2D;
 import java.awt.image.ImageObserver;

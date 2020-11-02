@@ -1,4 +1,4 @@
-package game2.context_impl;
+package client.game2.context_impl;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -6,19 +6,20 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Queue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import client.common.Size;
-import game2.Projector;
-import game2.View;
-import game2.context_impl.view.ViewFactory;
+import client.game2.Projector;
+import client.game2.View;
+import client.game2.context_impl.view.ViewFactory;
 
 class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 	private View activeView;
 	private JFrame frame;
-	
+	private Queue<View> viewQueue;
 	public ProjectorImpl() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		
@@ -28,17 +29,25 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 		addKeyListener(this);
 		requestFocus();
 		setFocusable(true);
-		
+	}
+	
+	@Override
+	public void setViewQueue(Queue<View> viewQueue) {
+		this.viewQueue = viewQueue;
+	}
+
+	@Override
+	public void startProjector() {
 		Thread thread = new Thread(this);
 		thread.start();
 	}
-	
+
 	@Override
 	public void run() {
 		while(true) {
 			repaint();
 			revalidate();
-			setFrameDelay(300);
+			setFrameDelay(30);
 		}
 	}
 	
@@ -69,7 +78,14 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
-		
+		int code = e.getKeyCode();
+		switch(code) {
+		case KeyEvent.VK_UP: activeView.upKey();break;
+		case KeyEvent.VK_DOWN: activeView.downKey();break;
+		case KeyEvent.VK_LEFT: activeView.leftKey();break;
+		case KeyEvent.VK_RIGHT: activeView.rightKey();break;
+		case KeyEvent.VK_SPACE: activeView.spaceKey();break;
+		}
 	}
 	@Override
 	public void keyTyped(KeyEvent e) {}

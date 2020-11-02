@@ -1,21 +1,24 @@
-package game2.context_impl.view._main;
+package client.game2.context_impl.view._main;
 
 import java.awt.Graphics2D;
 import java.awt.image.ImageObserver;
 import java.util.ArrayList;
 import java.util.List;
 
-import game2.Button;
-import game2.Display;
-import game2.View;
+import client.game2.Button;
+import client.game2.Display;
+import client.game2.KeyHandler;
+import client.game2.View;
 
 class MainView implements View{
-	private List<Button> buttons = new ArrayList<>();
-	private List<Display> displays = new ArrayList<>();
+	private final List<Button> buttons = new ArrayList<>();
+	private final List<Display> displays = new ArrayList<>();
+	private final KeyHandler buttonHandler;
 	
 	public MainView() {
 		initButtons();
 		initDisplays();
+		buttonHandler = new ButtonHandler(buttons);
 	}
 	@Override
 	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
@@ -35,27 +38,29 @@ class MainView implements View{
 	
 	@Override
 	public void leftKey() {
-		// TODO Auto-generated method stub
-		
+		buttonHandler.left();
 	}
 
 	@Override
 	public void rightKey() {
-		// TODO Auto-generated method stub
-		
+		buttonHandler.right();
 	}
 
 	@Override
 	public void upKey() {
-		// TODO Auto-generated method stub
-		
+		buttonHandler.up();
 	}
 
 	@Override
 	public void downKey() {
-		// TODO Auto-generated method stub
+		buttonHandler.down();
+	}
+	
+	@Override
+	public void spaceKey() {
 		
 	}
+	
 	private void initButtons() {
 		buttons.add(new GameStartBtn());
 		buttons.add(new OptionBtn());

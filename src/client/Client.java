@@ -1,6 +1,6 @@
 package client;
 
-import game2.context_impl.GameContext;
+import client.game2.context_impl.GameContext;
 
 public class Client {
 

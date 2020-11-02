@@ -1,9 +1,9 @@
-package game2.context_impl;
+package client.game2.context_impl;
 
-import game2.ActionDispatcher;
-import game2.Game;
-import game2.Projector;
-import game2.ViewDispatcher;
+import client.game2.ActionDispatcher;
+import client.game2.Game;
+import client.game2.Projector;
+import client.game2.ViewDispatcher;
 
 abstract public class GameFactory {
 	public static final Game getGame() {

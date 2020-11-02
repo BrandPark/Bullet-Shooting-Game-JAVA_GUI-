@@ -1,4 +1,4 @@
-package game2;
+package client.game2;
 
 public interface ActionDispatcher extends Dispatcher{
 

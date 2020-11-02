@@ -1,6 +1,6 @@
-package game2.context_impl.view._main;
+package client.game2.context_impl.view._main;
 
-import game2.View;
+import client.game2.View;
 
 abstract public class MainViewFactory {
 	public static final View getView() {

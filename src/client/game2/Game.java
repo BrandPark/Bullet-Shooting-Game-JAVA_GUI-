@@ -1,4 +1,4 @@
-package game2;
+package client.game2;
 
 public interface Game {
 	public void setViewDispatcher(ViewDispatcher viewDispatcher);

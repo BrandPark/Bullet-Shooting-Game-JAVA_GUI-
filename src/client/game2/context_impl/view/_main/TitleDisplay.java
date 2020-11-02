@@ -1,4 +1,4 @@
-package game2.context_impl.view._main;
+package client.game2.context_impl.view._main;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -6,7 +6,7 @@ import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
 import client.common.Size;
-import game2.Display;
+import client.game2.Display;
 
 class TitleDisplay implements Display{
 	private int x = Size.FRAME_W/4;
