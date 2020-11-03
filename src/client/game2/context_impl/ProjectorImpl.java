@@ -6,12 +6,12 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Queue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import client.common.Size;
+import client.game2.Model;
 import client.game2.Projector;
 import client.game2.View;
 import client.game2.context_impl.view.ViewFactory;
@@ -19,7 +19,8 @@ import client.game2.context_impl.view.ViewFactory;
 class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 	private View activeView;
 	private JFrame frame;
-	private Queue<View> viewQueue;
+	private Model viewModel;
+	
 	public ProjectorImpl() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		
@@ -32,9 +33,10 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 	}
 	
 	@Override
-	public void setViewQueue(Queue<View> viewQueue) {
-		this.viewQueue = viewQueue;
+	public void setViewModel(Model model) {
+		this.viewModel = model;
 	}
+
 
 	@Override
 	public void startProjector() {
