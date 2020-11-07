@@ -3,6 +3,7 @@ package client.game2.context_impl;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -13,6 +14,7 @@ import javax.swing.JPanel;
 import client.common.Size;
 import client.game2.Model;
 import client.game2.Projector;
+import client.game2.Unit;
 import client.game2.View;
 import client.game2.context_impl.view.ViewFactory;
 
@@ -52,6 +54,7 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D)g;
+		
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
 		if(view!=null)
@@ -71,24 +74,23 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 	}
 
 	@Override
-	public void showInGame() {
-		
+	public void showInGame(Unit unit) {
+		clearView();
+		view = ViewFactory.getInGameView(model, unit);
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
-		int code = e.getKeyCode();
-		switch(code) {
-		case KeyEvent.VK_UP: view.upKey();break;
-		case KeyEvent.VK_DOWN: view.downKey();break;
-		case KeyEvent.VK_LEFT: view.leftKey();break;
-		case KeyEvent.VK_RIGHT: view.rightKey();break;
-		case KeyEvent.VK_SPACE: view.spaceKey();break;
-		}
+		view.keyPressed(e);
 	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		view.keyReleased(e);
+	}
+	
 	@Override
 	public void keyTyped(KeyEvent e) {}
-	@Override
-	public void keyReleased(KeyEvent e) {}
+	
 	
 	private void frameInit() {
 		frame = new JFrame("Bullet Shooting Game");

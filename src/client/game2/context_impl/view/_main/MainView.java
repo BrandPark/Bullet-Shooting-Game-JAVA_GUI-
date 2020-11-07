@@ -1,6 +1,7 @@
 package client.game2.context_impl.view._main;
 
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,31 +39,15 @@ class MainView implements View{
 		System.out.println("MainView_StopView()");
 	}
 	
-	@Override
-	public void leftKey() {
-		buttonHandler.left();
-	}
-
-	@Override
-	public void rightKey() {
-		buttonHandler.right();
-	}
-
-	@Override
-	public void upKey() {
-		buttonHandler.up();
-	}
-
-	@Override
-	public void downKey() {
-		buttonHandler.down();
-	}
 	
 	@Override
-	public void spaceKey() {
-		buttonHandler.doAction();
+	public void keyPressed(KeyEvent e) {
+		buttonHandler.keyPressed(e);
 	}
-	
+	@Override
+	public void keyReleased(KeyEvent e) {
+		buttonHandler.keyReleased(e);
+	}
 	private void initButtons() {
 		buttons.add(new GameStartBtn());
 		buttons.add(new OptionBtn());

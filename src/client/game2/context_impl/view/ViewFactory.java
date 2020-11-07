@@ -1,7 +1,9 @@
 package client.game2.context_impl.view;
 
 import client.game2.Model;
+import client.game2.Unit;
 import client.game2.View;
+import client.game2.context_impl.view._ingame.InGameViewFactory;
 import client.game2.context_impl.view._main.MainViewFactory;
 import client.game2.context_impl.view._select_unit.SelectUnitViewFactory;
 
@@ -11,5 +13,8 @@ abstract public class ViewFactory {
 	}
 	public static final View getSelectUnitView(Model model) {
 		return SelectUnitViewFactory.getView(model);
+	}
+	public static final View getInGameView(Model model, Unit unit) {
+		return InGameViewFactory.getView(model, unit);
 	}
 }

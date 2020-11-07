@@ -6,6 +6,7 @@ import java.util.Queue;
 import client.game2.Dispatcher;
 import client.game2.Model;
 import client.game2.Projector;
+import client.game2.context_impl.view._ingame.InGameViewFactory;
 
 class CommandDispatcher extends Thread implements Dispatcher{
 	private Projector projector;
@@ -42,7 +43,7 @@ class CommandDispatcher extends Thread implements Dispatcher{
 		switch(command) {
 		case "GAME_START" : projector.showSelectUnit(); break;
 		case "OPTION" : System.out.println("옵션버튼 셀렉트"); break;
-		case "SELECT_UNIT" :  projector.showSelectUnit();break;
+		case "SELECT_USER_1" :  projector.showInGame(InGameViewFactory.getUser1());break;
 		}
 	}
 	private class ModelImpl implements Model {

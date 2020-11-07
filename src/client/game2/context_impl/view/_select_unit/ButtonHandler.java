@@ -1,5 +1,6 @@
 package client.game2.context_impl.view._select_unit;
 
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 import client.game2.Button;
@@ -19,42 +20,54 @@ class ButtonHandler implements KeyHandler{
 		focusBtn(index);
 	}
 	@Override
-	public void up() {
+	public void keyPressed(KeyEvent e) {
+		int keyCode = e.getKeyCode();
+		switch(keyCode) {
+		case KeyEvent.VK_UP: up();break;
+		case KeyEvent.VK_DOWN: down();break;
+		case KeyEvent.VK_LEFT: left();break;
+		case KeyEvent.VK_RIGHT: right();break;
+		case KeyEvent.VK_SPACE: doAction();break;
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+	}
+
+	private void up() {
 		unFocusBtn(index);
 		if(index==0)
 			index=buttons.size();
 		index--;
 		focusBtn(index);
 	}
-	@Override
-	public void down() {
+	private void down() {
 		unFocusBtn(index);
 		if(index==buttons.size()-1)
 			index=-1;
 		index++;
 		focusBtn(index);
 	}
-	@Override
-	public void left() {
+	private void left() {
 		unFocusBtn(index);
 		if(index==0)
 			index=buttons.size();
 		index--;
 		focusBtn(index);
 	}
-	@Override
-	public void right() {
+	private void right() {
 		unFocusBtn(index);
 		if(index==buttons.size()-1)
 			index=-1;
 		index++;
 		focusBtn(index);
 	}
-	@Override
-	public void doAction() {
+	private void doAction() {
 		String command = buttons.get(index).getAction();
 		model.addCommand(command);
 	}
+
 	
 	private void focusBtn(int index) {
 		buttons.get(index).focus();
