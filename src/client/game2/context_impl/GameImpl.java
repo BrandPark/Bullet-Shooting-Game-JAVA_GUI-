@@ -1,27 +1,19 @@
 package client.game2.context_impl;
 
-import client.game2.ActionDispatcher;
+import client.game2.Dispatcher;
 import client.game2.Game;
-import client.game2.ViewDispatcher;
 
 class GameImpl implements Game{
-	private ViewDispatcher viewDispatcher;
-	private ActionDispatcher actionDispatcher;
+	private Dispatcher dispatcher;
 	
 	@Override
-	public void setViewDispatcher(ViewDispatcher viewDispatcher) {
-		this.viewDispatcher = viewDispatcher;
-	}
-
-	@Override
-	public void setActionDispatcher(ActionDispatcher actionDispatcher) {
-		this.actionDispatcher = actionDispatcher;
+	public void setDispatcher(Dispatcher dispatcher) {
+		this.dispatcher = dispatcher;
 	}
 
 	@Override
 	public void startGame() {
-		viewDispatcher.startThread();
-		actionDispatcher.startThread();
+		dispatcher.startThread();
 	}
 	
 }

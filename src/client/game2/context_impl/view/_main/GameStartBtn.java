@@ -14,6 +14,7 @@ class GameStartBtn implements Button {
 	private int w = Size.FRAME_W/4;
 	private int h = Size.FRAME_H/10;
 	private Image img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/start_btn_normal.png");
+	private String action = "GAME_START";
 	
 	@Override
 	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
@@ -28,4 +29,10 @@ class GameStartBtn implements Button {
 	public void unfocus() {
 		img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/start_btn_normal.png");
 	}
+
+	@Override
+	public String getAction() {
+		return action;
+	}
+	
 }

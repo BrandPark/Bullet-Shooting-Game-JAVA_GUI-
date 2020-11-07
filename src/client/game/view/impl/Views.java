@@ -3,6 +3,7 @@ package client.game.view.impl;
 import client.game.ActionQueue;
 import client.game.ViewQueue;
 import client.game.view.View;
+import client.game2.context_impl.view._select_unit.SelectUnitView;
 
 public enum Views {
 	MainView{

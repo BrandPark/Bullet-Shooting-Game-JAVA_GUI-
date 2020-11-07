@@ -5,4 +5,5 @@ public interface KeyHandler {
 	public void down();
 	public void left();
 	public void right();
+	public void doAction();
 }

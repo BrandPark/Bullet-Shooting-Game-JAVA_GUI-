@@ -1,4 +1,4 @@
-package client.game2.context_impl.view._main;
+package client.game2.context_impl.view._select_unit;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package client.game2.context_impl.view._main;
+package client.game2.context_impl.view._select_unit;
 
 import java.awt.Graphics2D;
 import java.awt.image.ImageObserver;
@@ -11,18 +11,20 @@ import client.game2.KeyHandler;
 import client.game2.Model;
 import client.game2.View;
 
-class MainView implements View{
+
+class SelectUnitView implements View{
 	private final List<Button> buttons = new ArrayList<>();
 	private final List<Display> displays = new ArrayList<>();
 	private final KeyHandler buttonHandler;
 	private final Model model;
 	
-	public MainView(Model model) {
+	public SelectUnitView(Model model) {
 		this.model = model;
 		initButtons();
 		initDisplays();
 		buttonHandler = new ButtonHandler(buttons,model);
 	}
+
 	@Override
 	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
 		for (Display d : displays) {
@@ -35,7 +37,7 @@ class MainView implements View{
 
 	@Override
 	public void stopView() {
-		System.out.println("MainView_StopView()");
+		System.out.println("SelectUnitView_StopView()");
 	}
 	
 	@Override
@@ -62,14 +64,14 @@ class MainView implements View{
 	public void spaceKey() {
 		buttonHandler.doAction();
 	}
-	
+
 	private void initButtons() {
-		buttons.add(new GameStartBtn());
-		buttons.add(new OptionBtn());
+		buttons.add(new UserBtn1());
+		buttons.add(new UserBtn2());
+		buttons.add(new UserBtn3());
 	}
 	private void initDisplays() {
 		displays.add(new TitleDisplay());
 	}
-	
-	
+
 }

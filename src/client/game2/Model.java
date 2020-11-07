@@ -1,6 +1,6 @@
 package client.game2;
 
-public interface Model<T> {
-	public void add(T model);
-	public T poll();
+public interface Model {
+	public void addCommand(String command);
+	public String getCommand();
 }

@@ -17,12 +17,13 @@ import client.game2.View;
 import client.game2.context_impl.view.ViewFactory;
 
 class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
-	private View activeView;
+	private View view;
 	private JFrame frame;
-	private Model viewModel;
+	private Model model;
 	
-	public ProjectorImpl() {
+	public ProjectorImpl(Model model) {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
+		this.model = model;
 		
 		showMain();
 		frameInit();
@@ -31,12 +32,6 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 		requestFocus();
 		setFocusable(true);
 	}
-	
-	@Override
-	public void setViewModel(Model model) {
-		this.viewModel = model;
-	}
-
 
 	@Override
 	public void startProjector() {
@@ -59,19 +54,20 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
-		if(activeView!=null)
-			activeView.paint(g2d,this);
+		if(view!=null)
+			view.paint(g2d,this);
 	}
 
 	@Override
 	public void showMain() {
 		clearView();
-		activeView = ViewFactory.getMainView();
+		view = ViewFactory.getMainView(model);
 	}
 
 	@Override
 	public void showSelectUnit() {
-		
+		clearView();
+		view = ViewFactory.getSelectUnitView(model);
 	}
 
 	@Override
@@ -82,11 +78,11 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
 		switch(code) {
-		case KeyEvent.VK_UP: activeView.upKey();break;
-		case KeyEvent.VK_DOWN: activeView.downKey();break;
-		case KeyEvent.VK_LEFT: activeView.leftKey();break;
-		case KeyEvent.VK_RIGHT: activeView.rightKey();break;
-		case KeyEvent.VK_SPACE: activeView.spaceKey();break;
+		case KeyEvent.VK_UP: view.upKey();break;
+		case KeyEvent.VK_DOWN: view.downKey();break;
+		case KeyEvent.VK_LEFT: view.leftKey();break;
+		case KeyEvent.VK_RIGHT: view.rightKey();break;
+		case KeyEvent.VK_SPACE: view.spaceKey();break;
 		}
 	}
 	@Override
@@ -112,7 +108,7 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 		}
 	}
 	private void clearView() {
-		if(activeView != null)
-			activeView.stopView();
+		if(view != null)
+			view.stopView();
 	}
 }

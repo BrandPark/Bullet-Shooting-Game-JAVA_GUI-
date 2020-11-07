@@ -6,5 +6,4 @@ public interface Projector {
 	public void showSelectUnit();
 	public void showInGame();
 	public void startProjector();
-	public void setViewModel(Model model);
 }
