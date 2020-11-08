@@ -16,12 +16,16 @@ class TitleDisplay implements Display{
 	private Image img = null;
 	
 	public TitleDisplay() {
+		
 		img = Toolkit.getDefaultToolkit().getImage("resource/img/title.png");
 	}
 	
 	@Override
-	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
-		g2d.drawImage(img,x,y,w,h,imageObserver);
+	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
+		Toolkit.getDefaultToolkit().prepareImage(img, -1, -1, imageObserver);
+		if(g2d.drawImage(img, x, y, w, h,imageObserver))
+			return true;
+		return false;
 	}
 
 	

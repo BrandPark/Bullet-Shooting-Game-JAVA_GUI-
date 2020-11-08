@@ -17,8 +17,10 @@ class TitleDisplay implements Display{
 	private int h = Size.FRAME_H/4;
 	
 	@Override
-	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
-		g2d.drawImage(img,x,y,w,h,imageObserver);
+	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
+		if(g2d.drawImage(img, x, y, w, h,imageObserver))
+			return true;
+		return false;
 	}
 
 }

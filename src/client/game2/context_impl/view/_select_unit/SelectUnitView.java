@@ -27,13 +27,18 @@ class SelectUnitView implements View{
 	}
 
 	@Override
-	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
+	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		for (Display d : displays) {
-			d.paint(g2d, imageObserver);
+			if(d.paint(g2d, imageObserver))
+				continue;
+			return false;
 		}
 		for (Button b : buttons) {
-			b.paint(g2d, imageObserver);
+			if(b.paint(g2d, imageObserver))
+				continue;
+			return false;
 		}
+		return true;
 	}
 
 	@Override

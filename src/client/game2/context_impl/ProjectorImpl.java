@@ -18,10 +18,12 @@ import client.game2.Unit;
 import client.game2.View;
 import client.game2.context_impl.view.ViewFactory;
 
-class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
+class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	private View view;
 	private JFrame frame;
 	private Model model;
+	private Image buffImg;
+	private Graphics2D buffg;
 	
 	public ProjectorImpl(Model model) {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
@@ -29,38 +31,57 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 		
 		showMain();
 		frameInit();
-		
-		addKeyListener(this);
-		requestFocus();
-		setFocusable(true);
 	}
 
 	@Override
 	public void startProjector() {
-		Thread thread = new Thread(this);
-		thread.start();
+//		Thread thread = new Thread(this);
+//		thread.start();
+		repaint();
 	}
 
-	@Override
-	public void run() {
-		while(true) {
-			repaint();
-			revalidate();
-			setFrameDelay(30);
-		}
-	}
+//	@Override
+//	public void run() {
+//		while(true) {
+//			repaint();
+//			revalidate();
+//			setFrameDelay(30);
+//		}
+//	}
 	
 	@Override
 	public void paint(Graphics g) {
-		super.paint(g);
-		Graphics2D g2d = (Graphics2D)g;
-		
-		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-				RenderingHints.VALUE_ANTIALIAS_ON);
-		if(view!=null)
-			view.paint(g2d,this);
-	}
 
+		if(buffg == null) {
+			buffImg = createImage(Size.FRAME_W,Size.FRAME_H);
+			buffg = (Graphics2D) buffImg.getGraphics();
+			buffg.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+					RenderingHints.VALUE_ANTIALIAS_ON);
+		}
+		
+		update(g);
+//		Graphics2D g2d = (Graphics2D)g;
+//		
+//		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+//				RenderingHints.VALUE_ANTIALIAS_ON);
+//		if(view!=null)
+//			view.paint(g2d,this);
+	}
+	@Override
+	public void update(Graphics g) {
+		
+		
+		if(view!=null) {
+			buffg.clearRect(0, 0, Size.FRAME_W, Size.FRAME_H);
+			if(view.paint(buffg,this)) {
+				Graphics2D g2d = (Graphics2D)g;
+				g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+						RenderingHints.VALUE_ANTIALIAS_ON);
+				g2d.drawImage(buffImg,0,0,this);
+				repaint();
+			}
+		}
+	}
 	@Override
 	public void showMain() {
 		clearView();
@@ -96,6 +117,9 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener, Runnable{
 		frame = new JFrame("Bullet Shooting Game");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(this);
+		addKeyListener(this);
+		requestFocus();
+		setFocusable(true);
 		frame.pack();
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);

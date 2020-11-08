@@ -17,18 +17,27 @@ class OptionBtn implements Button {
 	private String action = "OPTION";
 
 	@Override
-	public void paint(Graphics2D g2d,ImageObserver imageObserver) {
-		g2d.drawImage(img, x, y, w, h,imageObserver);
+	public boolean paint(Graphics2D g2d,ImageObserver imageObserver) {
+//		Toolkit.getDefaultToolkit().prepareImage(img, -1, -1, imageObserver);
+		if(g2d.drawImage(img, x, y, w, h,imageObserver))
+			return true;
+		return false;
 	}
 
 	@Override
-	public void focus() {
+	public boolean focus() {
 		img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/option_btn_select.png");
+		if(Toolkit.getDefaultToolkit().prepareImage(img, -1, -1, null))
+			return true;
+		return false;
 	}
 
 	@Override
-	public void unfocus() {
+	public boolean unfocus() {
 		img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/option_btn_normal.png");
+		if(Toolkit.getDefaultToolkit().prepareImage(img, -1, -1,null))
+			return true;
+		return false;
 	}
 
 	@Override

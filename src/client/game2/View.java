@@ -5,7 +5,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
 
 public interface View {
-	public void paint(Graphics2D g2d,ImageObserver imageObserver);
+	public boolean paint(Graphics2D g2d,ImageObserver imageObserver);
 	public void stopView();
 	public void keyPressed(KeyEvent e);
 	public void keyReleased(KeyEvent e);
