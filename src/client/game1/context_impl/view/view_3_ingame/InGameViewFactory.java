@@ -1,4 +1,4 @@
-package client.game1.context_impl.view._ingame;
+package client.game1.context_impl.view.view_3_ingame;
 
 import client.game1.Model;
 import client.game1.Unit;

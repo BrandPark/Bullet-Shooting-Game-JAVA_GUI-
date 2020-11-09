@@ -1,4 +1,4 @@
-package client.game1.context_impl.view._main;
+package client.game1.context_impl.view.view_2_select_unit;
 
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
@@ -12,18 +12,20 @@ import client.game1.KeyHandler;
 import client.game1.Model;
 import client.game1.View;
 
-class MainView implements View{
+
+class SelectUnitView implements View{
 	private final List<Button> buttons = new ArrayList<>();
 	private final List<Display> displays = new ArrayList<>();
 	private final KeyHandler buttonHandler;
 	private final Model model;
 	
-	public MainView(Model model) {
+	public SelectUnitView(Model model) {
 		this.model = model;
 		initButtons();
 		initDisplays();
 		buttonHandler = new ButtonHandler(buttons,model);
 	}
+
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		for (Display d : displays) {
@@ -36,13 +38,13 @@ class MainView implements View{
 		}
 		return true;
 	}
-	
+
 	@Override
 	public void stopView() {
-		System.out.println("MainView_StopView()");
+		System.out.println("SelectUnitView_StopView()");
 	}
 	
-	
+
 	@Override
 	public void keyPressed(KeyEvent e) {
 		buttonHandler.keyPressed(e);
@@ -51,13 +53,14 @@ class MainView implements View{
 	public void keyReleased(KeyEvent e) {
 		buttonHandler.keyReleased(e);
 	}
+
 	private void initButtons() {
-		buttons.add(new GameStartBtn());
-		buttons.add(new OptionBtn());
+		buttons.add(new UserBtn1());
+		buttons.add(new UserBtn2());
+		buttons.add(new UserBtn3());
 	}
 	private void initDisplays() {
 		displays.add(new TitleDisplay());
 	}
-	
-	
+
 }

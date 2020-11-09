@@ -1,4 +1,4 @@
-package client.game1.context_impl.view._main;
+package client.game1.context_impl.view.view_1_main;
 
 import java.awt.event.KeyEvent;
 import java.util.List;

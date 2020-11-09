@@ -6,7 +6,7 @@ import java.util.Queue;
 import client.game1.Dispatcher;
 import client.game1.Model;
 import client.game1.Projector;
-import client.game1.context_impl.view._ingame.InGameViewFactory;
+import client.game1.context_impl.view.view_3_ingame.InGameViewFactory;
 
 class CommandDispatcher extends Thread implements Dispatcher{
 	private Projector projector;
