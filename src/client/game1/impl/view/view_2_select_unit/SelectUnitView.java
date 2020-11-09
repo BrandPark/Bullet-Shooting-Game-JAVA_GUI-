@@ -1,4 +1,4 @@
-package client.game1.context_impl.view.view_2_select_unit;
+package client.game1.impl.view.view_2_select_unit;
 
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;

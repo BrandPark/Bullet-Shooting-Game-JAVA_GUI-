@@ -1,4 +1,4 @@
-package client.game1.context_impl;
+package client.game1.impl;
 
 import client.game1.Dispatcher;
 import client.game1.Game;

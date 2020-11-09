@@ -1,4 +1,4 @@
-package client.game1.context_impl.view.view_3_ingame;
+package client.game1.impl.view.view_3_ingame;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
 
+import client.common.Location;
 import client.common.Size;
 import client.game1.Unit;
 
@@ -31,14 +32,15 @@ public class Unit1 implements Unit{
 	
 	public Unit1() {
 		this.power = 3;
-		this.speed = 10;
+		this.speed = 2;
 		this.life = 3;
-		this.x = Size.FRAME_W/2;
-		this.y = Size.FRAME_H - 100;
-		this.w = 30;
-		this.h = 40;
+		this.x = Location.USER_X;
+		this.y = Location.USER_Y;
+		this.w = Size.USER_W;
+		this.h = Size.USER_H;
 		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/unit/first_user.png");
 	}
+	
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		unitMove();
@@ -73,7 +75,11 @@ public class Unit1 implements Unit{
 		if(key == KeyEvent.VK_RIGHT)
 			moveDir = moveDir ^ RIGHT;
 	}
+	
 	private void unitMove() {
+		int curX = x;
+		int curY = y;
+		
 		if(moveDir == UP) 
 			y -= speed;
 		else if(moveDir == DOWN) 
@@ -99,5 +105,16 @@ public class Unit1 implements Unit{
 			x += speed;
 			y += speed;
 		}
+		if(!isInFrame()) {
+			x = curX;
+			y = curY;
+		}
+			
+	}
+	private boolean isInFrame() {
+		if(x <= 0 || x >= Size.FRAME_W - Size.USER_W ||
+				y <= 0 || y >= Size.FRAME_H - Size.USER_H)
+			return false;
+		return true;
 	}
 }

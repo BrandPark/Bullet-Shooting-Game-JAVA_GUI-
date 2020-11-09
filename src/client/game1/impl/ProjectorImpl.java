@@ -1,4 +1,4 @@
-package client.game1.context_impl;
+package client.game1.impl;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -16,7 +16,7 @@ import client.game1.Model;
 import client.game1.Projector;
 import client.game1.Unit;
 import client.game1.View;
-import client.game1.context_impl.view.ViewFactory;
+import client.game1.impl.view.ViewFactory;
 
 class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	private View view;

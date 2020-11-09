@@ -1,4 +1,4 @@
-package client.game1.context_impl.view.view_1_main;
+package client.game1.impl.view.view_1_main;
 
 import client.game1.Model;
 import client.game1.View;

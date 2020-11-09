@@ -1,4 +1,4 @@
-package client.game1.context_impl.view.view_2_select_unit;
+package client.game1.impl.view.view_1_main;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -19,6 +19,7 @@ class ButtonHandler implements KeyHandler{
 		this.index = 0;
 		focusBtn(index);
 	}
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
@@ -67,7 +68,6 @@ class ButtonHandler implements KeyHandler{
 		String command = buttons.get(index).getAction();
 		model.addCommand(command);
 	}
-
 	
 	private void focusBtn(int index) {
 		buttons.get(index).focus();
