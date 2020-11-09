@@ -23,8 +23,10 @@ public class InGameView implements View{
 		this.unit = unit;
 	}
 	@Override
-	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
-		unit.paint(g2d, imageObserver);
+	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
+		if(unit.paint(g2d, imageObserver))
+			return true;
+		return false;
 	}
 
 	@Override

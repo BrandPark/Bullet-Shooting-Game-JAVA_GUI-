@@ -15,33 +15,25 @@ class UserBtn1 implements Button{
 	private int y = Size.SELECT_CARD_VG;
 	private int w= Size.SELECT_CARD_W;
 	private int h = Size.SELECT_CARD_H;
-	private ImageObserver imageObserver;
 	private Image img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/first_user_card.png");
 	private String action = "SELECT_USER_1";
 	
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
-//		Toolkit.getDefaultToolkit().prepareImage(img, -1, -1, imageObserver);
-		this.imageObserver = imageObserver;
+		Toolkit.getDefaultToolkit().prepareImage(img, -1, -1, imageObserver);
 		if(g2d.drawImage(img, x, y, w, h,imageObserver))
 			return true;
 		return false;
 	}
 
 	@Override
-	public boolean focus() {
+	public void focus() {
 		img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/first_user_card_selected.png");
-		if(Toolkit.getDefaultToolkit().prepareImage(img, -1, -1, imageObserver))
-			return true;
-		return false;
 	}
 
 	@Override
-	public boolean unfocus() {
+	public void unfocus() {
 		img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/first_user_card.png");
-		if(Toolkit.getDefaultToolkit().prepareImage(img, -1, -1, imageObserver))
-			return true;
-		return false;
 	}
 
 	@Override

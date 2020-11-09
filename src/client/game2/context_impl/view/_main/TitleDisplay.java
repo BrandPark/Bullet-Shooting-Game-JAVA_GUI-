@@ -16,7 +16,6 @@ class TitleDisplay implements Display{
 	private Image img = null;
 	
 	public TitleDisplay() {
-		
 		img = Toolkit.getDefaultToolkit().getImage("resource/img/title.png");
 	}
 	

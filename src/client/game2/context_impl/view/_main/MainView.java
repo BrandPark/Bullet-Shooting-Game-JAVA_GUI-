@@ -27,18 +27,16 @@ class MainView implements View{
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		for (Display d : displays) {
-			if(d.paint(g2d, imageObserver))
-				continue;
-			return false;
+			if(!d.paint(g2d, imageObserver))
+				return false;
 		}
 		for (Button b : buttons) {
-			if(b.paint(g2d, imageObserver))
-				continue;
-			return false;
+			if(!b.paint(g2d, imageObserver))
+				return false;
 		}
 		return true;
 	}
-
+	
 	@Override
 	public void stopView() {
 		System.out.println("MainView_StopView()");

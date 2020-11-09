@@ -1,6 +1,5 @@
 package client.game2.context_impl.view._ingame;
 
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -41,9 +40,11 @@ public class Unit1 implements Unit{
 		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/unit/first_user.png");
 	}
 	@Override
-	public void paint(Graphics2D g2d, ImageObserver imageObserver) {
+	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		unitMove();
-		g2d.drawImage(image, x, y, w, h, imageObserver);
+		if(g2d.drawImage(image, x, y, w, h, imageObserver))
+			return true;
+		return false;
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
