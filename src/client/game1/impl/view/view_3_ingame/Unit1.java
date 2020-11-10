@@ -3,16 +3,16 @@ package client.game1.impl.view.view_3_ingame;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
 import java.util.List;
 
+import client.common.Direction;
 import client.common.Location;
 import client.common.Size;
 import client.game1.Bullet;
 import client.game1.Unit;
 
-public class Unit1 implements Unit{
+class Unit1 implements Unit{
 	private int power;
 	private int speed;
 	private int life;
@@ -21,16 +21,8 @@ public class Unit1 implements Unit{
 	private final int w;
 	private final int h;
 	private Image image;
+	private int moveDirection = 0;
 	
-	private int moveDir = 0;
-	private static final int RIGHT = 1;
-	private static final int LEFT = 2;
-	private static final int UP = 8;
-	private static final int DOWN = 4;
-	private static final int RIGHTUP = RIGHT | UP;
-	private static final int RIGHTDOWN = RIGHT | DOWN;
-	private static final int LEFTUP = LEFT | UP;
-	private static final int LEFTDOWN = LEFT | DOWN;
 	
 	public Unit1() {
 		this.power = 3;
@@ -51,72 +43,48 @@ public class Unit1 implements Unit{
 
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
-		unitMove();
+		move();
 		Toolkit.getDefaultToolkit().prepareImage(image, w, h, imageObserver);
 		if(g2d.drawImage(image, x, y, w, h, imageObserver))
 			return true;
 		return false;
 	}
+	
 	@Override
-	public void keyPressed(KeyEvent e) {
-		int key = e.getKeyCode();
-		
-		if(key == KeyEvent.VK_UP) 
-			moveDir = moveDir | UP;
-		if(key == KeyEvent.VK_DOWN)
-			moveDir = moveDir | DOWN;
-		if(key == KeyEvent.VK_LEFT)
-			moveDir = moveDir | LEFT;
-		if(key == KeyEvent.VK_RIGHT)
-			moveDir = moveDir | RIGHT;
-		
-	}
-	@Override
-	public void keyReleased(KeyEvent e) {
-		int key = e.getKeyCode();
-		
-		if(key == KeyEvent.VK_UP) 
-			moveDir = moveDir ^ UP;
-		if(key == KeyEvent.VK_DOWN)
-			moveDir = moveDir ^ DOWN;
-		if(key == KeyEvent.VK_LEFT)
-			moveDir = moveDir ^ LEFT;
-		if(key == KeyEvent.VK_RIGHT)
-			moveDir = moveDir ^ RIGHT;
+	public void setDirection(int moveDirection) {
+		this.moveDirection = moveDirection;
 	}
 	
-	private void unitMove() {
-		int curX = x;
-		int curY = y;
-		
-		if(moveDir == UP) 
-			y -= speed;
-		else if(moveDir == DOWN) 
-			y += speed;
-		else if(moveDir == LEFT) 
-			x -= speed;
-		else if(moveDir == RIGHT) {
-			x += speed;
+	private void move() {
+		int tempX = x;
+		int tempY = y;
+		if(moveDirection == Direction.UP) 
+			y-=speed;
+		else if(moveDirection == Direction.DOWN) 
+			y+=speed;
+		else if(moveDirection == Direction.LEFT) 
+			x-=speed;
+		else if(moveDirection == Direction.RIGHT) 
+			x+=speed;
+		else if(moveDirection == Direction.LEFTUP) {
+			x-=speed;
+			y-=speed;
 		}
-		else if(moveDir == LEFTUP) {
-			x -= speed;
-			y -= speed;
+		else if(moveDirection == Direction.LEFTDOWN) {
+			x-=speed;
+			y+=speed;
 		}
-		else if(moveDir == LEFTDOWN) {
-			x -= speed;
-			y += speed;
+		else if(moveDirection == Direction.RIGHTUP) {
+			x+=speed;
+			y-=speed;
 		}
-		else if(moveDir == RIGHTUP) {
-			x += speed;
-			y -= speed;
-		}
-		else if(moveDir == RIGHTDOWN) {
-			x += speed;
-			y += speed;
+		else if(moveDirection == Direction.RIGHTDOWN) {
+			x+=speed;
+			y+=speed;
 		}
 		if(!isInFrame()) {
-			x = curX;
-			y = curY;
+			x = tempX;
+			y = tempY;
 		}
 			
 	}

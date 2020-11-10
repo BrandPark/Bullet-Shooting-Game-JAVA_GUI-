@@ -7,7 +7,7 @@ import java.awt.image.ImageObserver;
 
 import client.game1.Bullet;
 
-public class Bullet1 implements Bullet, Runnable{
+class Bullet1 implements Bullet, Runnable{
 	private int x;
 	private int y;
 	private int w;
