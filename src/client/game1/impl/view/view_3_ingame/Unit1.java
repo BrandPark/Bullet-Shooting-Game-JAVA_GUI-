@@ -22,7 +22,7 @@ class Unit1 implements Unit{
 	private final int h;
 	private Image image;
 	private int moveDirection = 0;
-	
+	private final ReloadThread reloadThread;
 	
 	public Unit1() {
 		this.power = 3;
@@ -33,12 +33,17 @@ class Unit1 implements Unit{
 		this.w = Size.USER_W;
 		this.h = Size.USER_H;
 		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/unit/first_user.png");
+		this.reloadThread = new ReloadThread();
 	}
 	
 	@Override
 	public void shoot(List<Bullet> list) {
 		int centerX = x + (w/2) - 2;
-		list.add(new Bullet1(centerX,y));
+		if(reloadThread.isReloadable()) {
+			list.add(new Bullet1(centerX,y));
+			reloadThread.reload();
+		}
+			
 	}
 
 	@Override
@@ -94,5 +99,33 @@ class Unit1 implements Unit{
 				y <= 0 || y >= Size.FRAME_H - Size.USER_H)
 			return false;
 		return true;
+	}
+	
+	private class ReloadThread extends Thread{
+		private boolean reloadable;
+		
+		public ReloadThread(){
+			this.reloadable = true;
+			this.start();
+		}
+		@Override
+		public void run() {
+			while(true){
+				reloadable = true;
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		public boolean isReloadable() {
+			if(reloadable)
+				return true;
+			return false;
+		}
+		public void reload() {
+			reloadable = false;
+		}
 	}
 }
