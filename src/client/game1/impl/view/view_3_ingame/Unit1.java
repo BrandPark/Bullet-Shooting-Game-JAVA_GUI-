@@ -5,9 +5,11 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
+import java.util.List;
 
 import client.common.Location;
 import client.common.Size;
+import client.game1.Bullet;
 import client.game1.Unit;
 
 public class Unit1 implements Unit{
@@ -41,6 +43,11 @@ public class Unit1 implements Unit{
 		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/unit/first_user.png");
 	}
 	
+	@Override
+	public void shoot(List<Bullet> list) {
+		list.add(new Bullet1(x,y));
+	}
+
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		unitMove();
@@ -111,6 +118,7 @@ public class Unit1 implements Unit{
 		}
 			
 	}
+	
 	private boolean isInFrame() {
 		if(x <= 0 || x >= Size.FRAME_W - Size.USER_W ||
 				y <= 0 || y >= Size.FRAME_H - Size.USER_H)

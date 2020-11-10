@@ -15,6 +15,7 @@ public class Bullet1 implements Bullet, Runnable{
 	private Image image;
 	private int power;
 	private int speed;
+	private Thread thread;
 	
 	public Bullet1(int x, int y) {
 		this.x = x;
@@ -22,18 +23,31 @@ public class Bullet1 implements Bullet, Runnable{
 		this.w = 20;
 		this.h = 35;
 		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/bullet/bullet1.png");
+		
+		thread = new Thread(this);
+		thread.start();
 	}
+	
 	@Override
 	public void run() {
 		while(true) {
-			y-=speed;
+			y--;
+			bulletSpeed(300);
 		}
 	}
-	private boolean isInFrame() {
+	
+	@Override
+	public void remove() {
+		thread.interrupt();
+	}
+
+	@Override
+	public boolean isInFrame() {
 		if(y+h <= 0)
 			return false;
 		return true;
 	}
+	
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		Toolkit.getDefaultToolkit().prepareImage(image, w, h, imageObserver);
@@ -41,5 +55,16 @@ public class Bullet1 implements Bullet, Runnable{
 			return true;
 		return false;
 	}
+	
+	
+	
+	private void bulletSpeed(int speed) {
+		try {
+			thread.sleep(speed);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
 
 }
