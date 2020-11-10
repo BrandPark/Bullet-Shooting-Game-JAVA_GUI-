@@ -45,12 +45,14 @@ public class Unit1 implements Unit{
 	
 	@Override
 	public void shoot(List<Bullet> list) {
-		list.add(new Bullet1(x,y));
+		int centerX = x + (w/2) - 2;
+		list.add(new Bullet1(centerX,y));
 	}
 
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		unitMove();
+		Toolkit.getDefaultToolkit().prepareImage(image, w, h, imageObserver);
 		if(g2d.drawImage(image, x, y, w, h, imageObserver))
 			return true;
 		return false;

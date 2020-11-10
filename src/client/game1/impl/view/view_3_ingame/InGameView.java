@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
@@ -27,18 +28,11 @@ public class InGameView implements View{
 	}
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
-		System.out.println("paint()");
 		if(!unit.paint(g2d, imageObserver))
 			return false;
-		for(Bullet bullet : bullets) {
-//			if(!bullet.isInFrame()) {
-//				bullet.remove();
-//				bullets.remove(bullet);
-//				continue;
-//			}
-			if(bullet.paint(g2d, imageObserver))
-				return false;
-		}
+		if(!bulletsPaint(g2d, imageObserver))
+			return false;
+		
 		return true;
 	}
 
@@ -50,13 +44,27 @@ public class InGameView implements View{
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 		if(keyCode == KeyEvent.VK_SPACE)
-//			unit.shoot(bullets);
-			bullets.add(new Bullet1(400,400));
+			unit.shoot(bullets);
 		else unit.keyPressed(e);
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
 		unit.keyReleased(e);
 	}
-
+	
+	private boolean bulletsPaint(Graphics2D g2d, ImageObserver imageObserver) {
+		int size = bullets.size();
+		for(int i=0;i<size; i++) {
+			Bullet bullet = bullets.get(i);
+			if(!bullet.isInFrame()) {
+				bullet.remove();
+				bullets.remove(bullet);
+				size--;
+				continue;
+			}
+			if(!bullet.paint(g2d, imageObserver)) 
+				return false;
+		}
+		return true;
+	}
 }

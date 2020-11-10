@@ -16,13 +16,16 @@ public class Bullet1 implements Bullet, Runnable{
 	private int power;
 	private int speed;
 	private Thread thread;
+	private boolean life;
 	
 	public Bullet1(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.w = 20;
+		this.w = 5;
 		this.h = 35;
+		this.speed = 10;
 		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/bullet/bullet1.png");
+		this.life = true;
 		
 		thread = new Thread(this);
 		thread.start();
@@ -30,17 +33,24 @@ public class Bullet1 implements Bullet, Runnable{
 	
 	@Override
 	public void run() {
-		while(true) {
-			y--;
-			bulletSpeed(300);
+		while(life) {
+			y-=speed;
+			bulletSpeed(10);
 		}
 	}
 	
 	@Override
-	public void remove() {
-		thread.interrupt();
+	synchronized public void remove() {
+		life = false;
 	}
-
+	
+	@Override
+	public boolean isDead() {
+		if(life)
+			return false;
+		return true;
+	}
+	
 	@Override
 	public boolean isInFrame() {
 		if(y+h <= 0)
@@ -58,7 +68,7 @@ public class Bullet1 implements Bullet, Runnable{
 	
 	
 	
-	private void bulletSpeed(int speed) {
+	private void bulletSpeed(long speed) {
 		try {
 			thread.sleep(speed);
 		} catch (InterruptedException e) {
