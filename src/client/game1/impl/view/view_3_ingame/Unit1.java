@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 import java.util.List;
+import java.util.Vector;
 
 import client.common.Direction;
 import client.common.Location;
@@ -22,7 +23,8 @@ class Unit1 implements Unit{
 	private final int h;
 	private Image image;
 	private int moveDirection = 0;
-	private final ReloadThread reloadThread;
+	private final ShootThread shootThread;
+	private List<Bullet> bullets;
 	
 	public Unit1() {
 		this.power = 3;
@@ -33,17 +35,23 @@ class Unit1 implements Unit{
 		this.w = Size.USER_W;
 		this.h = Size.USER_H;
 		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/unit/first_user.png");
-		this.reloadThread = new ReloadThread();
+		this.bullets = new Vector<Bullet>();
+		this.shootThread = new ShootThread();
 	}
 	
 	@Override
-	public void shoot(List<Bullet> list) {
-		int centerX = x + (w/2) - 2;
-		if(reloadThread.isReloadable()) {
-			list.add(new Bullet1(centerX,y));
-			reloadThread.reload();
-		}
-			
+	public void shoot() {
+		shootThread.shoot();
+	}
+	
+	@Override
+	public void stopShoot() {
+		shootThread.stopShoot();
+	}
+
+	@Override
+	public List<Bullet> getBullets() {
+		return bullets;
 	}
 
 	@Override
@@ -101,17 +109,19 @@ class Unit1 implements Unit{
 		return true;
 	}
 	
-	private class ReloadThread extends Thread{
-		private boolean reloadable;
+	private class ShootThread extends Thread{
+		private boolean shootable;
 		
-		public ReloadThread(){
-			this.reloadable = true;
+		ShootThread(){
+			this.shootable = false;
 			this.start();
 		}
 		@Override
 		public void run() {
 			while(true){
-				reloadable = true;
+				int centerX = x + (w/2) - 2;
+				if(shootable) 
+					bullets.add(new Bullet1(centerX,y));
 				try {
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
@@ -119,13 +129,11 @@ class Unit1 implements Unit{
 				}
 			}
 		}
-		public boolean isReloadable() {
-			if(reloadable)
-				return true;
-			return false;
+		private void shoot() {
+			shootable = true;
 		}
-		public void reload() {
-			reloadable = false;
+		private void stopShoot() {
+			shootable = false;
 		}
 	}
 }

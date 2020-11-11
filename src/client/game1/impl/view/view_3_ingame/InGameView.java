@@ -18,14 +18,15 @@ import client.game1.View;
 class InGameView implements View{
 	private final List<Button> buttons = new ArrayList<>();
 	private final List<Display> displays = new ArrayList<>();
-	private final List<Bullet> bullets = new Vector<>(); 
+	private final List<Bullet> bullets; 
 	private final Model model;
 	private final Unit unit;
 	private final KeyHandler userHandler;
 	public InGameView(Model model, Unit unit) {
 		this.model = model;
 		this.unit = unit;
-		userHandler = new UserHandler(unit, bullets);
+		this.bullets = unit.getBullets();
+		userHandler = new UserHandler(unit);
 	}
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {

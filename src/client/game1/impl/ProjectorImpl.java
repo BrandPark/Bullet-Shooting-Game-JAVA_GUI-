@@ -84,6 +84,8 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		if(e.getKeyCode() == KeyEvent.VK_SPACE)
+			System.out.println("Release~");
 		view.keyReleased(e);
 	}
 	
