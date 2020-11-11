@@ -11,9 +11,9 @@ import client.common.Direction;
 import client.common.Location;
 import client.common.Size;
 import client.game1.Bullet;
-import client.game1.Unit;
+import client.game1.User;
 
-class Unit1 implements Unit{
+class User1 implements User{
 	private int power;
 	private int speed;
 	private int life;
@@ -26,7 +26,7 @@ class Unit1 implements Unit{
 	private final ShootThread shootThread;
 	private List<Bullet> bullets;
 	
-	public Unit1() {
+	public User1() {
 		this.power = 3;
 		this.speed = 2;
 		this.life = 3;
@@ -116,17 +116,22 @@ class Unit1 implements Unit{
 			this.shootable = false;
 			this.start();
 		}
+		
 		@Override
 		public void run() {
 			while(true){
-				int centerX = x + (w/2) - 2;
-				if(shootable) 
-					bullets.add(new Bullet1(centerX,y));
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+				addBullet();
+			}
+		}
+		
+		private void addBullet() {
+			int centerX = x + (w/2) - 2;
+			if(shootable) 
+				bullets.add(new Bullet1(centerX,y));
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
 		}
 		private void shoot() {

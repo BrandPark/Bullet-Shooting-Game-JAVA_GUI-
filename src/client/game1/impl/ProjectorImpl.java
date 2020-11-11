@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import client.common.Size;
 import client.game1.Model;
 import client.game1.Projector;
-import client.game1.Unit;
+import client.game1.User;
 import client.game1.View;
 import client.game1.impl.view.ViewFactory;
 
@@ -73,7 +73,7 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	}
 
 	@Override
-	public void showInGame(Unit unit) {
+	public void showInGame(User unit) {
 		clearView();
 		view = ViewFactory.getInGameView(model, unit);
 	}
@@ -84,8 +84,6 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if(e.getKeyCode() == KeyEvent.VK_SPACE)
-			System.out.println("Release~");
 		view.keyReleased(e);
 	}
 	

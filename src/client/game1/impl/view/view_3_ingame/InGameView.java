@@ -5,14 +5,14 @@ import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 import client.game1.Bullet;
 import client.game1.Button;
 import client.game1.Display;
+import client.game1.Enemy;
 import client.game1.KeyHandler;
 import client.game1.Model;
-import client.game1.Unit;
+import client.game1.User;
 import client.game1.View;
 
 class InGameView implements View{
@@ -20,13 +20,16 @@ class InGameView implements View{
 	private final List<Display> displays = new ArrayList<>();
 	private final List<Bullet> bullets; 
 	private final Model model;
-	private final Unit unit;
+	private final User unit;
+	private Enemy enemy;
 	private final KeyHandler userHandler;
-	public InGameView(Model model, Unit unit) {
+	public InGameView(Model model, User unit) {
 		this.model = model;
 		this.unit = unit;
 		this.bullets = unit.getBullets();
 		userHandler = new UserHandler(unit);
+		
+		this.enemy = new Enemy1();
 	}
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
@@ -34,7 +37,8 @@ class InGameView implements View{
 			return false;
 		if(!bulletsPaint(g2d, imageObserver))
 			return false;
-		
+		if(!enemy.paint(g2d, imageObserver))
+			return false;
 		return true;
 	}
 
@@ -61,9 +65,17 @@ class InGameView implements View{
 				size--;
 				continue;
 			}
+			if(enemy.isHit(bullet.getHitBox())) {
+				bullet.remove();
+				bullets.remove(bullet);
+				size--;
+				System.out.println("명중");
+				continue;
+			}
 			if(!bullet.paint(g2d, imageObserver)) 
 				return false;
 		}
 		return true;
 	}
+	
 }

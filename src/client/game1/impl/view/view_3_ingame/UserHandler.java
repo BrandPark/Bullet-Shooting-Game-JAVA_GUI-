@@ -6,14 +6,14 @@ import java.util.List;
 import client.common.Direction;
 import client.game1.Bullet;
 import client.game1.KeyHandler;
-import client.game1.Unit;
+import client.game1.User;
 
 class UserHandler implements KeyHandler{
-	private Unit unit;
+	private User unit;
 	private List<Bullet> bullets;
 	private int moveDir = 0;
 	
-	public UserHandler(Unit unit) {
+	public UserHandler(User unit) {
 		this.unit = unit;
 		this.bullets = unit.getBullets();
 	}

@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
 import client.game1.Bullet;
+import client.game1.HitBox;
 
 class Bullet1 implements Bullet, Runnable{
 	private int x;
@@ -17,6 +18,7 @@ class Bullet1 implements Bullet, Runnable{
 	private int speed;
 	private Thread thread;
 	private boolean life;
+	private HitBoxImpl hitBox;
 	
 	public Bullet1(int x, int y) {
 		this.x = x;
@@ -26,6 +28,7 @@ class Bullet1 implements Bullet, Runnable{
 		this.speed = 10;
 		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/bullet/bullet1.png");
 		this.life = true;
+		this.hitBox = new HitBoxImpl(x,y,w,h);
 		
 		thread = new Thread(this);
 		thread.start();
@@ -35,10 +38,16 @@ class Bullet1 implements Bullet, Runnable{
 	public void run() {
 		while(life) {
 			y-=speed;
+			hitBox.setLocation(x,y,w,h);
 			bulletSpeed(10);
 		}
 	}
 	
+	@Override
+	public HitBox getHitBox() {
+		return hitBox;
+	}
+
 	@Override
 	synchronized public void remove() {
 		life = false;
