@@ -13,7 +13,7 @@ class Bullet1 implements Bullet, Runnable{
 	private int y;
 	private int w;
 	private int h;
-	private Image image;
+	private Image img;
 	private int power;
 	private int speed;
 	private Thread thread;
@@ -25,8 +25,9 @@ class Bullet1 implements Bullet, Runnable{
 		this.y = y;
 		this.w = 5;
 		this.h = 35;
+		this.power = 1;
 		this.speed = 10;
-		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/bullet/bullet1.png");
+		this.img = Toolkit.getDefaultToolkit().getImage("resource/img/bullet/bullet1.png");
 		this.life = true;
 		this.hitBox = new HitBoxImpl(x,y,w,h);
 		
@@ -46,6 +47,11 @@ class Bullet1 implements Bullet, Runnable{
 	@Override
 	public HitBox getHitBox() {
 		return hitBox;
+	}
+	
+	@Override
+	public int getPower() {
+		return power;
 	}
 
 	@Override
@@ -69,8 +75,8 @@ class Bullet1 implements Bullet, Runnable{
 	
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
-		Toolkit.getDefaultToolkit().prepareImage(image, w, h, imageObserver);
-		if(g2d.drawImage(image, x, y, w, h, imageObserver))
+		Toolkit.getDefaultToolkit().prepareImage(img, -1, -1, imageObserver);
+		if(g2d.drawImage(img, x, y, w, h, imageObserver))
 			return true;
 		return false;
 	}

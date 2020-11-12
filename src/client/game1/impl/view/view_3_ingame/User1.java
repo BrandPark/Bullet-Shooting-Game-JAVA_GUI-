@@ -4,8 +4,9 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Vector;
 
 import client.common.Direction;
 import client.common.Location;
@@ -14,7 +15,6 @@ import client.game1.Bullet;
 import client.game1.User;
 
 class User1 implements User{
-	private int power;
 	private int speed;
 	private int life;
 	private int x;
@@ -27,7 +27,6 @@ class User1 implements User{
 	private List<Bullet> bullets;
 	
 	public User1() {
-		this.power = 3;
 		this.speed = 2;
 		this.life = 3;
 		this.x = Location.USER_X;
@@ -35,7 +34,7 @@ class User1 implements User{
 		this.w = Size.USER_W;
 		this.h = Size.USER_H;
 		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/unit/first_user.png");
-		this.bullets = new Vector<Bullet>();
+		this.bullets = new ArrayList<Bullet>();
 		this.shootThread = new ShootThread();
 	}
 	
@@ -57,7 +56,7 @@ class User1 implements User{
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		move();
-		Toolkit.getDefaultToolkit().prepareImage(image, w, h, imageObserver);
+		Toolkit.getDefaultToolkit().prepareImage(image, -1, -1, imageObserver);
 		if(g2d.drawImage(image, x, y, w, h, imageObserver))
 			return true;
 		return false;
@@ -126,10 +125,12 @@ class User1 implements User{
 		
 		private void addBullet() {
 			int centerX = x + (w/2) - 2;
-			if(shootable) 
+			if(shootable) {
 				bullets.add(new Bullet1(centerX,y));
+			}
+				
 			try {
-				Thread.sleep(100);
+				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
