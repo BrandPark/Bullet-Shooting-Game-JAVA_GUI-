@@ -43,8 +43,9 @@ public class Enemy1 implements Enemy, Runnable{
 	public void run() {
 		while(life>0) {
 			y++;
+			hitBox.setLocation(x, y, w, h);
 			try {
-				Thread.sleep(100);
+				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -86,6 +87,7 @@ public class Enemy1 implements Enemy, Runnable{
 	@Override
 	public void damage(int power) {
 		life -= power;
+		System.out.println("맞음");
 	}
 
 	@Override
