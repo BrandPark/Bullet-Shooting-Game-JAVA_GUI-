@@ -57,6 +57,7 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener{
 			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 					RenderingHints.VALUE_ANTIALIAS_ON);
 			g2d.drawImage(buffImg,0,0,this);
+			
 			repaint();
 		}
 	}

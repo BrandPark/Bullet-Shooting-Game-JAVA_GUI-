@@ -7,4 +7,5 @@ public interface User extends Element{
 	public void shoot();
 	public void stopShoot();
 	public List<Bullet> getBullets();
+	public void off();
 }

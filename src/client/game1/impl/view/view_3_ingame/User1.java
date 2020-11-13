@@ -28,18 +28,23 @@ class User1 implements User{
 	private List<Bullet> bullets;
 	
 	public User1() {
-		this.speed = 2;
+		this.speed = 1;
 		this.life = 3;
 		this.x = Location.USER_X;
 		this.y = Location.USER_Y;
 		this.w = Size.USER_W;
 		this.h = Size.USER_H;
 		this.image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
-		this.bulletType = BulletType.Bullet1;
+		this.bulletType = BulletType.UserBullet1;
 		this.bullets = new ArrayList<Bullet>();
 		this.shootThread = new ShootThread();
 	}
 	
+	@Override
+	public void off() {
+		shootThread.off();
+	}
+
 	@Override
 	public void shoot() {
 		shootThread.shoot();
@@ -112,15 +117,17 @@ class User1 implements User{
 	
 	private class ShootThread extends Thread{
 		private boolean shootable;
+		private boolean on;
 		
 		ShootThread(){
 			this.shootable = false;
 			this.start();
+			this.on = true;
 		}
 		
 		@Override
 		public void run() {
-			while(true){
+			while(on){
 				addBullet();
 			}
 		}
@@ -141,6 +148,10 @@ class User1 implements User{
 		}
 		private void stopShoot() {
 			shootable = false;
+		}
+		public void off() {
+			this.on = false;
+			System.out.println("User_SHootThread OFF()...");
 		}
 	}
 }

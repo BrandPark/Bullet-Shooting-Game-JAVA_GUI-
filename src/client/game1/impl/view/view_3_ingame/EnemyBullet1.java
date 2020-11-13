@@ -9,27 +9,27 @@ import client.common.ImageUrl;
 import client.game1.Bullet;
 import client.game1.HitBox;
 
-class Bullet1 implements Bullet, Runnable{
+public class EnemyBullet1 implements Bullet, Runnable{
 	private int x;
 	private int y;
 	private int w;
 	private int h;
-	private Image img;
 	private int power;
 	private int speed;
+	private Image img;
 	private Thread thread;
-	private boolean life;
+	private boolean isValid;
 	private HitBoxImpl hitBox;
 	
-	public Bullet1(int x, int y) {
+	public EnemyBullet1(int x, int y) {
 		this.x = x;
 		this.y = y;
 		this.w = 5;
 		this.h = 35;
 		this.power = 1;
-		this.speed = 10;
-		this.img = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER_BULLET1);
-		this.life = true;
+		this.speed = 3;	
+		this.img = Toolkit.getDefaultToolkit().getImage(ImageUrl.ENEMY_BULLET1);
+		this.isValid = true;
 		this.hitBox = new HitBoxImpl(x,y,w,h);
 		
 		thread = new Thread(this);
@@ -38,10 +38,10 @@ class Bullet1 implements Bullet, Runnable{
 	
 	@Override
 	public void run() {
-		while(life) {
-			y-=speed;
+		while(isValid) {
+			y-=2;
 			hitBox.setLocation(x,y,w,h);
-			bulletSpeed(10);
+			bulletSpeed(speed);
 		}
 	}
 	
@@ -57,12 +57,12 @@ class Bullet1 implements Bullet, Runnable{
 
 	@Override
 	synchronized public void remove() {
-		life = false;
+		isValid = false;
 	}
 	
 	@Override
 	public boolean isDead() {
-		if(life)
+		if(isValid)
 			return false;
 		return true;
 	}
@@ -85,8 +85,13 @@ class Bullet1 implements Bullet, Runnable{
 	
 	
 	private void bulletSpeed(long speed) {
+		long delay = 11 - speed;
+		if(delay <= 0)
+			delay = 1;
+		if(delay >= 11)
+			delay = 10;
 		try {
-			thread.sleep(speed);
+			thread.sleep(delay);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

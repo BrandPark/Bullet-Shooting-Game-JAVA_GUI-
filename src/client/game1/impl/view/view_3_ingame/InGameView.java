@@ -3,9 +3,6 @@ package client.game1.impl.view.view_3_ingame;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import client.game1.Bullet;
@@ -17,24 +14,22 @@ import client.game1.User;
 import client.game1.View;
 
 class InGameView implements View{
-	private final List<Enemy> enemys;
-	private final List<Bullet> bullets;
 	private final Model model;
-	private final User unit;
+	private final User user;
 	private final KeyHandler userHandler;
+	private final PhaseManager phaseManager;
+	private Phase phase;
+	
 	public InGameView(Model model, User user) {
 		this.model = model;
-		this.unit = user;
-		this.bullets = user.getBullets();
-		this.enemys = Collections.synchronizedList(new ArrayList<Enemy>());
+		this.user = user;
+		this.phaseManager = new PhaseManager();
 		this.userHandler = new UserHandler(user);
-		
-		enemys.add(new Enemy1(400,100));
-		enemys.add(new Enemy1(200,100));
+		this.phase = phaseManager.nextPhase();
 	}
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
-		if(!unit.paint(g2d, imageObserver))
+		if(!user.paint(g2d, imageObserver))
 			return false;
 		if(!enemysPaint(g2d, imageObserver))
 			return false;
@@ -45,7 +40,8 @@ class InGameView implements View{
 
 	@Override
 	public void stopView() {
-	
+		user.off();
+		phaseManager.off();
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -59,7 +55,15 @@ class InGameView implements View{
 	
 	private boolean enemysPaint(Graphics2D g2d, ImageObserver imageObserver) {
 		removeDeadEnemy();
-		for(Enemy enemy : enemys) {
+		if(phase.size() == 0) {
+			phase = phaseManager.nextPhase();
+		}
+		if(phase == null) {
+			model.addCommand("CLEAR");
+			return true;
+		}
+		
+		for(Enemy enemy : phase) {
 			if(!enemy.paint(g2d, imageObserver))
 				return false;
 		}
@@ -67,60 +71,70 @@ class InGameView implements View{
 	}
 	
 	private boolean bulletsPaint(Graphics2D g2d, ImageObserver imageObserver) {
-		synchronized(bullets) {
-			removeBulletOverFrame();
-			removeBulletHitEnemy();
-			
-			int size = bullets.size();
-			for(int i=0;i<size;i++) {
-				Bullet bullet = bullets.get(i);
-				if(!bullet.paint(g2d, imageObserver)) 
-					return false;
-			}
+		List<Bullet> userBullets = user.getBullets();
+		
+		removeBulletOverFrame(userBullets);
+		removeBulletHitEnemy(userBullets);
+		if(!userBulletPaint(g2d, imageObserver))
+			return false;
+		return true;
+	}
+
+	private boolean userBulletPaint(Graphics2D g2d, ImageObserver imageObserver) {
+		List<Bullet> userBullets = user.getBullets();
+		int size = userBullets.size();
+		for(int i=0;i<size;i++) {
+			Bullet bullet = userBullets.get(i);
+			if(!bullet.paint(g2d, imageObserver)) 
+				return false;
 		}
 		return true;
 	}
+ 
 	private void removeDeadEnemy() {
-		int size = enemys.size();
+		int size = phase.size();
 		for(int i=0; i<size;i++) {
-			Enemy enemy = enemys.get(i);
+			Enemy enemy = phase.get(i);
 			if(enemy.isDead()) {
-				enemys.remove(enemy);
+				phase.remove(enemy);
 				size--;
 			}
 		}
 	}
 	
-	private void removeBulletOverFrame() {
-		int size = bullets.size();
+	private void removeBulletOverFrame(List<Bullet> userBullets) {
+		int size = userBullets.size();
 		for(int i=0;i<size; i++) {
-			Bullet bullet = bullets.get(i);
+			Bullet bullet = userBullets.get(i);
 			
 			if(!bullet.isInFrame()) {
 				bullet.remove();
-				bullets.remove(bullet);
+				userBullets.remove(bullet);
 				size--;
 			}
 		}
 	}
-	private void removeBulletHitEnemy() {
-		int size = bullets.size();
+	private void removeBulletHitEnemy(List<Bullet> userBullets) {
+		int size = userBullets.size();
 		for(int i=0;i<size; i++) {
-			Bullet bullet = bullets.get(i);
+			Bullet bullet = userBullets.get(i);
 			int hitEnemyIndex = getHitEnemyIndex(bullet.getHitBox());
 			if(hitEnemyIndex != -1) {
 				bullet.remove();
-				bullets.remove(bullet);
+				userBullets.remove(bullet);
 				size--;
-				enemys.get(hitEnemyIndex).damage(bullet.getPower());
+				phase.get(hitEnemyIndex).damage(bullet.getPower());
 			}
 		}
 	}
 	
 	private int getHitEnemyIndex(HitBox hitBox) {
-		for(Enemy enemy : enemys) {
+		if(phase == null) {
+			return -1;
+		}
+		for(Enemy enemy : phase) {
 			if(enemy.isHit(hitBox))
-				return enemys.indexOf(enemy);
+				return phase.indexOf(enemy);
 		}
 		return -1;
 	}
