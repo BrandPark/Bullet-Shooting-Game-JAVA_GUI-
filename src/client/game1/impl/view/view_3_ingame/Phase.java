@@ -14,7 +14,6 @@ public class Phase extends ArrayList<Enemy>{
 		}
 		return bullets;
 	}
-	
 	public void startPhase() {
 		for(Enemy enemy : this) {
 			enemy.startMove();

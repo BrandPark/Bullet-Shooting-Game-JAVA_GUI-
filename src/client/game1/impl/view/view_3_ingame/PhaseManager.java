@@ -3,6 +3,7 @@ package client.game1.impl.view.view_3_ingame;
 import java.util.ArrayList;
 import java.util.List;
 
+import client.game1.Bullet;
 import client.game1.Enemy;
 
 class PhaseManager {
@@ -10,12 +11,13 @@ class PhaseManager {
 	private Phase phase1;
 	private Phase phase2;
 	private List<Phase> phaseList;
-	
+	private List<Bullet> bullets;
 	public PhaseManager(){
 		phaseNum = -1;
 		phase1 = new Phase();
 		phase2 = new Phase();
 		phaseList = new ArrayList<>();
+		bullets = new ArrayList<>();
 		phaseInit();
 	}
 	
@@ -30,13 +32,15 @@ class PhaseManager {
 			
 		return null;
 	}
-	
+	public List<Bullet> getBullets(){
+		return bullets;
+	}
 	private void phaseInit() {
-		phase1.add(new Enemy1(400,100));
-		phase1.add(new Enemy1(200,100));
+		phase1.add(new Enemy1(400,-30, bullets));
+		phase1.add(new Enemy1(200,-30, bullets));
 		
-		phase2.add(new Enemy1(400,100));
-		phase2.add(new Enemy1(200,100));
+		phase2.add(new Enemy1(400,-50, bullets));
+		phase2.add(new Enemy1(200,-50, bullets));
 		
 		phaseList.add(phase1);
 		phaseList.add(phase2);

@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
 import client.common.ImageUrl;
+import client.common.Size;
 import client.game1.Bullet;
 import client.game1.HitBox;
 
@@ -27,7 +28,7 @@ public class EnemyBullet1 implements Bullet, Runnable{
 		this.w = 5;
 		this.h = 35;
 		this.power = 1;
-		this.speed = 3;	
+		this.speed = 2;	
 		this.img = Toolkit.getDefaultToolkit().getImage(ImageUrl.ENEMY_BULLET1);
 		this.isValid = true;
 		this.hitBox = new HitBoxImpl(x,y,w,h);
@@ -39,7 +40,7 @@ public class EnemyBullet1 implements Bullet, Runnable{
 	@Override
 	public void run() {
 		while(isValid) {
-			y-=2;
+			y+=2;
 			hitBox.setLocation(x,y,w,h);
 			bulletSpeed(speed);
 		}
@@ -69,7 +70,7 @@ public class EnemyBullet1 implements Bullet, Runnable{
 	
 	@Override
 	public boolean isInFrame() {
-		if(y+h <= 0)
+		if(y > Size.FRAME_H)
 			return false;
 		return true;
 	}

@@ -26,7 +26,7 @@ public class Enemy1 implements Enemy, Runnable{
 	private Thread thread;
 	private ShootThread shootThread;
 	
-	public Enemy1(int x, int y) {
+	public Enemy1(int x, int y, List<Bullet> bullets) {
 		this.life = 3;
 		this.x = x;
 		this.y = y;
@@ -35,7 +35,7 @@ public class Enemy1 implements Enemy, Runnable{
 		this.hitBox = new HitBoxImpl(x,y,w,h);
 		this.image = Toolkit.getDefaultToolkit().getImage(ImageUrl.ENEMY1);
 		bulletType = BulletType.EnemyBullet1;
-		bullets = new ArrayList<>();
+		this.bullets = bullets;
 		
 	}
 	
@@ -43,9 +43,8 @@ public class Enemy1 implements Enemy, Runnable{
 	public void run() {
 		while(life>0) {
 			y++;
-			bullets.add(bulletType.getBullet(x, y));
 			try {
-				Thread.sleep(30);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -109,12 +108,11 @@ public class Enemy1 implements Enemy, Runnable{
 				addBullet();
 			}
 		}
-		
 		private void addBullet() {
 			int centerX = x + (w/2) - 2;
 			bullets.add(bulletType.getBullet(centerX, y));
 			try {
-				Thread.sleep(300);
+				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

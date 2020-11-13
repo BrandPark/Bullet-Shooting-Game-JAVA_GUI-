@@ -18,6 +18,7 @@ class InGameView implements View{
 	private final User user;
 	private final KeyHandler userHandler;
 	private final PhaseManager phaseManager;
+	private final List<Bullet> enemyBullets;
 	private Phase phase;
 	
 	public InGameView(Model model, User user) {
@@ -26,6 +27,7 @@ class InGameView implements View{
 		this.phaseManager = new PhaseManager();
 		this.userHandler = new UserHandler(user);
 		this.phase = phaseManager.nextPhase();
+		this.enemyBullets = phaseManager.getBullets();
 	}
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
@@ -73,13 +75,26 @@ class InGameView implements View{
 	private boolean bulletsPaint(Graphics2D g2d, ImageObserver imageObserver) {
 		List<Bullet> userBullets = user.getBullets();
 		
-		removeBulletOverFrame(userBullets);
-		removeBulletHitEnemy(userBullets);
+		removeUserBulletOverFrame(userBullets);
+		removeUserBulletHitEnemy(userBullets);
+		removeEnemyBulletOverFrame(enemyBullets);
 		if(!userBulletPaint(g2d, imageObserver))
+			return false;
+		if(!enemyBulletPaint(g2d, imageObserver))
 			return false;
 		return true;
 	}
 
+	private boolean enemyBulletPaint(Graphics2D g2d, ImageObserver imageObserver) {
+		int size = enemyBullets.size();
+		for(int i=0;i<size;i++) {
+			Bullet bullet = enemyBullets.get(i);
+			if(!bullet.paint(g2d, imageObserver)) 
+				return false;
+		}
+		return true;
+	}
+	
 	private boolean userBulletPaint(Graphics2D g2d, ImageObserver imageObserver) {
 		List<Bullet> userBullets = user.getBullets();
 		int size = userBullets.size();
@@ -101,8 +116,19 @@ class InGameView implements View{
 			}
 		}
 	}
-	
-	private void removeBulletOverFrame(List<Bullet> userBullets) {
+	private void removeEnemyBulletOverFrame(List<Bullet> enemyBullets) {
+		int size = enemyBullets.size();
+		for(int i=0;i<size; i++) {
+			Bullet bullet = enemyBullets.get(i);
+			
+			if(!bullet.isInFrame()) {
+				bullet.remove();
+				enemyBullets.remove(bullet);
+				size--;
+			}
+		}
+	}
+	private void removeUserBulletOverFrame(List<Bullet> userBullets) {
 		int size = userBullets.size();
 		for(int i=0;i<size; i++) {
 			Bullet bullet = userBullets.get(i);
@@ -114,7 +140,7 @@ class InGameView implements View{
 			}
 		}
 	}
-	private void removeBulletHitEnemy(List<Bullet> userBullets) {
+	private void removeUserBulletHitEnemy(List<Bullet> userBullets) {
 		int size = userBullets.size();
 		for(int i=0;i<size; i++) {
 			Bullet bullet = userBullets.get(i);
