@@ -67,39 +67,17 @@ class InGameView implements View{
 	}
 	
 	private boolean bulletsPaint(Graphics2D g2d, ImageObserver imageObserver) {
-//		synchronized(bullets) {
-//			removeBulletOverFrame();
-//			removeBulletHitEnemy();
-//			for(Iterator<Bullet> it = bullets.iterator(); it.hasNext();) {
-//				System.out.println("size : "+ bullets.size());
-//				Bullet bullet = it.next();
-//				if(!bullet.paint(g2d, imageObserver)) 
-//					return false;
-//			}
-//		}
-		
-		int size = bullets.size();
-		for(int i=0;i<size; i++) {
-			Bullet bullet = bullets.get(i);
-			if(!bullet.isInFrame()) {
-				bullet.remove();
-				bullets.remove(bullet);
-				size--;
-				continue;
+		synchronized(bullets) {
+			removeBulletOverFrame();
+			removeBulletHitEnemy();
+			
+			int size = bullets.size();
+			for(int i=0;i<size;i++) {
+				Bullet bullet = bullets.get(i);
+				if(!bullet.paint(g2d, imageObserver)) 
+					return false;
 			}
-			int hitEnemyIndex = getHitEnemyIndex(bullet.getHitBox());
-			if(hitEnemyIndex != -1) {
-				bullet.remove();
-				bullets.remove(bullet);
-				size--;
-				enemys.get(hitEnemyIndex).diminishLife(bullet.getPower());
-				continue;
-			}
-			System.out.println("size : "+ bullets.size());
-			if(!bullet.paint(g2d, imageObserver)) 
-				return false;
 		}
-		
 		return true;
 	}
 	private void removeDeadEnemy() {
@@ -134,7 +112,7 @@ class InGameView implements View{
 				bullet.remove();
 				bullets.remove(bullet);
 				size--;
-				enemys.get(hitEnemyIndex).diminishLife(bullet.getPower());
+				enemys.get(hitEnemyIndex).damage(bullet.getPower());
 			}
 		}
 	}

@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
+import client.common.ImageUrl;
 import client.common.Location;
 import client.common.Size;
 import client.game1.Button;
@@ -16,7 +17,7 @@ class UserBtn1 implements Button{
 	private int y = Location.SELECT_CARD_Y;
 	private int w= Size.SELECT_CARD_W;
 	private int h = Size.SELECT_CARD_H;
-	private Image img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/first_user_card.png");
+	private Image img = Toolkit.getDefaultToolkit().getImage(ImageUrl.FIRST_USER_CARD);
 	private String action = "SELECT_USER_1";
 	
 	@Override
@@ -29,12 +30,12 @@ class UserBtn1 implements Button{
 
 	@Override
 	public void focus() {
-		img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/first_user_card_selected.png");
+		img = Toolkit.getDefaultToolkit().getImage(ImageUrl.FIRST_USER_CARD_SELECTED);
 	}
 
 	@Override
 	public void unfocus() {
-		img = Toolkit.getDefaultToolkit().getImage("resource/img/btn/first_user_card.png");
+		img = Toolkit.getDefaultToolkit().getImage(ImageUrl.FIRST_USER_CARD);
 	}
 
 	@Override

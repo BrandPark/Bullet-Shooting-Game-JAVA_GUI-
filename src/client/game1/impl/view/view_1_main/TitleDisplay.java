@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
+import client.common.ImageUrl;
 import client.common.Size;
 import client.game1.Display;
 
@@ -16,7 +17,7 @@ class TitleDisplay implements Display{
 	private Image img = null;
 	
 	public TitleDisplay() {
-		img = Toolkit.getDefaultToolkit().getImage("resource/img/title.png");
+		img = Toolkit.getDefaultToolkit().getImage(ImageUrl.MAIN_TITLE);
 	}
 	
 	@Override

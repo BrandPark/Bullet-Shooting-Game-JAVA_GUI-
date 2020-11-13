@@ -5,10 +5,10 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import client.common.Direction;
+import client.common.ImageUrl;
 import client.common.Location;
 import client.common.Size;
 import client.game1.Bullet;
@@ -24,6 +24,7 @@ class User1 implements User{
 	private Image image;
 	private int moveDirection = 0;
 	private final ShootThread shootThread;
+	private BulletType bulletType;
 	private List<Bullet> bullets;
 	
 	public User1() {
@@ -33,7 +34,8 @@ class User1 implements User{
 		this.y = Location.USER_Y;
 		this.w = Size.USER_W;
 		this.h = Size.USER_H;
-		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/unit/first_user.png");
+		this.image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
+		this.bulletType = BulletType.Bullet1;
 		this.bullets = new ArrayList<Bullet>();
 		this.shootThread = new ShootThread();
 	}
@@ -126,11 +128,10 @@ class User1 implements User{
 		private void addBullet() {
 			int centerX = x + (w/2) - 2;
 			if(shootable) {
-				bullets.add(new Bullet1(centerX,y));
+				bullets.add(bulletType.getBullet(centerX, y));
 			}
-				
 			try {
-				Thread.sleep(50);
+				Thread.sleep(60);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

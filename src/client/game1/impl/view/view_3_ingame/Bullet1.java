@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
+import client.common.ImageUrl;
 import client.game1.Bullet;
 import client.game1.HitBox;
 
@@ -27,7 +28,7 @@ class Bullet1 implements Bullet, Runnable{
 		this.h = 35;
 		this.power = 1;
 		this.speed = 10;
-		this.img = Toolkit.getDefaultToolkit().getImage("resource/img/bullet/bullet1.png");
+		this.img = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER_BULLET1);
 		this.life = true;
 		this.hitBox = new HitBoxImpl(x,y,w,h);
 		

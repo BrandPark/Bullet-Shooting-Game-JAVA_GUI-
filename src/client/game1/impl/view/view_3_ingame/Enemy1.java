@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
+import client.common.ImageUrl;
 import client.common.Size;
 import client.game1.Enemy;
 import client.game1.HitBox;
@@ -25,7 +26,7 @@ public class Enemy1 implements Enemy, Runnable{
 		this.w = Size.USER_W;
 		this.h = Size.USER_H;
 		this.hitBox = new HitBoxImpl(x,y,w,h);
-		this.image = Toolkit.getDefaultToolkit().getImage("resource/img/unit/enemy1.png");
+		this.image = Toolkit.getDefaultToolkit().getImage(ImageUrl.ENEMY1);
 	}
 	
 	@Override
@@ -51,7 +52,7 @@ public class Enemy1 implements Enemy, Runnable{
 	}
 
 	@Override
-	public void diminishLife(int power) {
+	public void damage(int power) {
 		life -= power;
 	}
 
