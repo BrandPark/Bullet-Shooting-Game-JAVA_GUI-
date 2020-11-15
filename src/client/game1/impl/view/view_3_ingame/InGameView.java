@@ -78,6 +78,7 @@ class InGameView implements View{
 		removeUserBulletOverFrame(userBullets);
 		removeUserBulletHitEnemy(userBullets);
 		removeEnemyBulletOverFrame(enemyBullets);
+		removeEnemyBulletHitUser(enemyBullets);
 		if(!userBulletPaint(g2d, imageObserver))
 			return false;
 		if(!enemyBulletPaint(g2d, imageObserver))
@@ -126,6 +127,18 @@ class InGameView implements View{
 				enemyBullets.remove(bullet);
 				size--;
 			}
+		}
+	}
+	private void removeEnemyBulletHitUser(List<Bullet> enemyBullets) {
+		int size = enemyBullets.size();
+		for(int i=0;i<size; i++) {
+			Bullet bullet = enemyBullets.get(i);
+			if(user.isHit(bullet.getHitBox())) {
+				bullet.remove();
+				enemyBullets.remove(bullet);
+				size--;
+				System.out.println("맞음");
+			}	
 		}
 	}
 	private void removeUserBulletOverFrame(List<Bullet> userBullets) {

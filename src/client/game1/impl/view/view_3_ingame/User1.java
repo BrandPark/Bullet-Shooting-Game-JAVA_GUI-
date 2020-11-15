@@ -12,6 +12,7 @@ import client.common.ImageUrl;
 import client.common.Location;
 import client.common.Size;
 import client.game1.Bullet;
+import client.game1.HitBox;
 import client.game1.User;
 
 class User1 implements User{
@@ -26,6 +27,7 @@ class User1 implements User{
 	private final ShootThread shootThread;
 	private BulletType bulletType;
 	private List<Bullet> bullets;
+	private HitBox hitBox;
 	
 	public User1() {
 		this.speed = 1;
@@ -38,6 +40,7 @@ class User1 implements User{
 		this.bulletType = BulletType.UserBullet1;
 		this.bullets = new ArrayList<Bullet>();
 		this.shootThread = new ShootThread();
+		this.hitBox = new HitBoxImpl(x+10,y+10,w-10,h-10);
 	}
 	
 	@Override
@@ -58,6 +61,13 @@ class User1 implements User{
 	@Override
 	public List<Bullet> getBullets() {
 		return bullets;
+	}
+	
+	@Override
+	public boolean isHit(HitBox hitBox) {
+		if(this.hitBox.isCrash(hitBox)) 
+			return true;
+		return false;
 	}
 
 	@Override
@@ -105,7 +115,7 @@ class User1 implements User{
 			x = tempX;
 			y = tempY;
 		}
-			
+		hitBox.setLocation(x+10, y+10, w-10,h-10);
 	}
 	
 	private boolean isInFrame() {
