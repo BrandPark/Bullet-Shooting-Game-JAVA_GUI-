@@ -29,7 +29,6 @@ class User1 implements User{
 	private BulletType bulletType;
 	private List<Bullet> bullets;
 	private HitBox hitBox;
-	private boolean isDamaged;
 	
 	public User1() {
 		this.speed = 1;
@@ -44,7 +43,6 @@ class User1 implements User{
 		this.shootThread = new ShootThread();
 		this.damageThread = new DamageThread();
 		this.hitBox = new HitBoxImpl(x+10,y+10,w-10,h-10);
-		this.isDamaged = false;
 	}
 	
 	@Override
@@ -54,8 +52,7 @@ class User1 implements User{
 	
 	@Override
 	public void damage() {
-		if(!isDamaged)
-			damageThread.damage();
+		damageThread.damage();
 	}
 
 	@Override
@@ -143,7 +140,9 @@ class User1 implements User{
 	}
 	private class DamageThread extends Thread{
 		private boolean on; 
+		private boolean isDamaged;
 		DamageThread(){
+			this.isDamaged = false;
 			this.on = true;
 			this.start();
 		}
@@ -152,42 +151,42 @@ class User1 implements User{
 		public void run() {
 			while(true) {
 				try {
-					checkDamaged();
+					if(isDamaged)
+						checkDamaged();
 					Thread.sleep(30);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
 			}
 		}
 		private void checkDamaged() {
-			if(isDamaged) {
-				try {
-					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
-					Thread.sleep(300);
-					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
-					Thread.sleep(300);
-					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
-					Thread.sleep(300);
-					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
-					Thread.sleep(200);
-					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
-					Thread.sleep(150);
-					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
-					Thread.sleep(100);
-					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
-					Thread.sleep(50);
-					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
-					
-					isDamaged = false;
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+			try {
+				image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+				Thread.sleep(300);
+				image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
+				Thread.sleep(300);
+				image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+				Thread.sleep(300);
+				image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
+				Thread.sleep(200);
+				image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+				Thread.sleep(150);
+				image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
+				Thread.sleep(100);
+				image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+				Thread.sleep(50);
+				image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
+				
+				this.isDamaged = false;
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
 		}
 		public void damage() {
-			life--;
-			isDamaged = true;
+			if(!isDamaged) {
+				life--;
+				this.isDamaged = true;
+			}
 		}
 		
 		public void off() {

@@ -139,7 +139,6 @@ class InGameView implements View{
 				enemyBullets.remove(bullet);
 				size--;
 				user.damage();
-				g2d.fillRect(0, 0, Size.FRAME_W, Size.FRAME_H);
 			}	
 		}
 	}
