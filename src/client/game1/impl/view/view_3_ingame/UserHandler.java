@@ -13,9 +13,9 @@ class UserHandler implements KeyHandler{
 	private List<Bullet> bullets;
 	private int moveDir = 0;
 	
-	public UserHandler(User unit) {
-		this.unit = unit;
-		this.bullets = unit.getBullets();
+	public UserHandler(User user) {
+		this.unit = user;
+		this.bullets = user.getBullets();
 	}
 	
 	@Override
@@ -30,7 +30,7 @@ class UserHandler implements KeyHandler{
 			moveDir = moveDir | Direction.LEFT;
 		if(key == KeyEvent.VK_RIGHT)
 			moveDir = moveDir | Direction.RIGHT;
-		if(key == KeyEvent.VK_SPACE) 
+		if(key == KeyEvent.VK_Z) 
 			unit.shoot();
 			
 		unit.setDirection(moveDir);
@@ -48,7 +48,7 @@ class UserHandler implements KeyHandler{
 			moveDir = moveDir ^ Direction.LEFT;
 		if(key == KeyEvent.VK_RIGHT)
 			moveDir = moveDir ^ Direction.RIGHT;
-		if(key == KeyEvent.VK_SPACE) 
+		if(key == KeyEvent.VK_Z) 
 			unit.stopShoot();
 		unit.setDirection(moveDir);
 	}

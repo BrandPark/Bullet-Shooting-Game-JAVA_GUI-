@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
 import client.common.ImageUrl;
+import client.common.Size;
 import client.game1.Bullet;
 import client.game1.HitBox;
 
@@ -24,8 +25,8 @@ class UserBullet1 implements Bullet, Runnable{
 	public UserBullet1(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.w = 5;
-		this.h = 35;
+		this.w = Size.USER_BULLET1_W;
+		this.h = Size.USER_BULLET1_H;
 		this.power = 1;
 		this.speed = 9;	
 		this.img = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER_BULLET1);
@@ -74,6 +75,7 @@ class UserBullet1 implements Bullet, Runnable{
 		return true;
 	}
 	
+
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		Toolkit.getDefaultToolkit().prepareImage(img, -1, -1, imageObserver);

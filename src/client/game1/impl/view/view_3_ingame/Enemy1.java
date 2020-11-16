@@ -29,11 +29,11 @@ public class Enemy1 implements Enemy, Runnable{
 		this.life = 3;
 		this.x = x;
 		this.y = y;
-		this.w = Size.USER_W;
-		this.h = Size.USER_H;
+		this.w = Size.ENEMY1_W;
+		this.h = Size.ENEMY1_H;
 		this.hitBox = new HitBoxImpl(x,y,w,h);
 		this.image = Toolkit.getDefaultToolkit().getImage(ImageUrl.ENEMY1);
-		bulletType = BulletType.EnemyBullet1;
+		this.bulletType = BulletType.EnemyBullet1;
 		this.bullets = bullets;
 		
 	}
@@ -109,9 +109,11 @@ public class Enemy1 implements Enemy, Runnable{
 				addBullet();
 			}
 		}
+		
 		private void addBullet() {
-			int centerX = x + (w/2) - 2;
-			bullets.add(bulletType.getBullet(centerX, y));
+			int shootX = x + (w/2) - (bulletType.getBulletWidth()/2);
+			int shootY = y + h;
+			bullets.add(bulletType.getBullet(shootX, shootY));
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {

@@ -1,10 +1,12 @@
 package client.game1.impl.view.view_3_ingame;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
 import java.util.List;
 
+import client.common.Size;
 import client.game1.Bullet;
 import client.game1.Enemy;
 import client.game1.HitBox;
@@ -33,12 +35,12 @@ class InGameView implements View{
 	}
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
-		if(!user.paint(g2d, imageObserver))
+		if(!user.paint(g2d, imageObserver) 
+				|| !enemysPaint(g2d, imageObserver) 
+				|| !enemyBulletsPaint(g2d, imageObserver)
+				|| !userBulletsPaint(g2d, imageObserver))
 			return false;
-		if(!enemysPaint(g2d, imageObserver))
-			return false;
-		if(!bulletsPaint(g2d, imageObserver))
-			return false;
+		
 		if(isPhaseClear())
 			nextPhase();
 		if(user.isDead())
@@ -82,19 +84,9 @@ class InGameView implements View{
 		return true;
 	}
 	
-	private boolean bulletsPaint(Graphics2D g2d, ImageObserver imageObserver) {
-		removeUserBulletOverFrame();
-		removeUserBulletHitEnemy();
+	private boolean enemyBulletsPaint(Graphics2D g2d, ImageObserver imageObserver) {
 		removeEnemyBulletOverFrame();
-		removeEnemyBulletHitUser();
-		if(!userBulletPaint(g2d, imageObserver))
-			return false;
-		if(!enemyBulletPaint(g2d, imageObserver))
-			return false;
-		return true;
-	}
-
-	private boolean enemyBulletPaint(Graphics2D g2d, ImageObserver imageObserver) {
+		removeEnemyBulletHitUser(g2d, imageObserver);
 		int size = enemyBullets.size();
 		for(int i=0;i<size;i++) {
 			Bullet bullet = enemyBullets.get(i);
@@ -104,7 +96,9 @@ class InGameView implements View{
 		return true;
 	}
 	
-	private boolean userBulletPaint(Graphics2D g2d, ImageObserver imageObserver) {
+	private boolean userBulletsPaint(Graphics2D g2d, ImageObserver imageObserver) {
+		removeUserBulletOverFrame();
+		removeUserBulletHitEnemy();
 		int size = userBullets.size();
 		for(int i=0;i<size;i++) {
 			Bullet bullet = userBullets.get(i);
@@ -136,7 +130,7 @@ class InGameView implements View{
 			}
 		}
 	}
-	private void removeEnemyBulletHitUser() {
+	private void removeEnemyBulletHitUser(Graphics2D g2d, ImageObserver imageObserver) {
 		int size = enemyBullets.size();
 		for(int i=0;i<size; i++) {
 			Bullet bullet = enemyBullets.get(i);
@@ -145,6 +139,7 @@ class InGameView implements View{
 				enemyBullets.remove(bullet);
 				size--;
 				user.damage();
+				g2d.fillRect(0, 0, Size.FRAME_W, Size.FRAME_H);
 			}	
 		}
 	}

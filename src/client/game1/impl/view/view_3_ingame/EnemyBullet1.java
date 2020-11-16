@@ -25,8 +25,8 @@ public class EnemyBullet1 implements Bullet, Runnable{
 	public EnemyBullet1(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.w = 25;
-		this.h = 25;
+		this.w = Size.ENEMY_BULLET1_W;
+		this.h = Size.ENEMY_BULLET1_H;
 		this.power = 1;
 		this.speed = 2;	
 		this.img = Toolkit.getDefaultToolkit().getImage(ImageUrl.ENEMY_BULLET1);

@@ -28,7 +28,8 @@ class ButtonHandler implements KeyHandler{
 		case KeyEvent.VK_DOWN: down();break;
 		case KeyEvent.VK_LEFT: left();break;
 		case KeyEvent.VK_RIGHT: right();break;
-		case KeyEvent.VK_SPACE: doAction();break;
+		case KeyEvent.VK_SPACE: 
+		case KeyEvent.VK_Z: doAction();break;
 		}
 	}
 

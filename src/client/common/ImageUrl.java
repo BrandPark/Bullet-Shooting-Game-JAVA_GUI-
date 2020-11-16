@@ -19,6 +19,7 @@ abstract public class ImageUrl {
 	public final static String START_BUTTON_SELECTED = url + "btn/start_btn_selected.png";
 	
 	public final static String USER1 = url + "unit/user1.png";
+	public final static String OP_USER1 = url + "unit/op_user1.png";
 	public final static String USER2 = url + "unit/user2.png";
 	public final static String USER3 = url + "unit/user3.png";
 	public final static String ENEMY1 = url + "unit/enemy1.png";

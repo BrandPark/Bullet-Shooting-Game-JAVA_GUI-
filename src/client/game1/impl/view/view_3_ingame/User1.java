@@ -25,9 +25,11 @@ class User1 implements User{
 	private Image image;
 	private int moveDirection = 0;
 	private final ShootThread shootThread;
+	private final DamageThread damageThread;
 	private BulletType bulletType;
 	private List<Bullet> bullets;
 	private HitBox hitBox;
+	private boolean isDamaged;
 	
 	public User1() {
 		this.speed = 1;
@@ -40,7 +42,9 @@ class User1 implements User{
 		this.bulletType = BulletType.UserBullet1;
 		this.bullets = new ArrayList<Bullet>();
 		this.shootThread = new ShootThread();
+		this.damageThread = new DamageThread();
 		this.hitBox = new HitBoxImpl(x+10,y+10,w-10,h-10);
+		this.isDamaged = false;
 	}
 	
 	@Override
@@ -50,7 +54,8 @@ class User1 implements User{
 	
 	@Override
 	public void damage() {
-		life--;
+		if(!isDamaged)
+			damageThread.damage();
 	}
 
 	@Override
@@ -136,7 +141,61 @@ class User1 implements User{
 			return false;
 		return true;
 	}
-	
+	private class DamageThread extends Thread{
+		private boolean on; 
+		DamageThread(){
+			this.on = true;
+			this.start();
+		}
+
+		@Override
+		public void run() {
+			while(true) {
+				try {
+					checkDamaged();
+					Thread.sleep(30);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+			}
+		}
+		private void checkDamaged() {
+			if(isDamaged) {
+				try {
+					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+					Thread.sleep(300);
+					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
+					Thread.sleep(300);
+					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+					Thread.sleep(300);
+					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
+					Thread.sleep(200);
+					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+					Thread.sleep(150);
+					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
+					Thread.sleep(100);
+					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+					Thread.sleep(50);
+					image = Toolkit.getDefaultToolkit().getImage(ImageUrl.USER1);
+					
+					isDamaged = false;
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		public void damage() {
+			life--;
+			isDamaged = true;
+		}
+		
+		public void off() {
+			this.on = false;
+			System.out.println("User_DamageThread OFF()...");
+		}
+		
+	}
 	private class ShootThread extends Thread{
 		private boolean shootable;
 		private boolean on;
@@ -155,9 +214,9 @@ class User1 implements User{
 		}
 		
 		private void addBullet() {
-			int centerX = x + (w/2) - 2;
+			int shootX = x + (w/2) - (bulletType.getBulletWidth()/2);
 			if(shootable) {
-				bullets.add(bulletType.getBullet(centerX, y));
+				bullets.add(bulletType.getBullet(shootX, y));
 			}
 			try {
 				Thread.sleep(60);
