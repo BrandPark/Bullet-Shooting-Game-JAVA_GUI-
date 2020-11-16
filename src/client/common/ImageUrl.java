@@ -5,6 +5,7 @@ abstract public class ImageUrl {
 	
 	public final static String MAIN_TITLE = url + "main_title.png";
 	public final static String SELECT_TITLE = url + "select_title.png";
+	public final static String GAME_OVER_TITLE = url + "game_over_title.png";
 	
 	public final static String FIRST_USER_CARD = url + "btn/first_user_card.png";
 	public final static String FIRST_USER_CARD_SELECTED = url + "btn/first_user_card_selected.png";

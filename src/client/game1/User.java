@@ -9,4 +9,6 @@ public interface User extends Element{
 	public List<Bullet> getBullets();
 	public void off();
 	public boolean isHit(HitBox hitBox);
+	public void damage();
+	public boolean isDead();
 }

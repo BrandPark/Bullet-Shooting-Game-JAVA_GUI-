@@ -47,6 +47,18 @@ class User1 implements User{
 	public void off() {
 		shootThread.off();
 	}
+	
+	@Override
+	public void damage() {
+		life--;
+	}
+
+	@Override
+	public boolean isDead() {
+		if(life<=0)
+			return true;
+		return false;
+	}
 
 	@Override
 	public void shoot() {

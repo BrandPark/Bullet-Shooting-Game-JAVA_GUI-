@@ -45,6 +45,7 @@ class CommandDispatcher extends Thread implements Dispatcher{
 		case "OPTION" : System.out.println("옵션버튼 셀렉트"); break;
 		case "SELECT_USER_1" :  projector.showInGame(InGameViewFactory.getUser1());break;
 		case "CLEAR" : projector.showMain();break;
+		case "GAME_OVER" : projector.showMain(); System.out.println("GAME_OVER");break;
 		}
 	}
 	
