@@ -1,5 +1,6 @@
 package client.game1.impl;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,6 +18,7 @@ import client.game1.Projector;
 import client.game1.User;
 import client.game1.View;
 import client.game1.impl.view.ViewFactory;
+import client.game1.impl.view.view_3_ingame.Timer;
 
 class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	private View view;
@@ -51,7 +53,7 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	@Override
 	public void update(Graphics g) {
 		buffg.clearRect(0, 0, Size.FRAME_W, Size.FRAME_H);
-		
+		buffg.setBackground(new Color(80,188,223));
 		if(view != null && view.paint(buffg,this)) {
 			Graphics2D g2d = (Graphics2D)g;
 			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
@@ -77,6 +79,7 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	public void showInGame(User unit) {
 		clearView();
 		view = ViewFactory.getInGameView(model, unit);
+		
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {

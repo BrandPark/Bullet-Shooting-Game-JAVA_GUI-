@@ -1,5 +1,6 @@
 package client.game1.impl.view.view_1_main;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
