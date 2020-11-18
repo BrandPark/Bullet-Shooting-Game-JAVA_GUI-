@@ -86,7 +86,7 @@ public class Enemy1 implements Enemy, Runnable{
 	@Override
 	public void damage(int power) {
 		life -= power;
-		System.out.println("맞음");
+		
 	}
 
 	@Override

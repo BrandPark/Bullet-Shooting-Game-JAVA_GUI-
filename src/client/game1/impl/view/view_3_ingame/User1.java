@@ -87,7 +87,6 @@ class User1 implements User{
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
 		move();
-		
 		Toolkit.getDefaultToolkit().prepareImage(image, -1, -1, imageObserver);
 		if(g2d.drawImage(image, x, y, w, h, imageObserver))
 			return true;
@@ -219,7 +218,7 @@ class User1 implements User{
 				bullets.add(bulletType.getBullet(shootX, y));
 			}
 			try {
-				Thread.sleep(60);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
