@@ -3,18 +3,19 @@ package client.game1.impl;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import client.game1.Dispatcher;
 import client.game1.Model;
 import client.game1.Projector;
 import client.game1.impl.view.view_3_ingame.InGameViewFactory;
 
-class CommandDispatcher extends Thread implements Dispatcher{
+public class CommandDispatcher extends Thread {
 	private Projector projector;
 	private Model model;
 	
-	public CommandDispatcher() {
-		model = new ModelImpl();
-		projector = GameFactory.getProjector(model);
+	public CommandDispatcher(Projector projector) {
+		this.model = new ModelImpl();
+		this.projector = projector;
+		projector.showMain(model);
+		this.start();
 	}
 	
 	@Override
@@ -32,20 +33,14 @@ class CommandDispatcher extends Thread implements Dispatcher{
 		}
 	}
 
-	@Override
-	public void startThread() {
-		projector.startProjector();
-		this.start();
-	}
-	
 	private void execute(String command) {
 		System.out.println(command);
 		switch(command) {
-		case "GAME_START" : projector.showSelectUnit(); break;
+		case "GAME_START" : projector.showSelectUnit(model); break;
 		case "OPTION" : System.out.println("옵션버튼 셀렉트"); break;
-		case "SELECT_USER_1" :  projector.showInGame(InGameViewFactory.getUser1());break;
-		case "CLEAR" : projector.showMain();break;
-		case "GAME_OVER" : projector.showMain();break;
+		case "SELECT_USER_1" :  projector.showInGame(InGameViewFactory.getUser1(), model);break;
+		case "CLEAR" : projector.showMain(model);break;
+		case "GAME_OVER" : projector.showMain(model);break;
 		}
 	}
 	

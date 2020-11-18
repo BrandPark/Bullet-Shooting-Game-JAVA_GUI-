@@ -1,6 +1,11 @@
 package client.game1;
 
-public interface Game {
-	public void setDispatcher(Dispatcher dispatcher);
-	public void startGame();
+import client.game1.impl.CommandDispatcher;
+import client.game1.impl.ProjectorImpl;
+
+public class Game{
+	public void startGame() {
+		Projector projector = new ProjectorImpl();
+		CommandDispatcher commandDispatcher = new CommandDispatcher(projector);
+	}
 }

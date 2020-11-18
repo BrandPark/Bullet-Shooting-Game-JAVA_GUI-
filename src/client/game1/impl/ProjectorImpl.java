@@ -19,23 +19,15 @@ import client.game1.User;
 import client.game1.View;
 import client.game1.impl.view.ViewFactory;
 
-class ProjectorImpl extends JPanel implements Projector, KeyListener{
+public class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	private View view;
 	private JFrame frame;
-	private Model model;
 	private Image buffImg;
 	private Graphics2D buffg;
 	
-	public ProjectorImpl(Model model) {
+	public ProjectorImpl() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
-		this.model = model;
-		
-		showMain();
 		frameInit();
-	}
-
-	@Override
-	public void startProjector() {
 		repaint();
 	}
 
@@ -63,19 +55,19 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener{
 		}
 	}
 	@Override
-	public void showMain() {
+	public void showMain(Model model) {
 		clearView();
 		view = ViewFactory.getMainView(model);
 	}
 
 	@Override
-	public void showSelectUnit() {
+	public void showSelectUnit(Model model) {
 		clearView();
 		view = ViewFactory.getSelectUnitView(model);
 	}
 
 	@Override
-	public void showInGame(User unit) {
+	public void showInGame(User unit, Model model) {
 		clearView();
 		view = ViewFactory.getInGameView(model, unit);
 		

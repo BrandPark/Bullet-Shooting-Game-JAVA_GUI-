@@ -1,12 +1,12 @@
 package client;
 
-import client.game1.impl.GameContext;
+import client.game1.Game;
 
 public class Client {
 
 	public static void main(String[] args) {
-		GameContext gc = new GameContext();
-		gc.getGame().startGame();
+		Game game = new Game();
+		game.startGame();
 	}
 
 }
