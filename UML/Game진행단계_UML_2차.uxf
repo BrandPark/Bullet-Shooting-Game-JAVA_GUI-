@@ -1,0 +1,1557 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+fontsize=18
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2166</x>
+      <y>858</y>
+      <w>222</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>GamePanel
+--
+userUnitInfo: String
+levelInfo: String
+enemyUnits: Vector&lt;Unit&gt;
+backgroundImageUrl: String
+
+--
+run(): void 
+getHitAreas(): Vector&lt;Area&gt;
+getEnemyUnits(): Vector&lt;Area&gt;
+setLifeLabel(life: int): void
+setTimeLabel(): void
+setUserUnitInfo(code: int): void
+setBackground(img:String): void
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2442</x>
+      <y>810</y>
+      <w>114</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>UserUnit 
+--
+--
+getLife(): void
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2508</x>
+      <y>918</y>
+      <w>156</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>EnemyUnit
+--
+movePattern: MovePattern
+shootPattern: ShootPattern
+score: int
+--
+getUnitCode(): int
+setMovePattern(): void
+setShootPattern: void
+setScore(unitCode: int): void
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2616</x>
+      <y>1044</y>
+      <w>162</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>EnemyBullet
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2400</x>
+      <y>684</y>
+      <w>174</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>UserBullet
+--
+bulletType: int 
+power: int
+shootDelay: int
+bulletImageUrl: String
+--
+move(): void
+getShootDelay() : void
+checkHit(): boolean //유닛에 맞았는지 확인
+deleteBullet(): void
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2052</x>
+      <y>630</y>
+      <w>144</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>TimeLabel
+--
+mm: int
+ss: int
+ms: int
+--
+run(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2208</x>
+      <y>636</y>
+      <w>96</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>LifeLabel
+--
+userLife: int
+--
+setLife(life: int)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1326</x>
+      <y>492</y>
+      <w>84</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>MainFrame
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2382</x>
+      <y>1086</y>
+      <w>102</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Boss
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2460</x>
+      <y>756</y>
+      <w>78</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2382</x>
+      <y>930</y>
+      <w>138</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>210.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2112</x>
+      <y>702</y>
+      <w>156</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;240.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2610</x>
+      <y>978</y>
+      <w>48</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;160.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2250</x>
+      <y>672</y>
+      <w>30</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>20.0;10.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2388</x>
+      <y>912</y>
+      <w>132</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;290.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2772</x>
+      <y>798</y>
+      <w>234</w>
+      <h>222</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Unit
+--
+unitCode: int
+speed: int
+imageUrl: String
+life : int 
+bulletType: int
+--
+shoot(): abstract void
+move() : abstract void
+changeBullet(type: int): void
+changePower(type: int): void
+attacked(): abstract void
+getHitArea(): abstract void
+setImageUrl(unitCode: int): void
+{innerclass
+Area
+--
+x: int
+y: int
+width: int
+height: int
+--
+getHitArea(): String //x%y%x-end%y-end%whatUnit
+innerclass}
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1794</x>
+      <y>960</y>
+      <w>222</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>HitCheckThread
+--
+hitAreas: Vector&lt;Area&gt;
+
+--
+setHitAreaFromUnits(): void
+getHitAreas(): Vector&lt;Area&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1794</x>
+      <y>1080</y>
+      <w>234</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>FileLoaderUtil
+--
+enemyUnits: Vector&lt;Unit&gt;
+--
+setEnemyUnitsFromFile(levelInfo: String): Vector&lt;Unit&gt;
+getEnemyUnits(): Vector&lt;Unit&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2010</x>
+      <y>948</y>
+      <w>168</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;70.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2022</x>
+      <y>948</y>
+      <w>156</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;230.0;240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2550</x>
+      <y>834</y>
+      <w>234</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>370.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2658</x>
+      <y>888</y>
+      <w>126</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2478</x>
+      <y>1068</y>
+      <w>150</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1854</x>
+      <y>1170</y>
+      <w>174</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>ImageUrl: static
+--
+USER_UNIT_1: static final int
+USER_UNIT_2: static final int
+..
+Enemy_UNIT_1: static final int
+..
+Background_1: static final int
+..
+--
+getImageUrl(imageCode: int): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2322</x>
+      <y>630</y>
+      <w>114</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>ScoreLabel
+--
+score: int
+--
+getScore(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2250</x>
+      <y>678</y>
+      <w>114</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1698</x>
+      <y>1206</y>
+      <w>150</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+fg=black
+1~10 user UnitCode
+101~199  EnemyUnitCode
+201~299 BossUnitCode
+1001~1999 levelCode = backgroundImgCode</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1506</x>
+      <y>324</y>
+      <w>192</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>*StepService*
+--
+curPanelIndex: int
+--
+nextStep(): void
+focusing(stepPanel: StepPanel): void
+startStep(stepPanel: StepPanel): void
+///////////////////
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1524</x>
+      <y>192</y>
+      <w>132</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>*UserRepo*
+--
+userUnitUrl: String
+--
+saveUserUnitUrl(url: String): void
+getUserUnitUrl(): String
+//
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1344</x>
+      <y>192</y>
+      <w>144</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>*EnemyRepo*
+--
+level: int
+enemys: Vector&lt;Unit&gt;
+--
+getEnemys(): Vector&lt;Unit&gt;
+
+///////////////
+group=1
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1410</x>
+      <y>252</y>
+      <w>192</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+///////////////////
+group=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;300.0;90.0;300.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1680</x>
+      <y>192</y>
+      <w>174</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>*StepRepo*
+--
+step1Name: Enum
+step2Name: Enum
+--
+getStep(stepName: Enum): Enum
+/////
+group=1
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1584</x>
+      <y>246</y>
+      <w>204</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+/////
+group=1</panel_attributes>
+    <additional_attributes>320.0;10.0;320.0;100.0;10.0;100.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1404</x>
+      <y>498</y>
+      <w>36</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=add()</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1746</x>
+      <y>486</y>
+      <w>132</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+*StepPanel*
+fontsize=30
+layer=2
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>948</y>
+      <w>78</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>StepManager
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>948</y>
+      <w>84</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>StepPanels
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>804</y>
+      <w>78</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>PanelRepo
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>960</y>
+      <w>234</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=*
+m1=1</panel_attributes>
+    <additional_attributes>370.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>810</y>
+      <w>264</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;230.0;420.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>786</x>
+      <y>822</y>
+      <w>24</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>480</x>
+      <y>636</y>
+      <w>474</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>사이클 발생!.
+MainFrame에서 StepManager를 싱글턴으로 호출하면 PanelRepo객체를 만들고 
+PanelRepo의 생성자에서 panelInit()을통해 FirstPanel객체를 생성한다
+FirstPanel은 멤버로 다시 StepManager를 싱글턴으로 호출한다.
+이때 싱글턴 체크 메서드가 두 번 실행 될 수 있다. 여기서는 같은 스레드에서 두번 실행되었다. 
+깨달은 것. 메서드 안에서 new를 한다는 것은 항상 강한 결합력이 발생한다는 것을 주의해야함.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1584</x>
+      <y>252</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>594</x>
+      <y>1086</y>
+      <w>102</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>StepPanelList
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>1104</y>
+      <w>156</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;210.0;240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>1104</y>
+      <w>132</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>200.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>342</x>
+      <y>1314</y>
+      <w>624</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>생성시점을 다르게해서 싱글턴 체크 메서드가 두 번 실행되지 않게 할 수도 있지만
+그러면 사이클이 해소되진 않기 때문에 StepPanel들을 List에 담아서 보내주는 클래스를 추가하여 사이클을 해소하였다. 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>774</x>
+      <y>1230</y>
+      <w>78</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>StepManager
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>474</x>
+      <y>1230</y>
+      <w>84</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>StepPanels
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>762</x>
+      <y>1086</y>
+      <w>78</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>PanelRepo
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>1242</y>
+      <w>234</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=*
+m1=1</panel_attributes>
+    <additional_attributes>370.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>1104</y>
+      <w>24</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>948</x>
+      <y>1488</y>
+      <w>84</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>MainFrame</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1194</x>
+      <y>1488</y>
+      <w>84</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>StepManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>996</x>
+      <y>1452</y>
+      <w>240</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=add()</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0;380.0;10.0;380.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>996</x>
+      <y>1506</y>
+      <w>300</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=getInstance()</panel_attributes>
+    <additional_attributes>380.0;10.0;380.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>384</x>
+      <y>1506</y>
+      <w>546</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>첫 단추부터 문제였다. 학교에서 수업때 배운 버릇대로 main()안에서 new MainFrame("title");를 하고
+MainFrame의 생성자에서 StepManager의 객체를 생성하여 this로 인자를 넘겨주었다.
+그래야만 StepManager를 통해 MainFrame에 패널을 붙일 수 있다고 생각했다. 
+이렇게 하면 문제는 양방향의 연관관계가 생겨 매우 강한결합을 갖게된다. 
+처음에는 어쩔수 없다고 생각하고 진행했지만 StepPanelList로 사이클을 해결하면서 한번더 생각해 보게되었다.
+답은 main()안에 있었다. 
+
+main()에서 StepManager객체를 생성하고 메서드를 통해 MainFrame의 객체를 StepManager에 보내면
+MainFrame과 StepManager의 연관관계는 한방향이 된다.
+역시 습관은 무섭다. 지금부터라도 생각하면서 코딩하는 습관을 가져야 겠다. </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>978</x>
+      <y>1626</y>
+      <w>84</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>MainFrame</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1224</x>
+      <y>1626</y>
+      <w>84</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>StepManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1056</x>
+      <y>1626</y>
+      <w>180</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=gameStart(frame: JFrame)</panel_attributes>
+    <additional_attributes>10.0;10.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1104</x>
+      <y>1710</y>
+      <w>84</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>main()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1032</x>
+      <y>1644</y>
+      <w>84</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=new()</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0;120.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1182</x>
+      <y>1644</y>
+      <w>138</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=getInstance()</panel_attributes>
+    <additional_attributes>110.0;10.0;110.0;130.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>624</x>
+      <y>432</y>
+      <w>396</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>싱글턴에 인자를 넣는 것은 매우 힘들다.
+왜냐하면 싱글턴을 만들때는 Static으로 메서드와 객체레퍼런스를 생성하는데
+static특성상 클래스가 로더되기 전에 먼저 실행되기 때문에 
+전달되는 인자가 Static변수이지 않는이상 null값이 전달된다. </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2304</x>
+      <y>1362</y>
+      <w>60</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>mainFrame</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2538</x>
+      <y>1398</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>StepManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2478</x>
+      <y>1596</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Panels
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2358</x>
+      <y>1362</y>
+      <w>192</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=add(), threadStart()
+</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2502</x>
+      <y>1410</y>
+      <w>114</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=nextStep()
+m2=start()</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2076</x>
+      <y>1452</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>BackgroundSoundThread</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2130</x>
+      <y>1380</y>
+      <w>198</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>2448</x>
+      <y>1182</y>
+      <w>252</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>게임재시작 기능도 있기 때문에 nextStep()을통해 add()를 할때마다 동시에 PanelThread를 생성해서 start()해야함.
+panel들은 Array로 StepManager에 들어있기때문에 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2466</x>
+      <y>1602</y>
+      <w>30</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2436</x>
+      <y>1674</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>panelThread</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1452</x>
+      <y>486</y>
+      <w>234</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>*StepController*
+--
+--
+stepPanelChange(StepPanel,StepPanel): void
+/////////////////////
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1584</x>
+      <y>390</y>
+      <w>18</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+/////////////
+layer=3</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1320</x>
+      <y>156</y>
+      <w>582</w>
+      <h>258</h>
+    </coordinates>
+    <panel_attributes>*service*
+////////
+bg=pink
+fontsize=24
+layer=0
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1296</x>
+      <y>420</y>
+      <w>624</w>
+      <h>444</h>
+    </coordinates>
+    <panel_attributes>*steps*
+bg=orange
+fontsize=24
+fg=black
+layer=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1404</x>
+      <y>486</y>
+      <w>60</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+add()
+fontsize=20
+layer=3
+bg=black
+
+</panel_attributes>
+    <additional_attributes>10.0;30.0;80.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>858</x>
+      <y>1110</y>
+      <w>420</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>1. 패널들이 미리 저장되어있다. GamePanel의 UserUnit은 아직 만들어져 있지 않다.
+2. 패널이 nextStep()을 호출..
+3. StepController가 stepPanelChange()로 패널을 바꾼다.
+4. 그 후 바로 StepService의 startStep()을 호출하여 패널의 start()를 실행시킨다.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1314</x>
+      <y>654</y>
+      <w>588</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>*step1...n*
+bg=green
+fontsize=24
+fg=black
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1758</x>
+      <y>708</y>
+      <w>120</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>*Panel*
+//////////////////
+layer=2
+fg=black
+fontsize=40
+valign=center
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2382</x>
+      <y>834</y>
+      <w>72</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1836</x>
+      <y>534</y>
+      <w>18</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+/////////////////
+layer=3
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1680</x>
+      <y>504</y>
+      <w>78</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*
+////
+layer=3</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>726</y>
+      <w>114</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1
+///////
+layer=2</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1566</x>
+      <y>714</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>*JLabel*
+/////////////////
+fontsize=30
+layer=2
+valign=center
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>726</y>
+      <w>114</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1
+///////
+layer=2</panel_attributes>
+    <additional_attributes>10.0;100.0;90.0;100.0;90.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1566</x>
+      <y>774</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>*JButton*
+/////////////////
+fontsize=30
+layer=2
+valign=center
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1314</x>
+      <y>450</y>
+      <w>588</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>*step0*
+bg=green
+fontsize=24
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1338</x>
+      <y>558</y>
+      <w>234</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+*StepFactory*
+--
+--
+getStep(stepName: String): String
+////////////////
+fontsize=24
+layer=2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1566</x>
+      <y>534</y>
+      <w>252</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+////
+layer=3</panel_attributes>
+    <additional_attributes>400.0;10.0;400.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>1878</y>
+      <w>528</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>1. 객체는 책임이다
+2. 각 책임들은 캡슐화 되고 필요한 메서드만 public으로 만든다
+3. 설계는 인터페이스(public method) 중심으로 해야한다. 
+ - 한 클래스가 책임을 다른 클래스에 의존(위임)하는 순간 수정 할 것을 생각해 보아야 한다.
+ - 인터페이스 중심이란 큰 책임으로 나누어 각 책임 들이 서로에게 보낼 메세지를 생각해보고 거기서 부터
+   설계를 시작하는 것이다.
+4. 위임을 하기위해 다른 클래스의 메서드를 호출하는 것을 객체지향에서는 메시징이라한다.
+ - 메시징은 인터페이스 이며, 해당 클래스에게 이것을 해라 라는 명령이다.
+   따라서 메서드명은 명령형으로 짓는다.
+5. 추상클래스는 여러클래스의 타입을 하나로 묶어서 다룰 수 있게 해준다.(다형성)
+ - 추상클래스에는 공통의 인터페이스를 작성하고 이 인터페이스를 통해서만 의존하게 하는 것이 좋다.
+ 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2184</x>
+      <y>246</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>StepManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2358</x>
+      <y>246</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Step</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2514</x>
+      <y>366</y>
+      <w>60</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>UserUnit</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2724</x>
+      <y>366</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Bullet
+--
+--
+paint()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2250</x>
+      <y>240</y>
+      <w>120</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt; nextStep()
+</panel_attributes>
+    <additional_attributes>10.0;30.0;180.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2376</x>
+      <y>264</y>
+      <w>150</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+paint() &gt;
+</panel_attributes>
+    <additional_attributes>230.0;180.0;10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2568</x>
+      <y>360</y>
+      <w>168</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+paint() &gt;
+</panel_attributes>
+    <additional_attributes>260.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2520</x>
+      <y>198</y>
+      <w>144</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>HitBoxLocationCollection</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2514</x>
+      <y>438</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>EnemyUnit</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2376</x>
+      <y>264</y>
+      <w>144</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+paint() &gt;
+</panel_attributes>
+    <additional_attributes>220.0;310.0;10.0;310.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2424</x>
+      <y>192</y>
+      <w>108</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+addToList(:Unit) &gt;</panel_attributes>
+    <additional_attributes>160.0;30.0;10.0;30.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2712</x>
+      <y>252</y>
+      <w>78</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>HitCheck</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2748</x>
+      <y>276</y>
+      <w>102</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+hitcheck(:Point) ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2646</x>
+      <y>198</y>
+      <w>90</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+hitCheck(:Point)</panel_attributes>
+    <additional_attributes>30.0;30.0;110.0;30.0;110.0;110.0</additional_attributes>
+  </element>
+</diagram>
