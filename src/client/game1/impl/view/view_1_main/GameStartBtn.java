@@ -8,6 +8,7 @@ import java.awt.image.ImageObserver;
 import client.common.ImageUrl;
 import client.common.Size;
 import client.game1.Button;
+import client.game1.Model;
 
 class GameStartBtn implements Button {
 	private int x = Size.FRAME_W/8 * 3;
@@ -35,8 +36,8 @@ class GameStartBtn implements Button {
 	}
 
 	@Override
-	public String getAction() {
-		return action;
+	public void doAction(Model model) {
+		model.addCommand(action);
 	}
 	
 }

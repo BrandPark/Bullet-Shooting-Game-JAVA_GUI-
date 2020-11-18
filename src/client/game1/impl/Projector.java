@@ -27,12 +27,12 @@ public class Projector extends JPanel implements KeyListener{
 	public Projector() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		frameInit();
+		createImgBuff();
 		repaint();
 	}
 
 	@Override
 	public void paint(Graphics g) {
-		createImgBuff();
 		update(g);
 	}
 	

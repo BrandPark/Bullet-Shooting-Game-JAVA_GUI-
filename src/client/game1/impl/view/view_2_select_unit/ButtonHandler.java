@@ -19,6 +19,7 @@ class ButtonHandler implements KeyHandler{
 		this.index = 0;
 		focusBtn(index);
 	}
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
@@ -28,7 +29,7 @@ class ButtonHandler implements KeyHandler{
 		case KeyEvent.VK_LEFT: left();break;
 		case KeyEvent.VK_RIGHT: right();break;
 		case KeyEvent.VK_SPACE: 
-		case KeyEvent.VK_Z: doAction();break;
+		case KeyEvent.VK_Z: activateBtn();break;
 		}
 	}
 
@@ -64,11 +65,10 @@ class ButtonHandler implements KeyHandler{
 		index++;
 		focusBtn(index);
 	}
-	private void doAction() {
-		String command = buttons.get(index).getAction();
-		model.addCommand(command);
+	
+	private void activateBtn() {
+		buttons.get(index).doAction(model);
 	}
-
 	
 	private void focusBtn(int index) {
 		buttons.get(index).focus();

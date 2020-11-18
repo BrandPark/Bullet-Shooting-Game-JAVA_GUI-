@@ -9,6 +9,7 @@ import client.common.ImageUrl;
 import client.common.Location;
 import client.common.Size;
 import client.game1.Button;
+import client.game1.Model;
 
 
 class UserBtn3 implements Button{
@@ -39,7 +40,7 @@ class UserBtn3 implements Button{
 	}
 
 	@Override
-	public String getAction() {
-		return action;
+	public void doAction(Model model) {
+		model.addCommand(action);
 	}
 }

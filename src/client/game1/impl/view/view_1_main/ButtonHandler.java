@@ -29,7 +29,7 @@ class ButtonHandler implements KeyHandler{
 		case KeyEvent.VK_LEFT: left();break;
 		case KeyEvent.VK_RIGHT: right();break;
 		case KeyEvent.VK_SPACE: 
-		case KeyEvent.VK_Z: doAction();break;
+		case KeyEvent.VK_Z: activateBtn();break;
 		}
 	}
 
@@ -65,9 +65,9 @@ class ButtonHandler implements KeyHandler{
 		index++;
 		focusBtn(index);
 	}
-	private void doAction() {
-		String command = buttons.get(index).getAction();
-		model.addCommand(command);
+	
+	private void activateBtn() {
+		buttons.get(index).doAction(model);
 	}
 	
 	private void focusBtn(int index) {

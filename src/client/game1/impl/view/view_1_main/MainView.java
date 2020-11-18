@@ -51,6 +51,7 @@ class MainView implements View{
 	public void keyReleased(KeyEvent e) {
 		buttonHandler.keyReleased(e);
 	}
+	
 	private void initButtons() {
 		buttons.add(new GameStartBtn());
 		buttons.add(new OptionBtn());

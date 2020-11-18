@@ -9,6 +9,7 @@ import client.common.ImageUrl;
 import client.common.Location;
 import client.common.Size;
 import client.game1.Button;
+import client.game1.Model;
 
 
 class UserBtn2 implements Button{
@@ -38,7 +39,7 @@ class UserBtn2 implements Button{
 		img = Toolkit.getDefaultToolkit().getImage(ImageUrl.SECOND_USER_CARD);
 	}
 	@Override
-	public String getAction() {
-		return action;
+	public void doAction(Model model) {
+		model.addCommand(action);
 	}
 }
