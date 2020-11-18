@@ -1,6 +1,6 @@
 package client;
 
-import client.game1.Game;
+import client.game.Game;
 
 public class Client {
 
