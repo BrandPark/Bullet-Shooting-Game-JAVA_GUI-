@@ -1,11 +1,11 @@
 package client.game1;
 
 import client.game1.impl.CommandDispatcher;
-import client.game1.impl.ProjectorImpl;
+import client.game1.impl.Projector;
 
 public class Game{
 	public void startGame() {
-		Projector projector = new ProjectorImpl();
+		Projector projector = new Projector();
 		CommandDispatcher commandDispatcher = new CommandDispatcher(projector);
 	}
 }

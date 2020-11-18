@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import client.game1.Model;
-import client.game1.Projector;
 import client.game1.impl.view.view_3_ingame.InGameViewFactory;
 
 public class CommandDispatcher extends Thread {

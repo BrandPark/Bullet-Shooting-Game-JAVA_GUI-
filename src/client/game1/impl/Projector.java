@@ -14,18 +14,17 @@ import javax.swing.JPanel;
 
 import client.common.Size;
 import client.game1.Model;
-import client.game1.Projector;
 import client.game1.User;
 import client.game1.View;
 import client.game1.impl.view.ViewFactory;
 
-public class ProjectorImpl extends JPanel implements Projector, KeyListener{
+public class Projector extends JPanel implements KeyListener{
 	private View view;
 	private JFrame frame;
 	private Image buffImg;
 	private Graphics2D buffg;
 	
-	public ProjectorImpl() {
+	public Projector() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		frameInit();
 		repaint();
@@ -33,45 +32,32 @@ public class ProjectorImpl extends JPanel implements Projector, KeyListener{
 
 	@Override
 	public void paint(Graphics g) {
-		if(buffg == null) {
-			buffImg = createImage(Size.FRAME_W,Size.FRAME_H);
-			buffg = (Graphics2D) buffImg.getGraphics();
-			buffg.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-					RenderingHints.VALUE_ANTIALIAS_ON);
-		}
+		createImgBuff();
 		update(g);
 	}
+	
 	@Override
 	public void update(Graphics g) {
-		buffg.clearRect(0, 0, Size.FRAME_W, Size.FRAME_H);
-		buffg.setBackground(new Color(80,188,223));
-		if(view != null && view.paint(buffg,this)) {
-			Graphics2D g2d = (Graphics2D)g;
-			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-					RenderingHints.VALUE_ANTIALIAS_ON);
-			g2d.drawImage(buffImg,0,0,this);
-			
-			repaint();
-		}
+		clearBuffg();
+		viewPaint(g);
 	}
-	@Override
+	
 	public void showMain(Model model) {
 		clearView();
 		view = ViewFactory.getMainView(model);
 	}
 
-	@Override
 	public void showSelectUnit(Model model) {
 		clearView();
 		view = ViewFactory.getSelectUnitView(model);
 	}
 
-	@Override
 	public void showInGame(User unit, Model model) {
 		clearView();
 		view = ViewFactory.getInGameView(model, unit);
-		
 	}
+	
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		view.keyPressed(e);
@@ -89,17 +75,41 @@ public class ProjectorImpl extends JPanel implements Projector, KeyListener{
 		frame = new JFrame("Bullet Shooting Game");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(this);
+		
 		addKeyListener(this);
+		
 		requestFocus();
 		setFocusable(true);
+		
 		frame.pack();
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
 	
+	private void viewPaint(Graphics g) {
+		if(view != null && view.paint(buffg,this)) {
+			Graphics2D g2d = (Graphics2D)g;
+			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+					RenderingHints.VALUE_ANTIALIAS_ON);
+			g2d.drawImage(buffImg,0,0,this);
+			repaint();
+		}
+	}
 	private void clearView() {
 		if(view != null)
 			view.stopView();
+	}
+	private void createImgBuff() {
+		if(buffg == null) {
+			buffImg = createImage(Size.FRAME_W,Size.FRAME_H);
+			buffg = (Graphics2D) buffImg.getGraphics();
+			buffg.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+					RenderingHints.VALUE_ANTIALIAS_ON);
+		}
+	}
+	private void clearBuffg() {
+		buffg.clearRect(0, 0, Size.FRAME_W, Size.FRAME_H);
+		buffg.setBackground(new Color(80,188,223));
 	}
 }
