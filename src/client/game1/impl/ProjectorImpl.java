@@ -18,7 +18,6 @@ import client.game1.Projector;
 import client.game1.User;
 import client.game1.View;
 import client.game1.impl.view.ViewFactory;
-import client.game1.impl.view.view_3_ingame.Timer;
 
 class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	private View view;

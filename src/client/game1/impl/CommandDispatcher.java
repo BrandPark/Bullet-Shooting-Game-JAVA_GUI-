@@ -49,7 +49,7 @@ class CommandDispatcher extends Thread implements Dispatcher{
 		}
 	}
 	
-	private class ModelImpl implements Model {
+	private static class ModelImpl implements Model {
 		private Queue<String> commandQueue = new LinkedList<>();
 
 		@Override
