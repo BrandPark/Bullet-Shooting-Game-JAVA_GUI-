@@ -7,8 +7,8 @@ import java.awt.image.ImageObserver;
 
 import client.game.Bullet;
 import client.game.HitBox;
-import client.game.impl.common.ImageUrl;
-import client.game.impl.common.Size;
+import client.game.common.ImageUrl;
+import client.game.common.Size;
 
 public class EnemyBullet1 implements Bullet, Runnable{
 	private int x;

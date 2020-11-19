@@ -6,10 +6,13 @@ import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
 import client.game.Button;
+import client.game.Command;
 import client.game.Model;
-import client.game.impl.common.ImageUrl;
-import client.game.impl.common.Location;
-import client.game.impl.common.Size;
+import client.game.Projector;
+import client.game.common.ImageUrl;
+import client.game.common.Location;
+import client.game.common.Size;
+import client.game.impl.ViewFactory;
 
 
 class UserBtn2 implements Button{
@@ -19,7 +22,6 @@ class UserBtn2 implements Button{
 	private int w= Size.SELECT_CARD_W;
 	private int h = Size.SELECT_CARD_H;
 	private Image img = Toolkit.getDefaultToolkit().getImage(ImageUrl.SECOND_USER_CARD);
-	private String action = "SELECT_USER_2";
 	
 	@Override
 	public boolean paint(Graphics2D g2d, ImageObserver imageObserver) {
@@ -40,6 +42,13 @@ class UserBtn2 implements Button{
 	}
 	@Override
 	public void doAction(Model model) {
-		model.addCommand(action);
+		model.addCommand(new SelectUserCommand());
+	}
+	
+	private static class SelectUserCommand implements Command {
+		@Override
+		public void execute(Projector projector, Model model) {
+			projector.showInGame(ViewFactory.getUser1(), model);
+		}
 	}
 }

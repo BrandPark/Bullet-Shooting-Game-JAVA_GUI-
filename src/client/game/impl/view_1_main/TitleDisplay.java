@@ -6,8 +6,8 @@ import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 
 import client.game.Display;
-import client.game.impl.common.ImageUrl;
-import client.game.impl.common.Size;
+import client.game.common.ImageUrl;
+import client.game.common.Size;
 
 class TitleDisplay implements Display{
 	private int x = Size.FRAME_W/4;

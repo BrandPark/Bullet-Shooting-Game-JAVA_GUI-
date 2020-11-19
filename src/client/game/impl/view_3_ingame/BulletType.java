@@ -1,7 +1,7 @@
 package client.game.impl.view_3_ingame;
 
 import client.game.Bullet;
-import client.game.impl.common.Size;
+import client.game.common.Size;
 
 enum BulletType {
 	UserBullet1{

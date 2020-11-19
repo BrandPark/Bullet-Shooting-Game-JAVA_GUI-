@@ -17,4 +17,7 @@ abstract public class ViewFactory {
 	public static final View getInGameView(Model model, User unit) {
 		return InGameViewFactory.getView(model, unit);
 	}
+	public static final User getUser1() {
+		return InGameViewFactory.getUser1();
+	}
 }

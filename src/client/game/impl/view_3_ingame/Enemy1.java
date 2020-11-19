@@ -9,8 +9,8 @@ import java.util.List;
 import client.game.Bullet;
 import client.game.Enemy;
 import client.game.HitBox;
-import client.game.impl.common.ImageUrl;
-import client.game.impl.common.Size;
+import client.game.common.ImageUrl;
+import client.game.common.Size;
 
 public class Enemy1 implements Enemy, Runnable{
 	private int life;

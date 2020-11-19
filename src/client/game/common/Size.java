@@ -1,4 +1,4 @@
-package client.game.impl.common.copy;
+package client.game.common;
 
 public abstract class Size {
 //	GamePanel	4:3

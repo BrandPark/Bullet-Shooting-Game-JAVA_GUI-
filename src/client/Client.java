@@ -1,6 +1,6 @@
 package client;
 
-import client.game.Game;
+import client.game.impl.Game;
 
 public class Client {
 

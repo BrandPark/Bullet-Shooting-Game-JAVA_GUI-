@@ -6,7 +6,7 @@ import java.util.List;
 import client.game.Bullet;
 import client.game.KeyHandler;
 import client.game.User;
-import client.game.impl.common.Direction;
+import client.game.common.Direction;
 
 class UserHandler implements KeyHandler{
 	private User unit;

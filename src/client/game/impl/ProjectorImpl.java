@@ -13,17 +13,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import client.game.Model;
+import client.game.Projector;
 import client.game.User;
 import client.game.View;
-import client.game.impl.common.Size;
+import client.game.common.Size;
 
-public class Projector extends JPanel implements KeyListener{
+class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	private View view;
 	private JFrame frame;
 	private Image buffImg;
 	private Graphics2D buffg;
 	
-	public Projector() {
+	public ProjectorImpl() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		frameInit();
 		createImgBuff();
@@ -41,16 +42,19 @@ public class Projector extends JPanel implements KeyListener{
 		viewPaint(g);
 	}
 	
+	@Override
 	public void showMain(Model model) {
 		clearView();
 		view = ViewFactory.getMainView(model);
 	}
 
+	@Override
 	public void showSelectUnit(Model model) {
 		clearView();
 		view = ViewFactory.getSelectUnitView(model);
 	}
 
+	@Override
 	public void showInGame(User unit, Model model) {
 		clearView();
 		view = ViewFactory.getInGameView(model, unit);

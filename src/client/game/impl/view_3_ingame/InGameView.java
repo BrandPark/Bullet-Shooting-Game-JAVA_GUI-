@@ -6,11 +6,14 @@ import java.awt.image.ImageObserver;
 import java.util.List;
 
 import client.game.Bullet;
+import client.game.Command;
 import client.game.Enemy;
 import client.game.KeyHandler;
 import client.game.Model;
+import client.game.Projector;
 import client.game.User;
 import client.game.View;
+import client.game.impl.ViewFactory;
 
 class InGameView implements View{
 	private final Model model;
@@ -42,7 +45,7 @@ class InGameView implements View{
 			return false;
 		
 		if(user.isDead())
-			model.addCommand("GAME_OVER");
+			model.addCommand(new GameOverCommand());
 		return true;
 	}
 
@@ -63,7 +66,7 @@ class InGameView implements View{
 	private void nextPhase() {
 		phase = phaseManager.nextPhase();
 		if(phase == null) {
-			model.addCommand("CLEAR");
+			model.addCommand(new GameClearCommand());
 		}
 	}
 	private boolean isPhaseClear() {
@@ -103,5 +106,17 @@ class InGameView implements View{
 				return false;
 		}
 		return true;
+	}
+	private static class GameClearCommand implements Command {
+		@Override
+		public void execute(Projector projector, Model model) {
+			projector.showMain(model);
+		}
+	}
+	private static class GameOverCommand implements Command {
+		@Override
+		public void execute(Projector projector, Model model) {
+			projector.showMain(model);
+		}
 	}
 }

@@ -3,14 +3,14 @@ package client.game.impl;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import client.game.Command;
 import client.game.Model;
-import client.game.impl.view_3_ingame.InGameViewFactory;
 
-public class CommandDispatcher extends Thread {
-	private Projector projector;
+class CommandDispatcher extends Thread {
+	private ProjectorImpl projector;
 	private Model model;
 	
-	public CommandDispatcher(Projector projector) {
+	public CommandDispatcher(ProjectorImpl projector) {
 		this.model = new ModelImpl();
 		this.projector = projector;
 		projector.showMain(model);
@@ -23,8 +23,8 @@ public class CommandDispatcher extends Thread {
 			synchronized(model) {
 				try {
 					model.wait();
-					String command = model.getCommand();
-					execute(command);
+					Command command = model.getCommand();
+					command.execute(projector, model);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -32,22 +32,11 @@ public class CommandDispatcher extends Thread {
 		}
 	}
 
-	private void execute(String command) {
-		System.out.println(command);
-		switch(command) {
-		case "GAME_START" : projector.showSelectUnit(model); break;
-		case "OPTION" : System.out.println("옵션버튼 셀렉트"); break;
-		case "SELECT_USER_1" :  projector.showInGame(InGameViewFactory.getUser1(), model);break;
-		case "CLEAR" : projector.showMain(model);break;
-		case "GAME_OVER" : projector.showMain(model);break;
-		}
-	}
-	
 	private static class ModelImpl implements Model {
-		private Queue<String> commandQueue = new LinkedList<>();
+		private Queue<Command> commandQueue = new LinkedList<>();
 
 		@Override
-		public void addCommand(String command) {
+		public void addCommand(Command command) {
 			commandQueue.add(command);
 			
 			synchronized(this) {
@@ -56,7 +45,7 @@ public class CommandDispatcher extends Thread {
 		}
 
 		@Override
-		public String getCommand() {
+		public Command getCommand() {
 			return commandQueue.poll();
 		}
 	}

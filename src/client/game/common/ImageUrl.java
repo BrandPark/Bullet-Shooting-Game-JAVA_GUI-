@@ -1,4 +1,4 @@
-package client.game.impl.common;
+package client.game.common;
 
 abstract public class ImageUrl {
 	private static String url = "resource/img/";

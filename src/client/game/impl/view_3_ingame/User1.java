@@ -10,10 +10,10 @@ import java.util.List;
 import client.game.Bullet;
 import client.game.HitBox;
 import client.game.User;
-import client.game.impl.common.Direction;
-import client.game.impl.common.ImageUrl;
-import client.game.impl.common.Location;
-import client.game.impl.common.Size;
+import client.game.common.Direction;
+import client.game.common.ImageUrl;
+import client.game.common.Location;
+import client.game.common.Size;
 
 class User1 implements User{
 	private int speed;

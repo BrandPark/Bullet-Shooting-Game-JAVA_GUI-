@@ -1,4 +1,4 @@
-package client.game.impl.common;
+package client.game.common;
 
 abstract public class Direction {
 	public static final int RIGHT = 1;
