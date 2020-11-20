@@ -9,4 +9,5 @@ public interface Enemy extends Element{
 	public List<Bullet> getBullets();
 	public void startMove();
 	public void off();
+	public boolean isInFrame();
 }

@@ -45,7 +45,7 @@ public class Enemy1 implements Enemy, Runnable{
 			y++;
 			hitBox.setLocation(x, y, w, h);
 			try {
-				Thread.sleep(50);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -56,6 +56,13 @@ public class Enemy1 implements Enemy, Runnable{
 	public void off() {
 		this.life = 0;
 		System.out.println("enemy 쓰레드 off");
+	}
+
+	@Override
+	public boolean isInFrame() {
+		if(y < Size.FRAME_H)
+			return true; 
+		return false;
 	}
 
 	@Override

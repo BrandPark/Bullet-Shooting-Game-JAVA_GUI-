@@ -38,7 +38,6 @@ abstract public class AbstractBullet extends AbstractElement implements Runnable
 		hitBox.setLocation(x,y,w,h);
 	}
 	
-	
 	@Override
 	public void run() {
 		while(isValid) {

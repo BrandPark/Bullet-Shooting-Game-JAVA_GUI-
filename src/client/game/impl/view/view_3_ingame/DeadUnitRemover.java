@@ -18,13 +18,14 @@ class DeadUnitRemover {
 		this.user = user;
 	}
 	public void remove(Phase phase) {
-		removeEnemy(phase);
+		removeDeadEnemy(phase);
+		removeEnemyOverFrame(phase);
 		removeEnemyBulletOverFrame();
 		removeEnemyBulletHitUser();
 		removeUserBulletOverFrame();
 		removeUserBulletHitEnemy(phase);
 	}
-	private void removeEnemy(Phase phase) {
+	private void removeDeadEnemy(Phase phase) {
 		int size = phase.size();
 		for(int i=0; i<size;i++) {
 			Enemy enemy = phase.get(i);
@@ -34,7 +35,18 @@ class DeadUnitRemover {
 			}
 		}
 	}
-	
+	private void removeEnemyOverFrame(Phase phase) {
+		int size = phase.size();
+		for(int i=0;i<size; i++) {
+			Enemy enemy = phase.get(i);
+			
+			if(!enemy.isInFrame()) {
+				enemy.off();
+				phase.remove(enemy);
+				size--;
+			}
+		}
+	}
 	private void removeEnemyBulletOverFrame() {
 		int size = enemyBullets.size();
 		for(int i=0;i<size; i++) {
