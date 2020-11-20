@@ -7,23 +7,20 @@ import client.game.HitBox;
 import client.game.common.Size;
 
 abstract public class AbstractBullet extends AbstractElement implements Runnable, Bullet{
-	
 	private int power;
 	private int speed;
 	private HitBox hitBox;
-	
 	private Thread thread;
 	private boolean isValid;
 	
-	
 	public AbstractBullet(int x, int y) {
-		this.x = x;
-		this.y = y;
-		this.w = Size.USER_BULLET1_W;
-		this.h = Size.USER_BULLET1_H;
+		setX(x);
+		setY(y);
+		setWidth(Size.USER_BULLET1_W);
+		setHeight(Size.USER_BULLET1_H);
+		setImage(initImg());
 		this.isValid = true;
 		this.hitBox = initHitBox();
-		this.img = initImg();
 		this.power = initPower();
 		this.speed = initSpeed();
 		

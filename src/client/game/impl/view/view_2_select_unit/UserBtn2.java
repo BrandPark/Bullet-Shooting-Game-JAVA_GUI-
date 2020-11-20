@@ -13,21 +13,21 @@ import client.game.impl.view.ViewFactory;
 class UserBtn2 extends AbstractButton {
 
 	public UserBtn2() {
-		this.x = Location.SELECT_CARD_SECOND_X;
-		this.y = Location.SELECT_CARD_Y;
-		this.w= Size.SELECT_CARD_W;
-		this.h = Size.SELECT_CARD_H;
-		this.img = getImage(ImageUrl.SECOND_USER_CARD);
+		setX(Location.SELECT_CARD_SECOND_X);
+		setY(Location.SELECT_CARD_Y);
+		setWidth(Size.SELECT_CARD_W);
+		setHeight(Size.SELECT_CARD_H);
+		setImage(getImage(ImageUrl.SECOND_USER_CARD));
 	}
 	
 	@Override
 	public void focus() {
-		img = getImage(ImageUrl.SECOND_USER_CARD_SELECTED);
+		setImage(getImage(ImageUrl.SECOND_USER_CARD_SELECTED));
 	}
 
 	@Override
 	public void unfocus() {
-		img = getImage(ImageUrl.SECOND_USER_CARD);
+		setImage(getImage(ImageUrl.SECOND_USER_CARD));
 	}
 	@Override
 	public void doAction(Model model) {

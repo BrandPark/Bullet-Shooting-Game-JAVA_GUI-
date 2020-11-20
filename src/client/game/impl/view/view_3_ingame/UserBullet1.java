@@ -14,20 +14,20 @@ class UserBullet1 extends AbstractBullet{
 
 	@Override
 	public boolean isInFrame() {
-		if(y+h>0)
+		if(getY()+getHeight()>0)
 			return true;
 		return false;
 	}
 
 	@Override
 	protected HitBox initHitBox() {
-		return new HitBoxImpl(x,y,w,h);
+		return new HitBoxImpl(getX(),getY(),getWidth(),getHeight());
 	}
 
 	@Override
 	protected void bulletMove() {
-		y-=2;
-		hitBoxMove(x,y,w,h);
+		setY(getY()-2);
+		hitBoxMove(getX(),getY(),getWidth(),getHeight());
 	}
 
 	@Override

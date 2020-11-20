@@ -8,11 +8,11 @@ import java.awt.image.ImageObserver;
 import client.game.Element;
 
 abstract public class AbstractElement implements Element{
-	protected int x;
-	protected int y;
-	protected int w;
-	protected int h;
-	protected Image img;
+	private int x;
+	private int y;
+	private int w;
+	private int h;
+	private Image img;
 	
 	public AbstractElement() {
 		this.x = 0;
@@ -33,5 +33,34 @@ abstract public class AbstractElement implements Element{
 	protected final Image getImage(String url) {
 		return Toolkit.getDefaultToolkit().getImage(url);
 	}
-	
+	protected final void setX(int x) {
+		this.x = x;
+	}
+	protected final void setY(int y) {
+		this.y = y;
+	}
+	protected final int getX() {
+		return x;
+	}
+	protected final int getY() {
+		return y;
+	}
+	protected final void setWidth(int w) {
+		this.w = w;
+	}
+	protected final int getWidth() {
+		return w;
+	}
+	protected final void setHeight(int h) {
+		this.h = h;
+	}
+	protected final int getHeight() {
+		return h;
+	}
+	protected final void setImage(Image img) {
+		this.img = img;
+	}
+	protected final Image getImage() {
+		return img;
+	}
 }

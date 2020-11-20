@@ -10,20 +10,20 @@ import client.game.impl.view.AbstractButton;
 class GameStartBtn extends AbstractButton {
 	
 	public GameStartBtn() {
-		this.x = Size.FRAME_W/8 * 3;
-		this.y = Size.FRAME_H/6 + 200;
-		this.w = Size.FRAME_W/4;
-		this.h = Size.FRAME_H/10;
-		this.img = getImage(ImageUrl.START_BUTTON);
+		setX(Size.FRAME_W/8 * 3);
+		setY(Size.FRAME_H/6 + 200);
+		setWidth(Size.FRAME_W/4);
+		setHeight(Size.FRAME_H/10);
+		setImage(getImage(ImageUrl.START_BUTTON));
 	}
 
 	@Override
 	public void focus() {
-		img = getImage(ImageUrl.START_BUTTON_SELECTED);
+		setImage(getImage(ImageUrl.START_BUTTON_SELECTED));
 	}
 	@Override
 	public void unfocus() {
-		img = getImage(ImageUrl.START_BUTTON);
+		setImage(getImage(ImageUrl.START_BUTTON));
 	}
 
 	@Override

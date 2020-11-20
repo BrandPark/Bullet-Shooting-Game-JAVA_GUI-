@@ -28,19 +28,20 @@ abstract public class AbstractUser extends AbstractElement implements User{
 	private HitBox hitBox;
 	
 	public AbstractUser() {
-		this.x = Location.USER_X;
-		this.y = Location.USER_Y;
-		this.w = Size.USER_W;
-		this.h = Size.USER_H;
+		setX(Location.USER_X);
+		setY(Location.USER_Y);
+		setWidth(Size.USER_W);
+		setHeight(Size.USER_H);
+		
 		this.life=3;
 		this.moveDirection = 0;
 		this.bullets = new ArrayList<Bullet>();
 		this.shootThread = new ShootThread();
 		this.damageThread = new DamageThread();
-		this.hitBox = new HitBoxImpl(x+10,y+10,w-10,h-10);
+		this.hitBox = new HitBoxImpl(getX()+10,getY()+10,getWidth()-10,getHeight()-10);
 		this.speed = initSpeed();
 		this.bulletType = initBulletType();
-		this.img = initImg();
+		setImage(initImg());
 	}
 	
 	abstract protected int initSpeed();
@@ -100,42 +101,42 @@ abstract public class AbstractUser extends AbstractElement implements User{
 	}
 	
 	private void move() {
-		int tempX = x;
-		int tempY = y;
+		int tempX = getX();
+		int tempY = getY();
 		if(moveDirection == Direction.UP) 
-			y-=speed;
+			setY(getY()-speed);
 		else if(moveDirection == Direction.DOWN) 
-			y+=speed;
+			setY(getY()+speed);
 		else if(moveDirection == Direction.LEFT) 
-			x-=speed;
+			setX(getX()-speed);
 		else if(moveDirection == Direction.RIGHT) 
-			x+=speed;
+			setX(getX()+speed);
 		else if(moveDirection == Direction.LEFTUP) {
-			x-=speed;
-			y-=speed;
+			setX(getX()-speed);
+			setY(getY()-speed);
 		}
 		else if(moveDirection == Direction.LEFTDOWN) {
-			x-=speed;
-			y+=speed;
+			setX(getX()-speed);
+			setY(getY()+speed);
 		}
 		else if(moveDirection == Direction.RIGHTUP) {
-			x+=speed;
-			y-=speed;
+			setX(getX()+speed);
+			setY(getY()-speed);
 		}
 		else if(moveDirection == Direction.RIGHTDOWN) {
-			x+=speed;
-			y+=speed;
+			setX(getX()+speed);
+			setY(getY()+speed);
 		}
 		if(!isInFrame()) {
-			x = tempX;
-			y = tempY;
+			setX(tempX);
+			setY(tempY);
 		}
-		hitBox.setLocation(x+10, y+10, w-10,h-10);
+		hitBox.setLocation(getX()+10, getY()+10, getWidth()-10,getHeight()-10);
 	}
 	
 	private boolean isInFrame() {
-		if(x <= 0 || x >= Size.FRAME_W - Size.USER_W ||
-				y <= 0 || y >= Size.FRAME_H - Size.USER_H)
+		if(getX() <= 0 || getX() >= Size.FRAME_W - Size.USER_W ||
+				getY() <= 0 || getY() >= Size.FRAME_H - Size.USER_H)
 			return false;
 		return true;
 	}
@@ -163,23 +164,23 @@ abstract public class AbstractUser extends AbstractElement implements User{
 			}
 		}
 		private void checkDamaged() {
-			Image tempImg = img;
+			Image tempImg = getImage();
 			try {
-				img = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+				setImage(getImage(ImageUrl.OP_USER1));
 				Thread.sleep(300);
-				img = tempImg;
+				setImage(tempImg);
 				Thread.sleep(300);
-				img = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+				setImage(getImage(ImageUrl.OP_USER1));
 				Thread.sleep(300);
-				img = tempImg;
+				setImage(tempImg);
 				Thread.sleep(200);
-				img = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+				setImage(getImage(ImageUrl.OP_USER1));
 				Thread.sleep(150);
-				img = tempImg;
+				setImage(tempImg);
 				Thread.sleep(100);
-				img = Toolkit.getDefaultToolkit().getImage(ImageUrl.OP_USER1);
+				setImage(getImage(ImageUrl.OP_USER1));
 				Thread.sleep(50);
-				img = tempImg;
+				setImage(tempImg);
 				
 				this.isDamaged = false;
 			} catch (InterruptedException e) {
@@ -218,8 +219,8 @@ abstract public class AbstractUser extends AbstractElement implements User{
 		
 		protected void addBullet() {
 			if(shootable) {
-				int shootX = x + (w/2) - (bulletType.getBulletWidth()/2);
-				bullets.add(bulletType.getBullet(shootX, y));
+				int shootX = getX() + (getWidth()/2) - (bulletType.getBulletWidth()/2);
+				bullets.add(bulletType.getBullet(shootX, getY()));
 			}
 			try {
 				Thread.sleep(100);

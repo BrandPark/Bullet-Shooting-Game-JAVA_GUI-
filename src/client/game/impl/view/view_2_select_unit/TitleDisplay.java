@@ -7,10 +7,10 @@ import client.game.impl.view.AbstractDisplay;
 
 class TitleDisplay extends AbstractDisplay{
 	public TitleDisplay() {
-		this.x = Size.FRAME_W/4;
-		this.y = Size.FRAME_H/40;
-		this.w = Size.FRAME_W/2;
-		this.h = Size.FRAME_H/4;
-		this.img = getImage(ImageUrl.SELECT_TITLE);
+		setX(Size.FRAME_W/4);
+		setY(Size.FRAME_H/40);
+		setWidth(Size.FRAME_W/2);
+		setHeight(Size.FRAME_H/4);
+		setImage(getImage(ImageUrl.SELECT_TITLE));
 	}
 }
