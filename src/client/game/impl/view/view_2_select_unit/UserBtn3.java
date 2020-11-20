@@ -1,8 +1,6 @@
 package client.game.impl.view.view_2_select_unit;
 
-import java.awt.Graphics2D;
 import java.awt.Toolkit;
-import java.awt.image.ImageObserver;
 
 import client.game.Command;
 import client.game.Model;
@@ -42,7 +40,7 @@ class UserBtn3 extends AbstractButton {
 	private static class SelectUserCommand implements Command {
 		@Override
 		public void execute(Projector projector, Model model) {
-			projector.showInGame(ViewFactory.getUser1(), model);
+			projector.showInGame(ViewFactory.getUser3(), model);
 		}
 	}
 }

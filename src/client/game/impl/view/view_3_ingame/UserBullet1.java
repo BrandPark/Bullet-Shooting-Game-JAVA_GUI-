@@ -93,7 +93,7 @@ class UserBullet1 implements Bullet, Runnable{
 		if(delay >= 11)
 			delay = 10;
 		try {
-			thread.sleep(delay);
+			Thread.sleep(delay);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

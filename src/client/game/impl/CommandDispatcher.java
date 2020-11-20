@@ -5,12 +5,13 @@ import java.util.Queue;
 
 import client.game.Command;
 import client.game.Model;
+import client.game.Projector;
 
 class CommandDispatcher extends Thread {
-	private ProjectorImpl projector;
+	private Projector projector;
 	private Model model;
 	
-	public CommandDispatcher(ProjectorImpl projector) {
+	public CommandDispatcher(Projector projector) {
 		this.model = new ModelImpl();
 		this.projector = projector;
 		projector.showMain(model);

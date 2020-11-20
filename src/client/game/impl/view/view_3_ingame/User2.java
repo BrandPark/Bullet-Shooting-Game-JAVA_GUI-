@@ -2,7 +2,7 @@ package client.game.impl.view.view_3_ingame;
 
 import client.game.common.ImageUrl;
 
-class User1 extends AbstractUser{
+public class User2 extends AbstractUser{
 
 	@Override
 	protected void setSpeed() {
@@ -16,6 +16,6 @@ class User1 extends AbstractUser{
 
 	@Override
 	protected void setImg() {
-		this.img = getImage(ImageUrl.USER1);
+		this.img = getImage(ImageUrl.USER2);
 	}
 }

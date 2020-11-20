@@ -1,4 +1,4 @@
-package client.game.impl.view;
+package client.game.impl.view.view_3_ingame;
 
 import java.awt.event.KeyEvent;
 
@@ -6,7 +6,7 @@ import client.game.KeyHandler;
 import client.game.User;
 import client.game.common.Direction;
 
-public class UserHandler implements KeyHandler{
+class UserHandler implements KeyHandler{
 	private User unit;
 	private int moveDir = 0;
 	

@@ -13,7 +13,6 @@ import client.game.Model;
 import client.game.Projector;
 import client.game.User;
 import client.game.View;
-import client.game.impl.view.UserHandler;
 
 class InGameView implements View{
 	private final Model model;
@@ -107,6 +106,7 @@ class InGameView implements View{
 		}
 		return true;
 	}
+	
 	private static class GameClearCommand implements Command {
 		@Override
 		public void execute(Projector projector, Model model) {

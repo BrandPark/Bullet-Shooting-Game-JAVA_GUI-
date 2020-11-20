@@ -39,7 +39,7 @@ class UserBtn2 extends AbstractButton {
 	private static class SelectUserCommand implements Command {
 		@Override
 		public void execute(Projector projector, Model model) {
-			projector.showInGame(ViewFactory.getUser1(), model);
+			projector.showInGame(ViewFactory.getUser2(), model);
 		}
 	}
 }

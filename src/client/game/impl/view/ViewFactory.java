@@ -20,4 +20,10 @@ abstract public class ViewFactory {
 	public static final User getUser1() {
 		return InGameViewFactory.getUser1();
 	}
+	public static final User getUser2() {
+		return InGameViewFactory.getUser2();
+	}
+	public static final User getUser3() {
+		return InGameViewFactory.getUser3();
+	}
 }

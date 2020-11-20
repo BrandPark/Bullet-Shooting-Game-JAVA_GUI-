@@ -22,8 +22,9 @@ public class Enemy1 implements Enemy, Runnable{
 	private HitBox hitBox;
 	private BulletType bulletType;
 	private List<Bullet> bullets;
-	private Thread thread;
-	private ShootThread shootThread;
+	private Thread enemyThread;
+	private Thread shootThread;
+	private AutoShoot autoShoot;
 	
 	public Enemy1(int x, int y, List<Bullet> bullets) {
 		this.life = 3;
@@ -35,7 +36,7 @@ public class Enemy1 implements Enemy, Runnable{
 		this.image = Toolkit.getDefaultToolkit().getImage(ImageUrl.ENEMY1);
 		this.bulletType = BulletType.EnemyBullet1;
 		this.bullets = bullets;
-		
+		this.autoShoot = new AutoShoot();
 	}
 	
 	@Override
@@ -59,9 +60,10 @@ public class Enemy1 implements Enemy, Runnable{
 
 	@Override
 	public void startMove() {
-		thread = new Thread(this);
-		thread.start();
-		shootThread = new ShootThread();
+		enemyThread = new Thread(this);
+		enemyThread.start();
+		shootThread = new Thread(autoShoot);
+		shootThread.start();
 	}
 
 	@Override
@@ -97,11 +99,7 @@ public class Enemy1 implements Enemy, Runnable{
 		return false;
 	}
 	
-	private class ShootThread extends Thread{
-		
-		ShootThread(){
-			this.start();
-		}
+	private class AutoShoot implements Runnable{
 		
 		@Override
 		public void run() {

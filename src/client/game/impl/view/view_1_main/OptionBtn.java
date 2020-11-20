@@ -1,11 +1,7 @@
 package client.game.impl.view.view_1_main;
 
-import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.image.ImageObserver;
 
-import client.game.Button;
 import client.game.Command;
 import client.game.Model;
 import client.game.Projector;

@@ -4,7 +4,7 @@ import client.game.Model;
 import client.game.View;
 
 abstract public class SelectUnitViewFactory {
-	public static View getView(Model model) {
+	public static final View getView(Model model) {
 		return new SelectUnitView(model);
 	}
 }
