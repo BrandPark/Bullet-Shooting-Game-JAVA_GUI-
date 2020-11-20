@@ -17,6 +17,7 @@ import client.game.Projector;
 import client.game.User;
 import client.game.View;
 import client.game.common.Size;
+import client.game.impl.view.ViewFactory;
 
 class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	private View view;
