@@ -1,7 +1,5 @@
 package client.game.impl.view.view_1_main;
 
-import java.awt.Toolkit;
-
 import client.game.Command;
 import client.game.Model;
 import client.game.Projector;
@@ -15,17 +13,17 @@ class OptionBtn extends AbstractButton {
 		this.y = Size.FRAME_H / 6 + 300;
 		this.w = Size.FRAME_W / 4;
 		this.h = Size.FRAME_H / 10;
-		this.img = Toolkit.getDefaultToolkit().getImage(ImageUrl.OPTION_BUTTON);
+		this.img = getImage(ImageUrl.OPTION_BUTTON);
 	}
 
 	@Override
 	public void focus() {
-		img = Toolkit.getDefaultToolkit().getImage(ImageUrl.OPTION_BUTTON_SELECTED);
+		img = getImage(ImageUrl.OPTION_BUTTON_SELECTED);
 	}
 
 	@Override
 	public void unfocus() {
-		img = Toolkit.getDefaultToolkit().getImage(ImageUrl.OPTION_BUTTON);
+		img = getImage(ImageUrl.OPTION_BUTTON);
 	}
 
 	@Override

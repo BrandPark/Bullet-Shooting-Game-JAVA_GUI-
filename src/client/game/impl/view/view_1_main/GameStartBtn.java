@@ -1,7 +1,5 @@
 package client.game.impl.view.view_1_main;
 
-import java.awt.Toolkit;
-
 import client.game.Command;
 import client.game.Model;
 import client.game.Projector;
@@ -16,16 +14,16 @@ class GameStartBtn extends AbstractButton {
 		this.y = Size.FRAME_H/6 + 200;
 		this.w = Size.FRAME_W/4;
 		this.h = Size.FRAME_H/10;
-		this.img = Toolkit.getDefaultToolkit().getImage(ImageUrl.START_BUTTON);
+		this.img = getImage(ImageUrl.START_BUTTON);
 	}
 
 	@Override
 	public void focus() {
-		img = Toolkit.getDefaultToolkit().getImage(ImageUrl.START_BUTTON_SELECTED);
+		img = getImage(ImageUrl.START_BUTTON_SELECTED);
 	}
 	@Override
 	public void unfocus() {
-		img = Toolkit.getDefaultToolkit().getImage(ImageUrl.START_BUTTON);
+		img = getImage(ImageUrl.START_BUTTON);
 	}
 
 	@Override

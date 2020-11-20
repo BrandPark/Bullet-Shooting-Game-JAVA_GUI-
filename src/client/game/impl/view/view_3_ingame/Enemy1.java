@@ -100,7 +100,6 @@ public class Enemy1 implements Enemy, Runnable{
 	}
 	
 	private class AutoShoot implements Runnable{
-		
 		@Override
 		public void run() {
 			while(life > 0){

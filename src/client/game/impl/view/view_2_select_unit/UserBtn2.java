@@ -1,7 +1,5 @@
 package client.game.impl.view.view_2_select_unit;
 
-import java.awt.Toolkit;
-
 import client.game.Command;
 import client.game.Model;
 import client.game.Projector;
@@ -19,17 +17,17 @@ class UserBtn2 extends AbstractButton {
 		this.y = Location.SELECT_CARD_Y;
 		this.w= Size.SELECT_CARD_W;
 		this.h = Size.SELECT_CARD_H;
-		this.img = Toolkit.getDefaultToolkit().getImage(ImageUrl.SECOND_USER_CARD);
+		this.img = getImage(ImageUrl.SECOND_USER_CARD);
 	}
 	
 	@Override
 	public void focus() {
-		img = Toolkit.getDefaultToolkit().getImage(ImageUrl.SECOND_USER_CARD_SELECTED);
+		img = getImage(ImageUrl.SECOND_USER_CARD_SELECTED);
 	}
 
 	@Override
 	public void unfocus() {
-		img = Toolkit.getDefaultToolkit().getImage(ImageUrl.SECOND_USER_CARD);
+		img = getImage(ImageUrl.SECOND_USER_CARD);
 	}
 	@Override
 	public void doAction(Model model) {

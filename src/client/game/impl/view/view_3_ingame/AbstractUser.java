@@ -18,10 +18,8 @@ import client.game.impl.view.AbstractElement;
 
 abstract public class AbstractUser extends AbstractElement implements User{
 	
-	
-	protected int speed;
-	protected BulletType bulletType;
-	
+	private int speed;
+	private BulletType bulletType;
 	private int life;
 	private int moveDirection;
 	private final ShootThread shootThread;
@@ -40,14 +38,14 @@ abstract public class AbstractUser extends AbstractElement implements User{
 		this.shootThread = new ShootThread();
 		this.damageThread = new DamageThread();
 		this.hitBox = new HitBoxImpl(x+10,y+10,w-10,h-10);
-		setSpeed();
-		setBulletType();
-		setImg();
+		this.speed = initSpeed();
+		this.bulletType = initBulletType();
+		this.img = initImg();
 	}
 	
-	abstract protected void setSpeed();
-	abstract protected void setBulletType();
-	abstract protected void setImg();
+	abstract protected int initSpeed();
+	abstract protected BulletType initBulletType();
+	abstract protected Image initImg();
 		
 		
 	@Override
