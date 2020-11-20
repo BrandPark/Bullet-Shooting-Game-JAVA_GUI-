@@ -16,8 +16,8 @@ abstract public class AbstractBullet extends AbstractElement implements Runnable
 	public AbstractBullet(int x, int y) {
 		setX(x);
 		setY(y);
-		setWidth(Size.USER_BULLET1_W);
-		setHeight(Size.USER_BULLET1_H);
+		setWidth(initWidth());
+		setHeight(initHeight());
 		setImage(initImg());
 		this.isValid = true;
 		this.hitBox = initHitBox();
@@ -33,6 +33,8 @@ abstract public class AbstractBullet extends AbstractElement implements Runnable
 	abstract protected Image initImg();
 	abstract protected int initPower();
 	abstract protected int initSpeed();
+	abstract protected int initWidth();
+	abstract protected int initHeight();
 	
 	protected final void hitBoxMove(int x, int y, int w, int h) {
 		hitBox.setLocation(x,y,w,h);

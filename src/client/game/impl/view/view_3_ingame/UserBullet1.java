@@ -4,12 +4,23 @@ import java.awt.Image;
 
 import client.game.HitBox;
 import client.game.common.ImageUrl;
+import client.game.common.Size;
 import client.game.impl.view.AbstractBullet;
 
 class UserBullet1 extends AbstractBullet{
 
 	public UserBullet1(int x, int y) {
 		super(x, y);
+	}
+
+	@Override
+	protected int initWidth() {
+		return Size.USER_BULLET1_W;
+	}
+
+	@Override
+	protected int initHeight() {
+		return Size.USER_BULLET1_H;
 	}
 
 	@Override

@@ -45,7 +45,7 @@ public class Enemy1 implements Enemy, Runnable{
 			y++;
 			hitBox.setLocation(x, y, w, h);
 			try {
-				Thread.sleep(10);
+				Thread.sleep(30);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
