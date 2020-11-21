@@ -2,7 +2,6 @@ package client.game.impl.view.view_3_ingame;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 import java.util.ArrayList;
 import java.util.List;
