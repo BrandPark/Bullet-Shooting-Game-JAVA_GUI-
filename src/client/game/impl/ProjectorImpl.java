@@ -19,6 +19,7 @@ import client.game.View;
 import client.game.common.Size;
 import client.game.impl.view.ViewFactory;
 
+@SuppressWarnings("serial")
 class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	private View view;
 	private JFrame frame;

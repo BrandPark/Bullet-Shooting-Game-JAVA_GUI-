@@ -16,6 +16,7 @@ abstract public class AbstractButtonView implements View {
 	private final List<Button> buttons = new ArrayList<>();
 	private final List<Display> displays = new ArrayList<>();
 	private final KeyHandler buttonHandler;
+	@SuppressWarnings("unused")
 	private final Model model;
 	
 	public AbstractButtonView(Model model) {

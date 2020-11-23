@@ -4,7 +4,6 @@ import java.awt.Image;
 
 import client.game.Bullet;
 import client.game.HitBox;
-import client.game.common.Size;
 
 abstract public class AbstractBullet extends AbstractElement implements Runnable, Bullet{
 	private int power;
@@ -20,7 +19,7 @@ abstract public class AbstractBullet extends AbstractElement implements Runnable
 		setHeight(initHeight());
 		setImage(initImg());
 		this.isValid = true;
-		this.hitBox = initHitBox();
+		this.hitBox = new HitBoxImpl(x, y, getWidth(), getHeight());
 		this.power = initPower();
 		this.speed = initSpeed();
 		
@@ -28,7 +27,6 @@ abstract public class AbstractBullet extends AbstractElement implements Runnable
 		thread.start();
 	}
 	
-	abstract protected HitBox initHitBox();
 	abstract protected void bulletMove();
 	abstract protected Image initImg();
 	abstract protected int initPower();

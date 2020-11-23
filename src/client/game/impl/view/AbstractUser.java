@@ -1,4 +1,4 @@
-package client.game.impl.view.view_3_ingame;
+package client.game.impl.view;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import client.game.Bullet;
+import client.game.BulletType;
 import client.game.HitBox;
 import client.game.User;
 import client.game.common.Direction;
 import client.game.common.ImageUrl;
 import client.game.common.Location;
 import client.game.common.Size;
-import client.game.impl.view.AbstractElement;
 
 abstract public class AbstractUser extends AbstractElement implements User{
 	
@@ -37,7 +37,7 @@ abstract public class AbstractUser extends AbstractElement implements User{
 		this.bullets = new ArrayList<Bullet>();
 		this.shootThread = new ShootThread();
 		this.damageThread = new DamageThread();
-		this.hitBox = new HitBoxImpl(getX()+10,getY()+10,getWidth()-10,getHeight()-10);
+		this.hitBox = new HitBoxImpl(getX()+10, getY()+10, getWidth()-10, getHeight()-10);
 		this.speed = initSpeed();
 		this.bulletType = initBulletType();
 		setImage(initImg());
@@ -46,7 +46,6 @@ abstract public class AbstractUser extends AbstractElement implements User{
 	abstract protected int initSpeed();
 	abstract protected BulletType initBulletType();
 	abstract protected Image initImg();
-		
 		
 	@Override
 	public void off() {
@@ -218,7 +217,7 @@ abstract public class AbstractUser extends AbstractElement implements User{
 		
 		protected void addBullet() {
 			if(shootable) {
-				int shootX = getX() + (getWidth()/2) - (bulletType.getBulletWidth()/2);
+				int shootX = getX() + (getWidth()/2) - 10;
 				bullets.add(bulletType.getBullet(shootX, getY()));
 			}
 			try {

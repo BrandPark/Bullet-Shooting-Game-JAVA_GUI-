@@ -17,7 +17,6 @@ class MainView extends AbstractButtonView{
 
 	@Override
 	protected void initButtons() {
-		GameStartBtn btn = new GameStartBtn();
 		addButton(new GameStartBtn());
 		addButton(new OptionBtn());
 	}

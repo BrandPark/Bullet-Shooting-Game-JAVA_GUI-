@@ -2,7 +2,6 @@ package client.game.impl.view.view_3_ingame;
 
 import java.awt.Image;
 
-import client.game.HitBox;
 import client.game.common.ImageUrl;
 import client.game.common.Size;
 import client.game.impl.view.AbstractBullet;
@@ -28,11 +27,6 @@ class UserBullet1 extends AbstractBullet{
 		if(getY()+getHeight()>0)
 			return true;
 		return false;
-	}
-
-	@Override
-	protected HitBox initHitBox() {
-		return new HitBoxImpl(getX(),getY(),getWidth(),getHeight());
 	}
 
 	@Override

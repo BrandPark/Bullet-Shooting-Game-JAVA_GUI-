@@ -1,4 +1,4 @@
-package client.game.impl.view.view_3_ingame;
+package client.game.impl.view;
 
 import client.game.HitBox;
 

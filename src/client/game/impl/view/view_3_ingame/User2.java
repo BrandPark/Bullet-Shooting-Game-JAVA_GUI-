@@ -2,7 +2,9 @@ package client.game.impl.view.view_3_ingame;
 
 import java.awt.Image;
 
+import client.game.BulletType;
 import client.game.common.ImageUrl;
+import client.game.impl.view.AbstractUser;
 
 public class User2 extends AbstractUser{
 
@@ -13,7 +15,7 @@ public class User2 extends AbstractUser{
 
 	@Override
 	protected BulletType initBulletType() {
-		return BulletType.UserBullet1;
+		return new UserBulletType1();
 	}
 
 	@Override
