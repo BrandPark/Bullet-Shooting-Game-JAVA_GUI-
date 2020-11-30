@@ -19,8 +19,11 @@ import client.game.View;
 import client.game.common.Size;
 import client.game.impl.view.ViewFactory;
 
-@SuppressWarnings("serial")
 class ProjectorImpl extends JPanel implements Projector, KeyListener{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private View view;
 	private JFrame frame;
 	private Image buffImg;
@@ -29,12 +32,12 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	public ProjectorImpl() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		frameInit();
-		createImgBuff();
 		repaint();
 	}
 
 	@Override
 	public void paint(Graphics g) {
+		createImgBuff();
 		update(g);
 	}
 	
