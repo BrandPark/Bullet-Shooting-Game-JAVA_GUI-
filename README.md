@@ -30,3 +30,4 @@
 * 게임이 종료되면 바로 Main화면으로 돌아가진다.
 
 ## 다이어그램
+![diagram](./img/diagram.png)
