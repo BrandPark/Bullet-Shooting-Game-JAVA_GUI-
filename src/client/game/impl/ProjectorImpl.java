@@ -32,7 +32,6 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	public ProjectorImpl() {
 		setPreferredSize(new Dimension(Size.FRAME_W, Size.FRAME_H));
 		frameInit();
-		repaint();
 	}
 
 	@Override
@@ -45,6 +44,7 @@ class ProjectorImpl extends JPanel implements Projector, KeyListener{
 	public void update(Graphics g) {
 		clearBuffg();
 		viewPaint(g);
+		repaint();
 	}
 	
 	@Override
