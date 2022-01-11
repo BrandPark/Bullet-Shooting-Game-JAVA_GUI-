@@ -8,5 +8,4 @@ public class Client {
 		Game game = new Game();
 		game.startGame();
 	}
-
 }

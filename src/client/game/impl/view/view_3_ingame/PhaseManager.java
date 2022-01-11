@@ -2,6 +2,7 @@ package client.game.impl.view.view_3_ingame;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import client.game.Bullet;
 import client.game.Enemy;
@@ -17,7 +18,7 @@ class PhaseManager {
 		phase1 = new Phase();
 		phase2 = new Phase();
 		phaseList = new ArrayList<>();
-		bullets = new ArrayList<>();
+		bullets = new CopyOnWriteArrayList<>();
 		phaseInit();
 	}
 	

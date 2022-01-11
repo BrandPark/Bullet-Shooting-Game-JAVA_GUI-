@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.image.ImageObserver;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import client.game.Bullet;
 import client.game.BulletType;
@@ -34,7 +35,7 @@ abstract public class AbstractUser extends AbstractElement implements User{
 		
 		this.life=3;
 		this.moveDirection = 0;
-		this.bullets = new ArrayList<Bullet>();
+		this.bullets = new CopyOnWriteArrayList<>();
 		this.shootThread = new ShootThread();
 		this.damageThread = new DamageThread();
 		this.hitBox = new HitBoxImpl(getX()+10, getY()+10, getWidth()-10, getHeight()-10);
@@ -221,7 +222,7 @@ abstract public class AbstractUser extends AbstractElement implements User{
 				bullets.add(bulletType.getBullet(shootX, getY()));
 			}
 			try {
-				Thread.sleep(10);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

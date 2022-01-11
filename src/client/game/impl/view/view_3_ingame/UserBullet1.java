@@ -31,7 +31,7 @@ class UserBullet1 extends AbstractBullet{
 
 	@Override
 	protected void bulletMove() {
-		setY(getY()-2);
+		setY(getY()-5);
 		hitBoxMove(getX(),getY(),getWidth(),getHeight());
 	}
 
@@ -47,7 +47,7 @@ class UserBullet1 extends AbstractBullet{
 
 	@Override
 	protected int initSpeed() {
-		return 9;
+		return 5;
 	}
 	
 }

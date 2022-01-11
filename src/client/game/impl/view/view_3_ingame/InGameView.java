@@ -3,6 +3,8 @@ package client.game.impl.view.view_3_ingame;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.ImageObserver;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -97,26 +99,14 @@ class InGameView implements View{
 		}
 		return true;
 	}
-	
+
 	private boolean userBulletsPaint(Graphics2D g2d, ImageObserver imageObserver) {
-		int size = userBullets.size();
-		for(int i=0;i<userBullets.size();i++) {
-			Bullet bullet = userBullets.get(i);
-			if(!bullet.paint(g2d, imageObserver)) 
-				return false;   
+
+		for(Bullet bullet : userBullets) {
+			if(bullet != null && !bullet.paint(g2d, imageObserver))
+				return false;
 		}
-		
-//		for(Bullet bullet : userBullets) {
-//			if(!bullet.paint(g2d, imageObserver))
-//				return false;
-//		}
-		
-//		Iterator it = userBullets.iterator();
-//		while(it.hasNext()) {
-//			Bullet bullet = (Bullet)it.next();
-//			if(!bullet.paint(g2d, imageObserver))
-//				return false;
-//		}
+
 		return true;
 	}
 	
