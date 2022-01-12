@@ -35,7 +35,7 @@ abstract public class AbstractUser extends AbstractElement implements User{
 		
 		this.life=3;
 		this.moveDirection = 0;
-		this.bullets = new CopyOnWriteArrayList<>();
+		this.bullets = new ArrayList<>();
 		this.shootThread = new ShootThread();
 		this.damageThread = new DamageThread();
 		this.hitBox = new HitBoxImpl(getX()+10, getY()+10, getWidth()-10, getHeight()-10);

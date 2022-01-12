@@ -18,7 +18,7 @@ class PhaseManager {
 		phase1 = new Phase();
 		phase2 = new Phase();
 		phaseList = new ArrayList<>();
-		bullets = new CopyOnWriteArrayList<>();
+		bullets = new ArrayList<>();
 		phaseInit();
 	}
 	

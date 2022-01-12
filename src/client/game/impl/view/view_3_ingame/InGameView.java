@@ -102,9 +102,17 @@ class InGameView implements View{
 
 	private boolean userBulletsPaint(Graphics2D g2d, ImageObserver imageObserver) {
 
-		for(Bullet bullet : userBullets) {
-			if(bullet != null && !bullet.paint(g2d, imageObserver))
-				return false;
+		int size = userBullets.size();	// 미리 개수를 센다.
+
+		for (int i = 0; i < size; i++) {
+			try {
+				Bullet bullet = userBullets.get(i);
+				if (!bullet.paint(g2d, imageObserver))
+					return false;
+			} catch (IndexOutOfBoundsException ex) {
+				// 마지막 총알을 그릴 때 GC에 의해서 이미 삭제되었다면 이 예외가 발생한다.
+				// 무시해도 문제가 없다.
+			}
 		}
 
 		return true;
