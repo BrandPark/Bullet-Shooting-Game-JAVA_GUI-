@@ -89,8 +89,9 @@ Game의 객체들의 연관관계를 다이어그램으로 간단히 그려보�
 
 <br>
 
-## 가장 기억에 남는 문제 해결
+## 해결한 문제
 - [ConcurrentModificationException 발생](https://javanitto.tistory.com/38).
+- [OOP에 대한 이해도 증가](https://javanitto.tistory.com/2?category=996103)
 
 <br>
 
